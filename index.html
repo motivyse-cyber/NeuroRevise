@@ -2179,19 +2179,22 @@ function renderGroups() {
 function createGroup() {
   const name = document.getElementById('groupName').value.trim();
   if (!name) return;
-  const code = Math.random().toString(36).substr(2,6).toUpperCase();
+  // Generate a readable 6-char alphanumeric code, avoid ambiguous chars
+  const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+  const code = Array.from({length:6}, () => chars[Math.floor(Math.random()*chars.length)]).join('');
   if (!userData.groups) userData.groups = [];
   const { users } = loadStorage();
   const user = users[currentUser];
+  const memberName = (user && user.name) || currentUser;
   userData.groups.push({
     name, code,
     description: document.getElementById('groupDesc').value.trim(),
     createdAt: new Date().toLocaleDateString(),
-    members: [(user && user.name) || currentUser],
+    members: [memberName],
     isAdmin: true,
     tasks: []
   });
-  saveUserData();
+  saveUserData(); // flush to localStorage immediately so others can find it
   document.getElementById('groupName').value='';
   document.getElementById('groupDesc').value='';
   closeModal('createGroupModal');
@@ -2201,29 +2204,51 @@ function createGroup() {
 function joinGroup() {
   const code = document.getElementById('inviteCode').value.trim().toUpperCase();
   if (!code) return;
-  // Find group in any user's data
+
+  // Flush current session to storage so it's visible in the search below
+  saveUserData();
+
+  // Search all users' data for the invite code
   const allData = JSON.parse(localStorage.getItem('nr_data') || '{}');
   let found = null, ownerEmail = null;
   Object.entries(allData).forEach(([email, data]) => {
-    (data.groups || []).forEach(g => { if(g.code === code) { found = g; ownerEmail = email; }});
+    (data.groups || []).forEach(g => {
+      if (g.code === code) { found = g; ownerEmail = email; }
+    });
   });
-  if (!found) { showToast('Invalid invite code', 'error'); return; }
+
+  if (!found) { showToast('Invalid invite code — check the code and try again', 'error'); return; }
   if (!userData.groups) userData.groups = [];
-  if (userData.groups.find(g => g.code === code)) { showToast('Already a member', 'error'); return; }
+  if (userData.groups.find(g => g.code === code)) { showToast('You are already in this group', 'error'); return; }
+
   const { users } = loadStorage();
   const user = users[currentUser];
-  // Add member to original group
-  if (ownerEmail && allData[ownerEmail]) {
-    allData[ownerEmail].groups.forEach(g => {
-      if (g.code === code && !g.members.includes((user && user.name)||currentUser)) {
-        g.members.push((user && user.name)||currentUser);
+  const memberName = (user && user.name) || currentUser;
+
+  // Add joiner to the owner's copy of the group
+  const freshAll = JSON.parse(localStorage.getItem('nr_data') || '{}');
+  if (ownerEmail && freshAll[ownerEmail]) {
+    freshAll[ownerEmail].groups = (freshAll[ownerEmail].groups || []).map(g => {
+      if (g.code === code) {
+        const members = g.members || [];
+        if (!members.includes(memberName)) members.push(memberName);
+        return { ...g, members };
       }
+      return g;
     });
-    localStorage.setItem('nr_data', JSON.stringify(allData));
+    // Also update joiner's own data in the same write
+    if (!freshAll[currentUser]) freshAll[currentUser] = userData;
+    freshAll[currentUser].groups = freshAll[currentUser].groups || [];
+    if (!freshAll[currentUser].groups.find(g => g.code === code)) {
+      const updatedGroup = freshAll[ownerEmail].groups.find(g => g.code === code);
+      freshAll[currentUser].groups.push({ ...updatedGroup, isAdmin: false });
+    }
+    localStorage.setItem('nr_data', JSON.stringify(freshAll));
+    // Sync in-memory userData
+    userData.groups = freshAll[currentUser].groups;
   }
-  userData.groups.push({ ...found, isAdmin: false, members: [...(found.members||[]), (user && user.name)||currentUser] });
-  saveUserData();
-  document.getElementById('inviteCode').value='';
+
+  document.getElementById('inviteCode').value = '';
   closeModal('joinGroupModal');
   renderGroups();
   showToast(`Joined "${found.name}" ✓`, 'success');
