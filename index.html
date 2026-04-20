@@ -19,16 +19,16 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
 a{color:inherit;text-decoration:none}
 button{font-family:var(--font);cursor:pointer;border:none;outline:none}
 input,textarea{font-family:var(--font);outline:none}
-
+ 
 /* ─── SCROLLBAR ─── */
 ::-webkit-scrollbar{width:5px;height:5px}
 ::-webkit-scrollbar-track{background:var(--bg)}
 ::-webkit-scrollbar-thumb{background:var(--border);border-radius:10px}
-
+ 
 /* ─── PAGE SYSTEM ─── */
 .page{display:none}
 .page.active{display:flex}
-
+ 
 /* ════════════════════════════════════════
    AUTH PAGE
 ════════════════════════════════════════ */
@@ -69,7 +69,7 @@ input,textarea{font-family:var(--font);outline:none}
   font-size:1rem;font-weight:600;border:1px solid var(--border);transition:var(--tr);
 }
 .btn-ghost:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-dim)}
-
+ 
 /* Auth Modal */
 .modal-overlay{
   position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);
@@ -98,12 +98,12 @@ input,textarea{font-family:var(--font);outline:none}
 .modal-switch span{color:var(--accent);cursor:pointer;font-weight:600}
 .modal-switch span:hover{text-decoration:underline}
 .error-msg{color:var(--danger);font-size:0.82rem;margin-top:8px;display:none}
-
+ 
 /* ════════════════════════════════════════
    APP LAYOUT
 ════════════════════════════════════════ */
 #appPage{flex-direction:row;min-height:100vh}
-
+ 
 /* Sidebar */
 .sidebar{
   width:var(--sidebar-w);background:var(--surface3);border-right:1px solid var(--border);
@@ -149,16 +149,16 @@ input,textarea{font-family:var(--font);outline:none}
   transition:var(--tr);
 }
 .theme-toggle:hover{background:var(--surface2);color:var(--text)}
-
+ 
 /* Main Content */
 .main{margin-left:var(--sidebar-w);flex:1;padding:32px;min-height:100vh;overflow-y:auto}
-
+ 
 /* Page Header */
 .page-header{margin-bottom:28px}
 .page-header h1{font-size:2rem;font-weight:800;margin-bottom:4px}
 .page-meta{display:flex;align-items:center;gap:8px;color:var(--text-muted);font-size:0.88rem}
 .dot{width:4px;height:4px;background:var(--text-muted);border-radius:50%}
-
+ 
 /* ─── CARDS ─── */
 .card{
   background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);
@@ -167,12 +167,12 @@ input,textarea{font-family:var(--font);outline:none}
 .card-sm{padding:16px 20px}
 .card-hover{transition:var(--tr)}
 .card-hover:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,0.3)}
-
+ 
 /* ─── GRID ─── */
 .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
 .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-
+ 
 /* ─── BADGE ─── */
 .badge{
   display:inline-flex;align-items:center;padding:3px 10px;border-radius:20px;
@@ -182,12 +182,12 @@ input,textarea{font-family:var(--font);outline:none}
 .badge-success{background:rgba(16,185,129,0.15);color:var(--success)}
 .badge-warn{background:rgba(245,158,11,0.15);color:var(--warning)}
 .badge-danger{background:rgba(239,68,68,0.15);color:var(--danger)}
-
+ 
 /* ─── PROGRESS BAR ─── */
 .progress-bar{height:6px;background:var(--surface2);border-radius:10px;overflow:hidden}
 .progress-fill{height:100%;border-radius:10px;transition:width 0.6s ease;
   background:linear-gradient(90deg,var(--accent),var(--accent2))}
-
+ 
 /* ─── CHECKBOX ─── */
 .checkbox-wrap{display:flex;align-items:center;gap:10px;cursor:pointer}
 .checkbox{
@@ -196,7 +196,7 @@ input,textarea{font-family:var(--font);outline:none}
 }
 .checkbox.checked{background:var(--accent);border-color:var(--accent)}
 .checkbox.checked::after{content:'✓';color:#fff;font-size:12px;font-weight:700}
-
+ 
 /* ─── STAT CARD ─── */
 .stat-card{display:flex;justify-content:space-between;align-items:center;position:relative;overflow:hidden}
 .stat-card::before{
@@ -209,7 +209,7 @@ input,textarea{font-family:var(--font);outline:none}
   width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;
   font-size:20px;flex-shrink:0;
 }
-
+ 
 /* ════════════════════════════════════════
    DASHBOARD
 ════════════════════════════════════════ */
@@ -238,7 +238,7 @@ input,textarea{font-family:var(--font);outline:none}
 .progress-fill.urgent{background:linear-gradient(90deg,var(--warning),#f97316)}
 .progress-fill.critical{background:linear-gradient(90deg,var(--danger),#f97316);animation:pulse-red 2s infinite}
 @keyframes pulse-red{0%,100%{opacity:1}50%{opacity:0.7}}
-
+ 
 .dashboard-grid{display:grid;grid-template-columns:1fr 360px;gap:24px}
 .section-title{font-size:1.1rem;font-weight:700;margin-bottom:16px;display:flex;align-items:center;gap:8px}
 .count-badge{
@@ -261,7 +261,7 @@ input,textarea{font-family:var(--font);outline:none}
 .empty-state svg{margin-bottom:12px;opacity:0.3}
 .empty-state p{font-size:0.95rem;margin-bottom:4px;color:var(--text-dim)}
 .empty-state small{font-size:0.82rem}
-
+ 
 /* Log Study Input */
 .log-study-card{}
 .input-styled{
@@ -278,7 +278,7 @@ input,textarea{font-family:var(--font);outline:none}
 .btn-accent:hover{transform:translateY(-1px);box-shadow:0 6px 25px var(--accent-glow)}
 .btn-accent:active{transform:translateY(0)}
 .hint{font-size:0.78rem;color:var(--text-muted);margin-top:8px;text-align:center}
-
+ 
 /* Topics list */
 .topics-grid{display:flex;flex-direction:column;gap:6px;margin-top:16px;max-height:200px;overflow-y:auto}
 .topic-chip{
@@ -289,12 +289,12 @@ input,textarea{font-family:var(--font);outline:none}
   width:20px;height:20px;display:flex;align-items:center;justify-content:center;
   border-radius:4px;transition:var(--tr)}
 .topic-chip-remove:hover{background:var(--danger);color:#fff}
-
+ 
 /* Upcoming/Missed */
 .sub-section{margin-top:24px}
 .review-missed{border-left:3px solid var(--danger)!important}
 .review-upcoming{border-left:3px solid var(--accent)!important}
-
+ 
 /* ════════════════════════════════════════
    PLANNER
 ════════════════════════════════════════ */
@@ -353,10 +353,10 @@ input,textarea{font-family:var(--font);outline:none}
 .wc-bar{width:100%;background:var(--accent-dim);border-radius:4px 4px 0 0;min-height:2px;transition:height 0.5s ease}
 .wc-bar.active{background:linear-gradient(0deg,var(--accent),var(--accent2))}
 .wc-label{font-size:0.68rem;color:var(--text-muted);text-align:center}
-
+ 
 /* Add Task Modal content */
 .modal-body{display:flex;flex-direction:column;gap:12px}
-
+ 
 /* ════════════════════════════════════════
    PAST PAPERS — NEW LAYOUT
 ════════════════════════════════════════ */
@@ -452,7 +452,7 @@ input,textarea{font-family:var(--font);outline:none}
   background:transparent;border:1px solid var(--border);color:var(--text-dim);transition:var(--tr);
 }
 .btn-outline:hover{border-color:var(--accent);color:var(--accent)}
-
+ 
 /* ════════════════════════════════════════
    STUDY TIMER
 ════════════════════════════════════════ */
@@ -481,7 +481,7 @@ input,textarea{font-family:var(--font);outline:none}
 .btn-timer.stop:hover{box-shadow:0 6px 20px rgba(239,68,68,0.4)}
 .timer-meta{display:flex;justify-content:space-between;margin-top:12px;font-size:0.75rem;color:var(--text-muted)}
 .timer-meta-val{font-weight:600;color:var(--text-dim);font-family:var(--mono)}
-
+ 
 /* ════════════════════════════════════════
    PROGRESS
 ════════════════════════════════════════ */
@@ -507,7 +507,7 @@ input,textarea{font-family:var(--font);outline:none}
   display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .revisions-today-text h4{font-size:0.9rem;font-weight:600}
 .revisions-today-text p{font-size:0.8rem;color:var(--text-muted)}
-
+ 
 /* ════════════════════════════════════════
    GROUPS
 ════════════════════════════════════════ */
@@ -546,13 +546,84 @@ input,textarea{font-family:var(--font);outline:none}
   background:transparent;border:1px solid rgba(239,68,68,0.3);color:var(--danger);transition:var(--tr);
 }
 .btn-danger-outline:hover{background:rgba(239,68,68,0.1)}
-
+ 
+/* ─── GROUP ADMIN PANEL ─── */
+.group-admin-panel{
+  margin-top:16px;border-top:1px solid var(--border);padding-top:16px;
+}
+.group-admin-title{
+  font-size:0.78rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--text-muted);margin-bottom:14px;display:flex;align-items:center;gap:8px;
+}
+.member-stat-row{
+  display:flex;align-items:center;gap:12px;padding:12px 14px;
+  background:var(--surface2);border-radius:10px;margin-bottom:8px;
+}
+.member-stat-avatar{
+  width:34px;height:34px;border-radius:50%;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  display:flex;align-items:center;justify-content:center;
+  font-size:0.82rem;font-weight:700;flex-shrink:0;color:#fff;
+}
+.member-stat-info{flex:1;min-width:0}
+.member-stat-name{font-size:0.9rem;font-weight:600;margin-bottom:4px}
+.member-stat-subjects{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:6px}
+.member-subject-tag{
+  font-size:0.7rem;font-weight:600;padding:2px 8px;border-radius:20px;
+  display:flex;align-items:center;gap:4px;
+}
+.member-stat-hours{
+  font-size:0.82rem;font-weight:700;color:var(--accent);white-space:nowrap;
+  text-align:right;
+}
+.member-stat-hours small{display:block;font-size:0.7rem;color:var(--text-muted);font-weight:400}
+.group-summary-bar{
+  display:flex;gap:16px;padding:14px 16px;
+  background:var(--accent-dim);border:1px solid var(--accent);
+  border-radius:10px;margin-bottom:16px;
+}
+.group-summary-item{text-align:center;flex:1}
+.group-summary-num{font-size:1.4rem;font-weight:800;color:var(--accent)}
+.group-summary-label{font-size:0.72rem;color:var(--text-muted)}
+ 
+/* ─── USER PICKER ─── */
+.user-picker-list{
+  max-height:200px;overflow-y:auto;border:1px solid var(--border);
+  border-radius:10px;background:var(--surface2);
+}
+.user-picker-item{
+  display:flex;align-items:center;gap:10px;padding:10px 14px;cursor:pointer;
+  transition:background 0.15s;border-bottom:1px solid var(--border);
+}
+.user-picker-item:last-child{border-bottom:none}
+.user-picker-item:hover{background:var(--border)}
+.user-picker-item.selected{background:var(--accent-dim)}
+.user-picker-check{
+  width:20px;height:20px;border:2px solid var(--border);border-radius:6px;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:var(--tr);
+}
+.user-picker-item.selected .user-picker-check{background:var(--accent);border-color:var(--accent)}
+.user-picker-item.selected .user-picker-check::after{content:'✓';color:#fff;font-size:11px;font-weight:700}
+.user-picker-name{font-size:0.9rem;font-weight:600}
+.user-picker-email{font-size:0.76rem;color:var(--text-muted)}
+.user-picker-empty{padding:20px;text-align:center;color:var(--text-muted);font-size:0.85rem}
+ 
+/* ─── AVAILABLE GROUPS LIST ─── */
+.avail-group-item{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:14px 16px;background:var(--surface2);border-radius:10px;margin-bottom:8px;
+  border:1px solid transparent;transition:var(--tr);
+}
+.avail-group-item:hover{border-color:var(--accent)}
+.avail-group-name{font-size:0.95rem;font-weight:700;margin-bottom:2px}
+.avail-group-meta{font-size:0.78rem;color:var(--text-muted)}
+ 
 /* ─── LIGHT MODE ─── */
 body.light{
   --bg:#f8faff;--surface:#ffffff;--surface2:#f1f5f9;--surface3:#f4f7fe;
   --border:#e2e8f0;--text:#0f172a;--text-muted:#64748b;--text-dim:#475569;
 }
-
+ 
 /* ─── TOAST ─── */
 .toast{
   position:fixed;bottom:24px;right:24px;background:var(--surface);border:1px solid var(--border);
@@ -563,12 +634,12 @@ body.light{
 .toast.show{transform:translateY(0);opacity:1}
 .toast.success{border-color:var(--success);color:var(--success)}
 .toast.error{border-color:var(--danger);color:var(--danger)}
-
+ 
 /* ─── ANIMATIONS ─── */
 @keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
-
+ 
 @keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
-
+ 
 /* ════ AUTH ENTRANCE ════ */
 @keyframes authLogoIn{0%{opacity:0;transform:translateY(40px) rotateX(50deg) scale(0.7)}100%{opacity:1;transform:translateY(0) rotateX(0) scale(1)}}
 @keyframes authSlideUp{from{opacity:0;transform:translateY(32px)}to{opacity:1;transform:translateY(0)}}
@@ -581,76 +652,76 @@ body.light{
 .auth-features .auth-feat:nth-child(3){animation:authFeatIn 0.55s cubic-bezier(0.22,1,0.36,1) 0.6s both}
 .auth-features .auth-feat:nth-child(4){animation:authFeatIn 0.55s cubic-bezier(0.22,1,0.36,1) 0.7s both}
 .auth-buttons{animation:authSlideUp 0.6s ease 0.78s both}
-
+ 
 /* ════ 3D LOGO BOB ════ */
 @keyframes logoBob{0%,100%{transform:translateY(0) rotateY(0deg) rotateX(0deg);box-shadow:0 0 40px var(--accent-glow)}30%{transform:translateY(-8px) rotateY(12deg) rotateX(5deg);box-shadow:0 18px 60px var(--accent-glow)}70%{transform:translateY(-4px) rotateY(-8deg) rotateX(-3deg);box-shadow:0 10px 50px var(--accent-glow)}}
 .auth-logo{animation:logoBob 5s ease-in-out infinite;transform-style:preserve-3d;perspective:400px}
-
+ 
 /* ════ GLITCH TITLE ════ */
 @keyframes glitch{0%,85%,100%{text-shadow:none;clip-path:none}86%{text-shadow:3px 0 #ff2d78,-3px 0 #00d4ff;transform:skewX(-3deg)}88%{text-shadow:-3px 0 #ff2d78,3px 0 #00d4ff;transform:skewX(2deg)}90%{text-shadow:2px 0 #ff2d78,-2px 0 #00d4ff;transform:none}92%{text-shadow:none}}
 .auth-title{animation:glitch 7s ease infinite,authSlideUp 0.7s cubic-bezier(0.34,1.26,0.64,1) 0.18s both!important}
-
+ 
 /* ════ PARTICLE CANVAS ════ */
 #authCanvas{position:absolute;inset:0;pointer-events:none;z-index:0}
 #authPage>*:not(#authCanvas){position:relative;z-index:1}
-
+ 
 /* ════ FLOATING BG ORBS ════ */
 @keyframes floatOrb{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(40px,-30px) scale(1.07)}66%{transform:translate(-25px,40px) scale(0.93)}}
 .bg-orb{position:fixed;border-radius:50%;filter:blur(90px);pointer-events:none;z-index:-1}
 .bg-orb-1{width:500px;height:500px;background:radial-gradient(circle,rgba(99,102,241,0.13),transparent);top:-150px;left:-100px;animation:floatOrb 14s ease-in-out infinite}
 .bg-orb-2{width:400px;height:400px;background:radial-gradient(circle,rgba(139,92,246,0.1),transparent);bottom:-100px;right:-80px;animation:floatOrb 18s ease-in-out infinite reverse}
 .bg-orb-3{width:300px;height:300px;background:radial-gradient(circle,rgba(236,72,153,0.07),transparent);top:45%;left:55%;animation:floatOrb 11s ease-in-out infinite 4s}
-
+ 
 /* buttons */
-
+ 
 /* ════ NAV GLOW INDICATOR ════ */
 .nav-item.active::before{content:'';position:absolute;left:0;top:50%;transform:translateY(-50%);width:3px;height:55%;background:linear-gradient(180deg,var(--accent),var(--accent2));border-radius:0 3px 3px 0;box-shadow:0 0 10px var(--accent)}
 .nav-item{position:relative}
-
+ 
 /* ════ SIDEBAR LOGO PULSE ════ */
 @keyframes logoPulse{0%,100%{box-shadow:0 0 0 0 rgba(99,102,241,0.5)}60%{box-shadow:0 0 0 8px rgba(99,102,241,0)}}
 .sidebar-logo-icon{animation:logoPulse 3.5s ease infinite}
-
+ 
 /* ════ 3D CARD SHIMMER ════ */
 .card-hover{transform-style:preserve-3d;will-change:transform}
 .card-hover::after{content:'';position:absolute;inset:0;border-radius:inherit;background:linear-gradient(115deg,transparent 25%,rgba(255,255,255,0.04) 50%,transparent 75%);background-size:200% 100%;opacity:0;transition:opacity 0.3s;pointer-events:none;z-index:1}
 .card-hover:hover::after{opacity:1;animation:shimmer 1.8s linear infinite}
 @keyframes shimmer{0%{background-position:-200% center}100%{background-position:200% center}}
-
+ 
 /* ════ CARD STAGGER ════ */
 @keyframes cardFadeUp{from{opacity:0;transform:translateY(28px) scale(0.97)}to{opacity:1;transform:translateY(0) scale(1)}}
-
+ 
 /* ════ TIMER GLOW ════ */
 @keyframes timerPulse{0%,100%{box-shadow:0 0 20px var(--accent-glow),inset 0 0 20px rgba(99,102,241,0.04)}50%{box-shadow:0 0 50px rgba(99,102,241,0.55),inset 0 0 35px rgba(99,102,241,0.09)}}
 .timer-card.running{animation:timerPulse 2.2s ease-in-out infinite!important;border-color:var(--accent)}
-
+ 
 /* ════ COUNTDOWN FLIP ════ */
 @keyframes digitFlip{0%{transform:rotateX(0)}40%{transform:rotateX(-90deg);opacity:0.4}70%{transform:rotateX(-90deg);opacity:0.4}100%{transform:rotateX(0)}}
 .hms-num{display:inline-block;transform-origin:center}
 .digit-flip{animation:digitFlip 0.38s cubic-bezier(0.4,0,0.2,1)}
-
+ 
 /* ════ STAT 3D ENTRANCE ════ */
 @keyframes statsIn{from{opacity:0;transform:perspective(500px) rotateX(22deg) translateY(30px)}to{opacity:1;transform:perspective(500px) rotateX(0) translateY(0)}}
-
+ 
 /* ════ PROGRESS BAR ANIMATE ════ */
 @keyframes progressGrow{from{width:0!important;opacity:0.6}to{opacity:1}}
-
+ 
 /* ════ MODAL ENTRANCE ════ */
 @keyframes modalBounceIn{from{transform:translateY(30px) scale(0.92);opacity:0}to{transform:translateY(0) scale(1);opacity:1}}
 .modal-overlay.open .modal{animation:modalBounceIn 0.4s cubic-bezier(0.34,1.56,0.64,1) both}
-
+ 
 /* ════ TOAST BOUNCE ════ */
 @keyframes toastBounce{from{opacity:0;transform:translateY(20px) scale(0.88)}to{opacity:1;transform:translateY(0) scale(1)}}
 .toast.show{animation:toastBounce 0.35s cubic-bezier(0.34,1.56,0.64,1) forwards}
-
+ 
 /* ════ ACTIVITY BAR GROW ════ */
 @keyframes barGrow{from{height:4px!important;opacity:0}to{opacity:1}}
 .activity-bar{animation:barGrow 0.7s cubic-bezier(0.22,1,0.36,1) both}
-
+ 
 /* ════ AUTH FEAT 3D HOVER ════ */
 .auth-feat{transform-style:preserve-3d;will-change:transform;transition:transform 0.22s ease,box-shadow 0.22s ease,border-color 0.22s ease}
 .auth-feat:hover{box-shadow:0 24px 60px rgba(0,0,0,0.5),0 0 24px var(--accent-glow);border-color:var(--accent)}
-
+ 
 /* ─── RESPONSIVE ─── */
 @media(max-width:900px){
   .sidebar{width:60px;padding:16px 8px}
@@ -669,7 +740,7 @@ body.light{
 </style>
 </head>
 <body>
-
+ 
 <!-- ════════ AUTH PAGE ════════ -->
 <div id="authPage" class="page active" style="flex-direction:column;align-items:center;justify-content:center;min-height:100vh;padding:20px;background:radial-gradient(ellipse at 30% 20%,rgba(99,102,241,0.12) 0%,transparent 60%),radial-gradient(ellipse at 70% 80%,rgba(139,92,246,0.08) 0%,transparent 60%),var(--bg)">
   <canvas id="authCanvas"></canvas>
@@ -705,7 +776,7 @@ body.light{
     <button class="btn-ghost" onclick="openModal('loginModal')">Sign In</button>
   </div>
 </div>
-
+ 
 <!-- ════════ APP PAGE ════════ -->
 <div id="appPage" class="page" style="display:none">
   <!-- Sidebar -->
@@ -751,10 +822,10 @@ body.light{
       </button>
     </div>
   </div>
-
+ 
   <!-- Main -->
   <div class="main">
-
+ 
     <!-- ─── DASHBOARD ─── -->
     <div id="pg-dashboard" style="display:block">
       <div class="page-header">
@@ -767,7 +838,7 @@ body.light{
           <span id="liveClock">00:00:00</span>
         </div>
       </div>
-
+ 
       <!-- Countdown -->
       <div class="countdown-card" id="countdownCard">
         <div class="countdown-label">Exam Countdown</div>
@@ -789,7 +860,7 @@ body.light{
           <div class="progress-bar"><div class="progress-fill" id="cdBar" style="width:0%"></div></div>
         </div>
       </div>
-
+ 
       <!-- Dashboard Grid -->
       <div class="dashboard-grid">
         <div>
@@ -822,7 +893,7 @@ body.light{
             <div id="upcomingList"><p style="font-size:0.85rem;color:var(--text-muted)">No reviews scheduled for the next 7 days.</p></div>
           </div>
         </div>
-
+ 
         <!-- Log Study -->
         <div>
           <div class="card log-study-card">
@@ -838,7 +909,7 @@ body.light{
           </div>
         </div>
       </div>
-
+ 
       <!-- Study Time Chart -->
       <div class="card" style="margin-top:24px">
         <div class="section-title" style="justify-content:space-between">
@@ -853,7 +924,7 @@ body.light{
         </div>
       </div>
     </div>
-
+ 
     <!-- ─── PLANNER ─── -->
     <div id="pg-planner" style="display:none">
       <div class="page-header">
@@ -916,7 +987,7 @@ body.light{
         </div>
       </div>
     </div>
-
+ 
     <!-- ─── PAPERS ─── -->
     <div id="pg-papers" style="display:none">
       <div class="page-header">
@@ -938,7 +1009,7 @@ body.light{
         <div class="papers-content-area" id="papersContentArea"></div>
       </div>
     </div>
-
+ 
     <!-- ─── TIMER ─── -->
     <div id="pg-timer" style="display:none">
       <div class="page-header">
@@ -947,7 +1018,7 @@ body.light{
       </div>
       <div class="timer-grid" id="timerGrid"></div>
     </div>
-
+ 
     <!-- ─── PROGRESS ─── -->
     <div id="pg-progress" style="display:none">
       <div class="page-header">
@@ -975,7 +1046,7 @@ body.light{
         <!-- Recent entries log -->
         <div id="pmLog" style="margin-top:16px"></div>
       </div>
-
+ 
       <!-- Daily Study Time Chart -->
       <div class="card" style="margin-bottom:24px">
         <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;flex-wrap:wrap;gap:10px">
@@ -998,7 +1069,7 @@ body.light{
         </div>
         <div id="dtLegend" style="display:flex;flex-wrap:wrap;gap:14px;margin-top:18px;padding-top:14px;border-top:1px solid var(--border)"></div>
       </div>
-
+ 
       <div class="progress-grid">
         <div class="card">
           <div class="section-title">Subject Mastery</div>
@@ -1013,7 +1084,7 @@ body.light{
         </div>
       </div>
     </div>
-
+ 
     <!-- ─── GROUPS ─── -->
     <div id="pg-groups" style="display:none">
       <div class="groups-header">
@@ -1025,10 +1096,10 @@ body.light{
       </div>
       <div id="groupsContent"></div>
     </div>
-
+ 
   </div><!-- /main -->
 </div><!-- /appPage -->
-
+ 
 <!-- ════════ MODALS ════════ -->
 <!-- Signup -->
 <div class="modal-overlay" id="signupModal">
@@ -1079,25 +1150,37 @@ body.light{
 </div>
 <!-- Create Group -->
 <div class="modal-overlay" id="createGroupModal">
-  <div class="modal">
+  <div class="modal" style="max-width:460px">
     <h2>Create Study Group</h2>
-    <div class="form-group"><label>Group name *</label><input type="text" id="groupName" placeholder="Group name *"></div>
-    <div class="form-group"><label>Description (optional)</label><input type="text" id="groupDesc" placeholder="Description (optional)"></div>
-    <button class="btn-primary btn-full" style="margin-top:8px" onclick="createGroup()">Create Group</button>
+    <p>Name your group and invite members already on this app</p>
+    <div class="form-group"><label>Group Name *</label><input type="text" id="groupName" placeholder="e.g. A-Level Squad"></div>
+    <div class="form-group"><label>Description (optional)</label><input type="text" id="groupDesc" placeholder="What are you studying together?"></div>
+    <div class="form-group">
+      <label style="margin-bottom:8px;display:block">Add Members <span style="color:var(--text-muted);font-weight:400">(select from registered users)</span></label>
+      <div class="user-picker-list" id="userPickerList"><div class="user-picker-empty">No other users registered yet</div></div>
+    </div>
+    <div id="selectedMembersPreview" style="font-size:0.8rem;color:var(--accent);margin-top:4px;min-height:18px"></div>
+    <button class="btn-primary btn-full" style="margin-top:12px" onclick="createGroup()">Create Group →</button>
     <button onclick="closeModal('createGroupModal')" style="position:absolute;top:16px;right:16px;background:none;color:var(--text-muted);font-size:20px">×</button>
   </div>
 </div>
 <!-- Join Group -->
 <div class="modal-overlay" id="joinGroupModal">
-  <div class="modal">
+  <div class="modal" style="max-width:460px">
     <h2>Join a Group</h2>
-    <p>Enter the invite code from your friends</p>
-    <div class="form-group"><label>Invite Code</label><input type="text" id="inviteCode" placeholder="e.g. ABC123" style="text-transform:uppercase"></div>
-    <button class="btn-primary btn-full" style="margin-top:8px" onclick="joinGroup()">Join Group</button>
+    <p>Groups you've been invited to, or enter a code manually</p>
+    <div id="availableGroupsList" style="margin-bottom:16px"></div>
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+      <div style="flex:1;height:1px;background:var(--border)"></div>
+      <span style="font-size:0.75rem;color:var(--text-muted)">or enter code manually</span>
+      <div style="flex:1;height:1px;background:var(--border)"></div>
+    </div>
+    <div class="form-group"><label>Invite Code</label><input type="text" id="inviteCode" placeholder="e.g. ABC123" style="text-transform:uppercase;letter-spacing:0.1em"></div>
+    <button class="btn-ghost btn-full" style="margin-top:4px" onclick="joinGroup()">Join with Code</button>
     <button onclick="closeModal('joinGroupModal')" style="position:absolute;top:16px;right:16px;background:none;color:var(--text-muted);font-size:20px">×</button>
   </div>
 </div>
-
+ 
 <!-- Add Paper Mark Modal -->
 <div class="modal-overlay" id="addMarkModal">
   <div class="modal">
@@ -1146,10 +1229,10 @@ body.light{
     <button onclick="closeModal('addMarkModal')" style="position:absolute;top:16px;right:16px;background:none;color:var(--text-muted);font-size:20px">×</button>
   </div>
 </div>
-
+ 
 <!-- Toast -->
 <div class="toast" id="toast"></div>
-
+ 
 <script>
 // ════════════════════════════════════
 //  CONFIG
@@ -1165,7 +1248,7 @@ const SUBJECTS = {
 const YEARS = ['2015','2016','2017','2018','2019','2020','2021','2022','2023','2024','2025'];
 const SR_SCHEDULE = [1, 3, 7, 14, 30];
 const SUBJECT_COLORS = {biology:'#10B981',chemistry:'#F59E0B',physics:'#3B82F6',pureMaths:'#8B5CF6',appliedMaths:'#EC4899'};
-
+ 
 // ════════════════════════════════════
 //  STATE
 // ════════════════════════════════════
@@ -1174,7 +1257,7 @@ let userData = {};
 let timers = {};
 let selectedYears = new Set(['2025']);
 let clockInterval, countdownInterval;
-
+ 
 function todayStr() {
   return new Date().toISOString().split('T')[0];
 }
@@ -1186,12 +1269,12 @@ function addDays(dateInput, n) {
   d.setDate(d.getDate() + n);
   return dateStr(d);
 }
-
+ 
 let plannerDate = todayStr();
 function formatDateDisplay(str) {
   return new Date(str + 'T12:00:00').toLocaleDateString('en-US', {weekday:'long', month:'long', day:'numeric'});
 }
-
+ 
 // ════════════════════════════════════
 //  STORAGE
 // ════════════════════════════════════
@@ -1218,7 +1301,7 @@ function defaultUserData() {
     groups: []
   };
 }
-
+ 
 // ════════════════════════════════════
 //  AUTH
 // ════════════════════════════════════
@@ -1282,6 +1365,15 @@ function initApp(email, user, data) {
   userData = data;
   // Always start with clean timer state for this session
   if (!Object.keys(timers).length) timers = {};
+  // Migrate old groups that lack memberEmails
+  if (userData.groups) {
+    userData.groups = userData.groups.map(g => {
+      if (!g.memberEmails) {
+        g.memberEmails = g.isAdmin ? [email] : [];
+      }
+      return g;
+    });
+  }
   document.getElementById('userEmail').textContent = email;
   document.getElementById('userAvatar').textContent = (user.name || email)[0].toUpperCase();
   showPage('appPage');
@@ -1292,7 +1384,7 @@ function showErr(el, msg) {
   el.textContent = msg; el.style.display = 'block';
   setTimeout(() => el.style.display = 'none', 3000);
 }
-
+ 
 // Check existing session
 (function() {
   const session = localStorage.getItem('nr_session');
@@ -1305,7 +1397,7 @@ function showErr(el, msg) {
     }
   }
 })();
-
+ 
 // ════════════════════════════════════
 //  MODAL SYSTEM
 // ════════════════════════════════════
@@ -1315,7 +1407,7 @@ function switchModal(from, to) { closeModal(from); openModal(to); }
 document.addEventListener('click', e => {
   if (e.target.classList.contains('modal-overlay')) closeModal(e.target.id);
 });
-
+ 
 // ════════════════════════════════════
 //  NAVIGATION
 // ════════════════════════════════════
@@ -1341,7 +1433,7 @@ function showPage(id) {
     target.style.display = (id === 'appPage') ? 'flex' : 'flex';
   }
 }
-
+ 
 // ════════════════════════════════════
 //  CLOCK & COUNTDOWN
 // ════════════════════════════════════
@@ -1387,7 +1479,7 @@ function updateCountdown() {
   else if (days < 30) bar.className = 'progress-fill urgent';
   else bar.className = 'progress-fill';
 }
-
+ 
 // ════════════════════════════════════
 //  SPACED REPETITION
 // ════════════════════════════════════
@@ -1439,7 +1531,7 @@ function stageLabel(days) {
   if (days === 0) return 'Day 0';
   return 'Day ' + days;
 }
-
+ 
 // ════════════════════════════════════
 //  DASHBOARD RENDER
 // ════════════════════════════════════
@@ -1519,7 +1611,7 @@ function renderStudyTimeChart() {
   const today = todayStr();
   const days = [];
   for (let i = 6; i >= 0; i--) days.push(addDays(today, -i));
-
+ 
   const dayData = days.map(date => {
     const result = { date, total: 0 };
     Object.entries(SUBJECTS).forEach(([key]) => {
@@ -1530,20 +1622,20 @@ function renderStudyTimeChart() {
     });
     return result;
   });
-
+ 
   const hasAnyData = dayData.some(d => d.total > 0);
   if (!hasAnyData) {
     container.innerHTML = `<div style="color:var(--text-muted);font-size:0.85rem;padding:20px 0">Start a timer session to see your study data here.</div>`;
     return;
   }
-
+ 
   const maxTotal = Math.max(...dayData.map(d => d.total), 1);
   const BAR_H = 100;
   const dayLabels = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-
+ 
   let barsHtml = `<div style="flex:1;min-width:200px">
     <div style="display:flex;gap:6px;align-items:flex-end;height:${BAR_H}px">`;
-
+ 
   dayData.forEach(d => {
     const dateObj = new Date(d.date + 'T12:00:00');
     const label = dayLabels[dateObj.getDay()];
@@ -1570,7 +1662,7 @@ function renderStudyTimeChart() {
     </div>`;
   });
   barsHtml += `</div></div>`;
-
+ 
   let legendHtml = `<div style="min-width:160px;display:flex;flex-direction:column;gap:10px;padding-top:4px;border-left:1px solid var(--border);padding-left:20px">
     <div style="font-size:0.72rem;font-weight:700;letter-spacing:0.08em;color:var(--text-muted);text-transform:uppercase;margin-bottom:2px">All-Time Hours</div>`;
   Object.entries(SUBJECTS).forEach(([key, sub]) => {
@@ -1587,10 +1679,10 @@ function renderStudyTimeChart() {
     </div>`;
   });
   legendHtml += `</div>`;
-
+ 
   container.innerHTML = barsHtml + legendHtml;
 }
-
+ 
 function removeTopic(id) {
   delete userData.topics[id];
   Object.keys(userData.revisions || {}).forEach(date => {
@@ -1599,7 +1691,7 @@ function removeTopic(id) {
   saveUserData();
   renderDashboard();
 }
-
+ 
 // ════════════════════════════════════
 //  PLANNER
 // ════════════════════════════════════
@@ -1700,14 +1792,14 @@ function deleteTask(i) {
   userData.tasks[plannerDate].splice(i, 1);
   saveUserData(); renderPlanner();
 }
-
+ 
 // ════════════════════════════════════
 //  PAST PAPERS
 // ════════════════════════════════════
 let activeSubjectKey = 'physics';
 let activeYear = '2025';
 let correctionMode = false;
-
+ 
 function renderPapers() {
   // Subject tabs
   const tabs = document.getElementById('papersSubjectTabs');
@@ -1715,7 +1807,7 @@ function renderPapers() {
   tabs.innerHTML = Object.entries(SUBJECTS).map(([key]) =>
     `<button class="papers-tab ${key===activeSubjectKey?'active':''}" onclick="setActiveSubject('${key}')">${subjectLabels[key]}</button>`
   ).join('');
-
+ 
   // Years sidebar
   const sidebar = document.getElementById('papersYearsSidebar');
   sidebar.innerHTML = `<div style="font-size:0.68rem;font-weight:700;letter-spacing:0.1em;color:var(--text-muted);margin-bottom:4px;display:flex;align-items:center;gap:6px">
@@ -1727,29 +1819,29 @@ function renderPapers() {
       <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
     </button>`
   ).join('');
-
+ 
   // Content area
   renderPaperContent();
 }
-
+ 
 function setActiveSubject(key) {
   activeSubjectKey = key;
   correctionMode = false;
   renderPapers();
 }
-
+ 
 function setActiveYear(y) {
   activeYear = y;
   correctionMode = false;
   renderPapers();
 }
-
+ 
 function toggleCorrectionMode() {
   correctionMode = !correctionMode;
   document.getElementById('correctionBtn').classList.toggle('active', correctionMode);
   document.getElementById('correctionBtn').textContent = correctionMode ? 'EXIT CORRECTION MODE' : 'ENTER CORRECTION MODE';
 }
-
+ 
 function resetCurrentPaper() {
   const sub = SUBJECTS[activeSubjectKey];
   const qs = getSubjectQuestions(sub);
@@ -1757,14 +1849,14 @@ function resetCurrentPaper() {
   renderPaperContent();
   showToast('Paper reset ✓', 'success');
 }
-
+ 
 function renderPaperContent() {
   const sub = SUBJECTS[activeSubjectKey];
   const area = document.getElementById('papersContentArea');
   const subjectIcons = {physics:'⚛️',chemistry:'🧪',biology:'🧬',pureMaths:'📐',appliedMaths:'📊'};
   const { total, mastered } = subjectTotals(activeSubjectKey, sub, [activeYear]);
   const pct = total ? Math.round(mastered/total*100) : 0;
-
+ 
   let html = `
     <div class="paper-header-card">
       <div class="paper-header-left">
@@ -1783,7 +1875,7 @@ function renderPaperContent() {
       </div>
     </div>
     <div class="paper-body-card">`;
-
+ 
   if (sub.mcq > 0) {
     html += `<div class="paper-section-label">
       <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
@@ -1792,7 +1884,7 @@ function renderPaperContent() {
     html += `<div class="q-grid">`;
     for (let i = 1; i <= sub.mcq; i++) html += renderQCard(activeSubjectKey, activeYear, String(i), i);
     html += `</div>`;
-
+ 
     html += `<div class="paper-section-label" style="margin-top:24px">
       <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
       STRUCTURED PART 2
@@ -1800,7 +1892,7 @@ function renderPaperContent() {
     html += `<div class="q-grid essays" style="grid-template-columns:repeat(4,1fr)">`;
     sub.structured.forEach(q => { html += renderQCard(activeSubjectKey, activeYear, q, q); });
     html += `</div>`;
-
+ 
     html += `<div class="paper-section-label" style="margin-top:24px">
       <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
       ESSAYS PART 2
@@ -1833,7 +1925,7 @@ function renderPaperContent() {
       html += `</div>`;
     }
   }
-
+ 
   html += `</div>`; // close paper-body-card
   area.innerHTML = html;
 }
@@ -1989,7 +2081,7 @@ function completeMCQYear(subKey, year) {
   for(let i=1;i<=sub.mcq;i++) setQAttempts(subKey,year,String(i),3);
   renderPapers(); showToast(`${year} MCQs completed ✓`, 'success');
 }
-
+ 
 // ════════════════════════════════════
 //  TIMER
 // ════════════════════════════════════
@@ -2065,7 +2157,7 @@ function fmtTime(secs) {
   const h = Math.floor(secs/3600), m = Math.floor((secs%3600)/60), s = secs%60;
   return `${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
 }
-
+ 
 // ════════════════════════════════════
 //  PROGRESS
 // ════════════════════════════════════
@@ -2133,82 +2225,329 @@ function renderProgress() {
   setTimeout(renderDailyTimeChart, 60);
   setTimeout(renderPaperMarksChart, 60);
 }
-
+ 
 // ════════════════════════════════════
 //  GROUPS
 // ════════════════════════════════════
+ 
+// ── Helpers ──
+function getOtherUsers() {
+  const { users } = loadStorage();
+  return Object.entries(users)
+    .filter(([email]) => email !== currentUser)
+    .map(([email, u]) => ({ email, name: u.name || email }));
+}
+ 
+function getMemberStudyData(memberEmail) {
+  const allData = JSON.parse(localStorage.getItem('nr_data') || '{}');
+  const mData = allData[memberEmail] || {};
+  const tt = mData.timeTracking || {};
+  let totalSecs = 0;
+  const subjectSecs = {};
+  Object.entries(SUBJECTS).forEach(([key, sub]) => {
+    const sessions = (tt[key] && tt[key].sessions) || [];
+    const secs = sessions.reduce((a, s) => a + s.duration, 0);
+    subjectSecs[key] = secs;
+    totalSecs += secs;
+  });
+  return { totalSecs, subjectSecs };
+}
+ 
+function fmtHours(secs) {
+  const h = Math.floor(secs / 3600);
+  const m = Math.floor((secs % 3600) / 60);
+  if (h === 0 && m === 0) return '0m';
+  if (h === 0) return `${m}m`;
+  return m > 0 ? `${h}h ${m}m` : `${h}h`;
+}
+ 
+// ── User picker (open create modal) ──
+function openCreateGroupModal() {
+  const others = getOtherUsers();
+  const list = document.getElementById('userPickerList');
+  window._pickedMembers = new Set();
+  if (others.length === 0) {
+    list.innerHTML = '<div class="user-picker-empty">No other users registered on this device yet.<br><small>Other people need to sign up first.</small></div>';
+  } else {
+    list.innerHTML = others.map(u => `
+      <div class="user-picker-item" id="pick_${u.email.replace(/[^a-z0-9]/gi,'_')}" onclick="toggleMemberPick('${u.email}','${u.name.replace(/'/g,"\\'")}')">
+        <div class="user-picker-check"></div>
+        <div>
+          <div class="user-picker-name">${u.name}</div>
+          <div class="user-picker-email">${u.email}</div>
+        </div>
+      </div>`).join('');
+  }
+  document.getElementById('selectedMembersPreview').textContent = '';
+  document.getElementById('groupName').value = '';
+  document.getElementById('groupDesc').value = '';
+  openModal('createGroupModal');
+}
+ 
+function toggleMemberPick(email, name) {
+  if (!window._pickedMembers) window._pickedMembers = new Set();
+  const id = 'pick_' + email.replace(/[^a-z0-9]/gi, '_');
+  const el = document.getElementById(id);
+  if (window._pickedMembers.has(email)) {
+    window._pickedMembers.delete(email);
+    el && el.classList.remove('selected');
+  } else {
+    window._pickedMembers.add(email);
+    el && el.classList.add('selected');
+  }
+  const count = window._pickedMembers.size;
+  document.getElementById('selectedMembersPreview').textContent =
+    count > 0 ? `✓ ${count} member${count > 1 ? 's' : ''} selected` : '';
+}
+ 
+// ── Open join modal ──
+function openJoinGroupModal() {
+  const allData = JSON.parse(localStorage.getItem('nr_data') || '{}');
+  const myGroupCodes = new Set((userData.groups || []).map(g => g.code));
+  const available = [];
+  Object.entries(allData).forEach(([email, data]) => {
+    if (email === currentUser) return;
+    (data.groups || []).forEach(g => {
+      const memberEmails = g.memberEmails || [];
+      if (memberEmails.includes(currentUser) && !myGroupCodes.has(g.code)) {
+        available.push({ ...g, ownerEmail: email });
+      }
+    });
+  });
+  const listEl = document.getElementById('availableGroupsList');
+  if (available.length === 0) {
+    listEl.innerHTML = '<div style="text-align:center;padding:16px;color:var(--text-muted);font-size:0.85rem">No pending group invitations.<br><small>Ask a friend to create a group and add you.</small></div>';
+  } else {
+    listEl.innerHTML = available.map(g => `
+      <div class="avail-group-item">
+        <div>
+          <div class="avail-group-name">${g.name}</div>
+          <div class="avail-group-meta">👤 ${(g.members || []).length} member${(g.members||[]).length!==1?'s':''} · Created ${g.createdAt}</div>
+        </div>
+        <button class="btn-sm" onclick="joinGroupByCode('${g.code}')">Join →</button>
+      </div>`).join('');
+  }
+  document.getElementById('inviteCode').value = '';
+  openModal('joinGroupModal');
+}
+ 
+// ── renderGroups ──
 function renderGroups() {
   const groups = userData.groups || [];
   const content = document.getElementById('groupsContent');
   const topBtns = document.getElementById('groupsTopBtns');
   topBtns.innerHTML = groups.length > 0 ? `
-    <button class="btn-ghost" style="padding:8px 16px;font-size:0.9rem" onclick="openModal('joinGroupModal')">⟲ Join</button>
-    <button class="btn-primary" style="padding:8px 16px;font-size:0.9rem" onclick="openModal('createGroupModal')">+ Create</button>` : '';
+    <button class="btn-ghost" style="padding:8px 16px;font-size:0.9rem" onclick="openJoinGroupModal()">⟲ Join</button>
+    <button class="btn-primary" style="padding:8px 16px;font-size:0.9rem" onclick="openCreateGroupModal()">+ Create</button>` : '';
+ 
   if (groups.length === 0) {
     content.innerHTML = `<div class="groups-cta">
-      <div class="groups-cta-card" onclick="openModal('createGroupModal')">
+      <div class="groups-cta-card" onclick="openCreateGroupModal()">
         <div class="groups-cta-icon" style="background:var(--accent-dim)">+</div>
         <h3>Create a Group</h3>
-        <p>Start a new study group and invite friends</p>
+        <p>Start a new study group and pick members from registered users</p>
       </div>
-      <div class="groups-cta-card" onclick="openModal('joinGroupModal')">
-        <div class="groups-cta-icon" style="background:rgba(139,92,246,0.15)">⟲</div>
+      <div class="groups-cta-card" onclick="openJoinGroupModal()">
+        <div class="groups-cta-icon" style="background:rgba(139,92,246,0.15)">👥</div>
         <h3>Join a Group</h3>
-        <p>Enter an invite code to join your friends</p>
+        <p>See pending invitations or enter a group code</p>
       </div>
     </div>`;
-  } else {
-    content.innerHTML = groups.map((g, gi) => `
+    return;
+  }
+ 
+  content.innerHTML = groups.map((g, gi) => {
+    const memberEmails = g.memberEmails || [];
+    const isAdmin = !!g.isAdmin;
+ 
+    // Build member stats
+    let totalGroupSecs = 0;
+    const memberRows = memberEmails.map(email => {
+      const { users } = loadStorage();
+      const uInfo = users[email] || {};
+      const displayName = uInfo.name || email;
+      const { totalSecs, subjectSecs } = getMemberStudyData(email);
+      totalGroupSecs += totalSecs;
+      const initial = (displayName[0] || '?').toUpperCase();
+      // Top subjects (those with >0 time)
+      const activeSubs = Object.entries(subjectSecs)
+        .filter(([,s]) => s > 0)
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 3);
+      const subTags = activeSubs.map(([key]) => {
+        const sub = SUBJECTS[key];
+        return `<span class="member-subject-tag" style="background:${sub.color}22;color:${sub.color}">${sub.name}</span>`;
+      }).join('');
+      return `
+        <div class="member-stat-row">
+          <div class="member-stat-avatar">${initial}</div>
+          <div class="member-stat-info">
+            <div class="member-stat-name">${displayName}${email === currentUser ? ' <span style="font-size:0.72rem;color:var(--text-muted);font-weight:400">(you)</span>' : ''}</div>
+            <div class="member-stat-subjects">${subTags || '<span style="font-size:0.72rem;color:var(--text-muted)">No study sessions yet</span>'}</div>
+          </div>
+          <div class="member-stat-hours">${fmtHours(totalSecs)}<small>total</small></div>
+        </div>`;
+    }).join('');
+ 
+    const groupTotalH = (totalGroupSecs / 3600).toFixed(1);
+    const activeMemberCount = memberEmails.filter(e => {
+      const { totalSecs } = getMemberStudyData(e);
+      return totalSecs > 0;
+    }).length;
+ 
+    return `
       <div class="group-card">
         <div class="group-card-header">
           <div>
             <div class="group-name">${g.name}</div>
             ${g.description ? `<div style="font-size:0.82rem;color:var(--text-muted);margin-top:2px">${g.description}</div>` : ''}
           </div>
-          <div class="group-code">${g.code}</div>
+          <div style="display:flex;gap:6px;align-items:center">
+            <span class="badge ${isAdmin ? 'badge-accent' : 'badge-warn'}">${isAdmin ? 'Admin' : 'Member'}</span>
+            <div class="group-code" title="Invite code">${g.code}</div>
+          </div>
         </div>
-        <div class="group-meta">📅 Created ${g.createdAt} · 👤 ${g.members.length} member${g.members.length>1?'s':''} · ${g.isAdmin?'Admin':'Member'}</div>
-        <div class="group-members">${g.members.map(m=>`<div class="member-chip"><div class="member-dot"></div>${m}</div>`).join('')}</div>
+        <div class="group-meta">📅 Created ${g.createdAt} · 👤 ${memberEmails.length} member${memberEmails.length!==1?'s':''}</div>
+ 
+        ${memberEmails.length > 0 ? `
+        <div class="group-admin-panel">
+          <div class="group-admin-title">
+            <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M3 20l4-8 4 4 4-6 4 6"/></svg>
+            Member Study Stats
+          </div>
+          <div class="group-summary-bar">
+            <div class="group-summary-item"><div class="group-summary-num">${memberEmails.length}</div><div class="group-summary-label">Members</div></div>
+            <div class="group-summary-item"><div class="group-summary-num">${groupTotalH}h</div><div class="group-summary-label">Group Total</div></div>
+            <div class="group-summary-item"><div class="group-summary-num">${activeMemberCount}</div><div class="group-summary-label">Active</div></div>
+          </div>
+          ${memberRows}
+        </div>` : ''}
+ 
         <div class="group-actions">
           <button class="btn-outline" onclick="copyInviteCode('${g.code}')">📋 Copy Invite Code</button>
-          <button class="btn-danger-outline" onclick="leaveGroup(${gi})">Leave Group</button>
+          ${isAdmin ? `<button class="btn-outline" onclick="openAddMembersModal(${gi})">+ Add Members</button>` : ''}
+          <button class="btn-danger-outline" onclick="leaveGroup(${gi})">${isAdmin ? 'Delete Group' : 'Leave Group'}</button>
+        </div>
+      </div>`;
+  }).join('');
+}
+ 
+// ── Add Members modal (admin only) ──
+function openAddMembersModal(gi) {
+  const g = (userData.groups || [])[gi];
+  if (!g) return;
+  const existingEmails = new Set(g.memberEmails || []);
+  const others = getOtherUsers().filter(u => !existingEmails.has(u.email));
+  window._addMembersGi = gi;
+  window._pickedMembers = new Set();
+  const list = document.getElementById('userPickerList');
+  const modal = document.getElementById('createGroupModal');
+  modal.querySelector('h2').textContent = `Add Members to "${g.name}"`;
+  modal.querySelector('p').textContent = 'Select users to add to this group';
+  modal.querySelector('.form-group').style.display = 'none'; // hide name
+  modal.querySelectorAll('.form-group')[1].style.display = 'none'; // hide desc
+  modal.querySelector('.btn-primary').textContent = 'Add Selected Members';
+  modal.querySelector('.btn-primary').setAttribute('onclick', 'addMembersToGroup()');
+  if (others.length === 0) {
+    list.innerHTML = '<div class="user-picker-empty">No other users to add.</div>';
+  } else {
+    list.innerHTML = others.map(u => `
+      <div class="user-picker-item" id="pick_${u.email.replace(/[^a-z0-9]/gi,'_')}" onclick="toggleMemberPick('${u.email}','${u.name.replace(/'/g,"\\'")}')">
+        <div class="user-picker-check"></div>
+        <div>
+          <div class="user-picker-name">${u.name}</div>
+          <div class="user-picker-email">${u.email}</div>
         </div>
       </div>`).join('');
   }
+  document.getElementById('selectedMembersPreview').textContent = '';
+  openModal('createGroupModal');
 }
+ 
+function addMembersToGroup() {
+  const gi = window._addMembersGi;
+  const picked = window._pickedMembers || new Set();
+  if (picked.size === 0) { showToast('Select at least one member', 'error'); return; }
+  const g = userData.groups[gi];
+  const { users } = loadStorage();
+  const freshAll = JSON.parse(localStorage.getItem('nr_data') || '{}');
+  picked.forEach(email => {
+    const name = (users[email] && users[email].name) || email;
+    if (!g.members.includes(name)) g.members.push(name);
+    if (!g.memberEmails) g.memberEmails = [];
+    if (!g.memberEmails.includes(email)) g.memberEmails.push(email);
+    // Write this group to the new member's data too (as pending invite)
+    if (freshAll[email]) {
+      freshAll[email].groups = freshAll[email].groups || [];
+      if (!freshAll[email].groups.find(x => x.code === g.code)) {
+        freshAll[email].groups.push({ ...g, isAdmin: false });
+      }
+    }
+  });
+  freshAll[currentUser] = userData;
+  localStorage.setItem('nr_data', JSON.stringify(freshAll));
+  // Reset modal state
+  const modal = document.getElementById('createGroupModal');
+  modal.querySelector('h2').textContent = 'Create Study Group';
+  modal.querySelector('p').textContent = 'Name your group and invite members already on this app';
+  modal.querySelectorAll('.form-group').forEach(f => f.style.display = '');
+  modal.querySelector('.btn-primary').textContent = 'Create Group →';
+  modal.querySelector('.btn-primary').setAttribute('onclick', 'createGroup()');
+  closeModal('createGroupModal');
+  renderGroups();
+  showToast(`Added ${picked.size} member${picked.size > 1 ? 's' : ''} ✓`, 'success');
+}
+ 
+// ── createGroup ──
 function createGroup() {
   const name = document.getElementById('groupName').value.trim();
-  if (!name) return;
-  // Generate a readable 6-char alphanumeric code, avoid ambiguous chars
+  if (!name) { showToast('Please enter a group name', 'error'); return; }
   const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
   const code = Array.from({length:6}, () => chars[Math.floor(Math.random()*chars.length)]).join('');
   if (!userData.groups) userData.groups = [];
   const { users } = loadStorage();
-  const user = users[currentUser];
-  const memberName = (user && user.name) || currentUser;
-  userData.groups.push({
+  const myName = (users[currentUser] && users[currentUser].name) || currentUser;
+  const pickedEmails = Array.from(window._pickedMembers || []);
+  const memberNames = [myName];
+  const memberEmails = [currentUser];
+  pickedEmails.forEach(email => {
+    const n = (users[email] && users[email].name) || email;
+    memberNames.push(n);
+    memberEmails.push(email);
+  });
+  const newGroup = {
     name, code,
     description: document.getElementById('groupDesc').value.trim(),
     createdAt: new Date().toLocaleDateString(),
-    members: [memberName],
+    members: memberNames,
+    memberEmails,
     isAdmin: true,
     tasks: []
+  };
+  userData.groups.push(newGroup);
+  // Immediately write group to each picked member's data
+  const freshAll = JSON.parse(localStorage.getItem('nr_data') || '{}');
+  freshAll[currentUser] = userData;
+  pickedEmails.forEach(email => {
+    if (freshAll[email]) {
+      freshAll[email].groups = freshAll[email].groups || [];
+      if (!freshAll[email].groups.find(g => g.code === code)) {
+        freshAll[email].groups.push({ ...newGroup, isAdmin: false });
+      }
+    }
   });
-  saveUserData(); // flush to localStorage immediately so others can find it
-  document.getElementById('groupName').value='';
-  document.getElementById('groupDesc').value='';
+  localStorage.setItem('nr_data', JSON.stringify(freshAll));
+  document.getElementById('groupName').value = '';
+  document.getElementById('groupDesc').value = '';
+  window._pickedMembers = new Set();
   closeModal('createGroupModal');
   renderGroups();
-  showToast(`Group "${name}" created! Code: ${code}`, 'success');
+  const invitedCount = pickedEmails.length;
+  showToast(`Group "${name}" created${invitedCount > 0 ? ` · ${invitedCount} member${invitedCount>1?'s':''} added` : ''}! Code: ${code}`, 'success');
 }
-function joinGroup() {
-  const code = document.getElementById('inviteCode').value.trim().toUpperCase();
-  if (!code) return;
-
-  // Flush current session to storage so it's visible in the search below
-  saveUserData();
-
-  // Search all users' data for the invite code
+ 
+// ── joinGroup (by code) ──
+function joinGroupByCode(code) {
   const allData = JSON.parse(localStorage.getItem('nr_data') || '{}');
   let found = null, ownerEmail = null;
   Object.entries(allData).forEach(([email, data]) => {
@@ -2216,54 +2555,69 @@ function joinGroup() {
       if (g.code === code) { found = g; ownerEmail = email; }
     });
   });
-
-  if (!found) { showToast('Invalid invite code — check the code and try again', 'error'); return; }
-  if (!userData.groups) userData.groups = [];
-  if (userData.groups.find(g => g.code === code)) { showToast('You are already in this group', 'error'); return; }
-
+  if (!found) { showToast('Group not found', 'error'); return; }
+  if ((userData.groups || []).find(g => g.code === code)) { showToast('Already in this group', 'error'); return; }
   const { users } = loadStorage();
-  const user = users[currentUser];
-  const memberName = (user && user.name) || currentUser;
-
-  // Add joiner to the owner's copy of the group
+  const myName = (users[currentUser] && users[currentUser].name) || currentUser;
+  if (!userData.groups) userData.groups = [];
+  userData.groups.push({ ...found, isAdmin: false });
+  // Add this user to owner's group members
   const freshAll = JSON.parse(localStorage.getItem('nr_data') || '{}');
   if (ownerEmail && freshAll[ownerEmail]) {
     freshAll[ownerEmail].groups = (freshAll[ownerEmail].groups || []).map(g => {
       if (g.code === code) {
         const members = g.members || [];
-        if (!members.includes(memberName)) members.push(memberName);
-        return { ...g, members };
+        if (!members.includes(myName)) members.push(myName);
+        const memberEmails = g.memberEmails || [ownerEmail];
+        if (!memberEmails.includes(currentUser)) memberEmails.push(currentUser);
+        return { ...g, members, memberEmails };
       }
       return g;
     });
-    // Also update joiner's own data in the same write
-    if (!freshAll[currentUser]) freshAll[currentUser] = userData;
-    freshAll[currentUser].groups = freshAll[currentUser].groups || [];
-    if (!freshAll[currentUser].groups.find(g => g.code === code)) {
-      const updatedGroup = freshAll[ownerEmail].groups.find(g => g.code === code);
-      freshAll[currentUser].groups.push({ ...updatedGroup, isAdmin: false });
-    }
-    localStorage.setItem('nr_data', JSON.stringify(freshAll));
-    // Sync in-memory userData
-    userData.groups = freshAll[currentUser].groups;
   }
-
-  document.getElementById('inviteCode').value = '';
+  freshAll[currentUser] = userData;
+  localStorage.setItem('nr_data', JSON.stringify(freshAll));
   closeModal('joinGroupModal');
   renderGroups();
   showToast(`Joined "${found.name}" ✓`, 'success');
 }
-function leaveGroup(i) {
-  userData.groups.splice(i, 1);
+ 
+function joinGroup() {
+  const code = document.getElementById('inviteCode').value.trim().toUpperCase();
+  if (!code) return;
   saveUserData();
-  renderGroups();
-  showToast('Left group', 'success');
+  joinGroupByCode(code);
+  document.getElementById('inviteCode').value = '';
 }
+ 
+function leaveGroup(i) {
+  const g = userData.groups[i];
+  if (g && g.isAdmin) {
+    if (!confirm(`Delete group "${g.name}"? All members will lose access.`)) return;
+    // Remove from all member data
+    const freshAll = JSON.parse(localStorage.getItem('nr_data') || '{}');
+    (g.memberEmails || []).forEach(email => {
+      if (freshAll[email]) {
+        freshAll[email].groups = (freshAll[email].groups || []).filter(x => x.code !== g.code);
+      }
+    });
+    userData.groups.splice(i, 1);
+    freshAll[currentUser] = userData;
+    localStorage.setItem('nr_data', JSON.stringify(freshAll));
+    showToast('Group deleted', 'success');
+  } else {
+    userData.groups.splice(i, 1);
+    saveUserData();
+    showToast('Left group', 'success');
+  }
+  renderGroups();
+}
+ 
 function copyInviteCode(code) {
   if (navigator.clipboard) navigator.clipboard.writeText(code).catch(function(){});
   showToast(`Invite code copied: ${code}`, 'success');
 }
-
+ 
 // ════════════════════════════════════
 //  UTILS
 // ════════════════════════════════════
@@ -2282,7 +2636,7 @@ function toggleTheme() {
 // ════════════════════════════════════
 //  ANIMATION ENGINE
 // ════════════════════════════════════
-
+ 
 // ─── AUTH CANVAS PARTICLES ───
 function initAuthCanvas() {
   const canvas = document.getElementById('authCanvas');
@@ -2291,14 +2645,14 @@ function initAuthCanvas() {
   let W, H, animRunning = true;
   const mouse = { x: -9999, y: -9999 };
   const COLORS = ['#6366F1','#8B5CF6','#EC4899','#3B82F6','#10B981','#F59E0B'];
-
+ 
   function resize() {
     W = canvas.width = window.innerWidth;
     H = canvas.height = window.innerHeight;
   }
   resize();
   window.addEventListener('resize', resize);
-
+ 
   class Particle {
     constructor() { this.init(); }
     init() {
@@ -2343,9 +2697,9 @@ function initAuthCanvas() {
       ctx.restore();
     }
   }
-
+ 
   const particles = Array.from({ length: 90 }, () => new Particle());
-
+ 
   function drawConnections() {
     const maxDist = 110;
     for (let i = 0; i < particles.length; i++) {
@@ -2365,7 +2719,7 @@ function initAuthCanvas() {
       }
     }
   }
-
+ 
   function loop() {
     const auth = document.getElementById('authPage');
     if (!auth || auth.style.display === 'none') { animRunning = false; return; }
@@ -2375,16 +2729,16 @@ function initAuthCanvas() {
     particles.forEach(p => { p.update(); p.draw(); });
     drawConnections();
   }
-
+ 
   document.addEventListener('mousemove', e => { mouse.x = e.clientX; mouse.y = e.clientY; });
   loop();
-
+ 
   // Restart canvas when returning to auth
   window._restartAuthCanvas = () => { if (!animRunning) loop(); };
 }
-
-
-
+ 
+ 
+ 
 // ─── 3D TILT ON HOVER ───
 function applyTilt(selector) {
   document.querySelectorAll(selector).forEach(el => {
@@ -2409,7 +2763,7 @@ function applyTilt(selector) {
     });
   });
 }
-
+ 
 // ─── COUNTER ANIMATION ───
 function animateCount(el, target, suffix='', decimals=0, duration=1100) {
   if (!el) return;
@@ -2423,7 +2777,7 @@ function animateCount(el, target, suffix='', decimals=0, duration=1100) {
   }
   requestAnimationFrame(step);
 }
-
+ 
 // ─── STAGGER CARDS ───
 function staggerCards(containerId, baseDelay=60) {
   const parent = typeof containerId === 'string' ? document.getElementById(containerId) : containerId;
@@ -2440,7 +2794,7 @@ function staggerCards(containerId, baseDelay=60) {
     }, 30);
   });
 }
-
+ 
 // ─── PROGRESS BAR ANIMATE ───
 function animateBars(container) {
   const bars = (container || document).querySelectorAll('.progress-fill');
@@ -2457,7 +2811,7 @@ function animateBars(container) {
     });
   });
 }
-
+ 
 // ─── DIGIT FLIP ON CHANGE ───
 var _lastSecs = -1;
 const _origUpdateCountdown = typeof updateCountdown === 'function' ? updateCountdown : null;
@@ -2473,7 +2827,7 @@ function triggerFlipIfChanged(newSecs) {
     _lastSecs = newSecs;
   }
 }
-
+ 
 // ─── HOOK INTO NAVIGATE ───
 const _origNavigate = navigate;
 const _navigateEnhanced = function(page) {
@@ -2495,7 +2849,7 @@ const _navigateEnhanced = function(page) {
 };
 // Replace global navigate with enhanced version
 window.navigate = _navigateEnhanced;
-
+ 
 // ─── FLOATING ORBS ───
 function createBgOrbs() {
   ['bg-orb-1','bg-orb-2','bg-orb-3'].forEach(cls => {
@@ -2506,7 +2860,7 @@ function createBgOrbs() {
     }
   });
 }
-
+ 
 // ─── AUTH CANVAS RESTART ON LOGOUT ───
 const _origShowPage = showPage;
 const _showPageEnhanced = function(id) {
@@ -2517,7 +2871,7 @@ const _showPageEnhanced = function(id) {
 };
 // Replace global showPage with enhanced version
 window.showPage = _showPageEnhanced;
-
+ 
 // ─── INIT ───
 document.addEventListener('DOMContentLoaded', () => {
   initAuthCanvas();
@@ -2529,9 +2883,9 @@ document.addEventListener('DOMContentLoaded', () => {
   if (md) md.value = todayStr();
   renderWeeklyChart && renderWeeklyChart();
 });
-
-
-
+ 
+ 
+ 
 // ════════════════════════════════════
 //  PAPER MARKS
 // ════════════════════════════════════
@@ -2543,38 +2897,38 @@ function saveMarkEntry() {
   const max    = parseFloat(document.getElementById('markMax').value);
   const date   = document.getElementById('markDate').value || todayStr();
   const err    = document.getElementById('markError');
-
+ 
   err.style.display = 'none';
   if (!subKey) { err.textContent = 'Please select a subject.'; err.style.display = 'block'; return; }
   if (!year)   { err.textContent = 'Please select a year.';    err.style.display = 'block'; return; }
   if (isNaN(score) || score < 0) { err.textContent = 'Please enter a valid score.'; err.style.display = 'block'; return; }
   if (isNaN(max) || max <= 0)    { err.textContent = 'Please enter a valid maximum.'; err.style.display = 'block'; return; }
   if (score > max) { err.textContent = 'Score cannot exceed the maximum.'; err.style.display = 'block'; return; }
-
+ 
   if (!userData.paperMarks) userData.paperMarks = [];
   userData.paperMarks.push({ id: Date.now().toString(), subKey, year, label, score, max, date });
   userData.paperMarks.sort((a, b) => a.date.localeCompare(b.date));
   saveUserData();
   closeModal('addMarkModal');
-
+ 
   // Reset form
   ['markSubject','markYear','markLabel','markScore','markMax'].forEach(id => {
     const el = document.getElementById(id);
     if (el) el.value = '';
   });
   document.getElementById('markDate').value = todayStr();
-
+ 
   renderPaperMarksChart();
   showToast('Mark saved ✓', 'success');
 }
-
+ 
 function deleteMarkEntry(id) {
   if (!userData.paperMarks) return;
   userData.paperMarks = userData.paperMarks.filter(m => m.id !== id);
   saveUserData();
   renderPaperMarksChart();
 }
-
+ 
 function renderPaperMarksChart() {
   const canvas   = document.getElementById('pmCanvas');
   const emptyEl  = document.getElementById('pmEmptyState');
@@ -2582,13 +2936,13 @@ function renderPaperMarksChart() {
   const logEl    = document.getElementById('pmLog');
   const tooltip  = document.getElementById('pmTooltip');
   if (!canvas) return;
-
+ 
   const marks = (userData.paperMarks || []).slice().sort((a,b) => a.date.localeCompare(b.date));
   const hasData = marks.length > 0;
-
+ 
   canvas.style.display = hasData ? 'block' : 'none';
   emptyEl.style.display = hasData ? 'none' : 'block';
-
+ 
   // Render recent log entries (always)
   const recent = marks.slice().reverse().slice(0, 8);
   logEl.innerHTML = marks.length === 0 ? '' : `
@@ -2609,16 +2963,16 @@ function renderPaperMarksChart() {
         </div>`;
       }).join('')}
     </div>`;
-
+ 
   if (!hasData) { legendEl.innerHTML = ''; return; }
-
+ 
   // Group by subject
   const bySubject = {};
   Object.keys(SUBJECTS).forEach(k => { bySubject[k] = []; });
   marks.forEach(m => { if (bySubject[m.subKey]) bySubject[m.subKey].push(m); });
-
+ 
   const activeSubjects = Object.keys(SUBJECTS).filter(k => bySubject[k].length > 0);
-
+ 
   // Legend
   legendEl.innerHTML = activeSubjects.map(key => {
     const sub = SUBJECTS[key];
@@ -2630,7 +2984,7 @@ function renderPaperMarksChart() {
       <span style="font-size:0.78rem;color:var(--text-muted)">${entries.length} attempt${entries.length>1?'s':''} · avg ${avg}%</span>
     </div>`;
   }).join('');
-
+ 
   // Canvas draw
   const wrap = document.getElementById('pmChartWrap');
   const W = wrap.clientWidth || 700;
@@ -2638,16 +2992,16 @@ function renderPaperMarksChart() {
   const CHART_W = W - PAD_L - PAD_R;
   const CHART_H = 220;
   const H = CHART_H + PAD_T + PAD_B;
-
+ 
   const dpr = window.devicePixelRatio || 1;
   canvas.width  = W * dpr;
   canvas.height = H * dpr;
   canvas.style.height = H + 'px';
-
+ 
   const ctx = canvas.getContext('2d');
   ctx.scale(dpr, dpr);
   ctx.clearRect(0, 0, W, H);
-
+ 
   // Grid lines + Y labels (0,25,50,75,100)
   ctx.font = '11px sans-serif';
   ctx.textAlign = 'right';
@@ -2661,7 +3015,7 @@ function renderPaperMarksChart() {
     ctx.fillStyle = 'rgba(148,163,184,0.7)';
     ctx.fillText(pct + '%', PAD_L - 6, y + 4);
   });
-
+ 
   // Collect all unique dates for X-axis
   const allDates = [...new Set(marks.map(m => m.date))].sort();
   const n = allDates.length;
@@ -2670,7 +3024,7 @@ function renderPaperMarksChart() {
     if (n === 1) return PAD_L + CHART_W / 2;
     return PAD_L + (i / (n - 1)) * CHART_W;
   };
-
+ 
   // X-axis labels — show a reasonable number
   ctx.textAlign = 'center';
   const step = Math.max(1, Math.ceil(n / 8));
@@ -2683,10 +3037,10 @@ function renderPaperMarksChart() {
     ctx.font = '10px sans-serif';
     ctx.fillText(lbl, x, PAD_T + CHART_H + 18);
   });
-
+ 
   // Draw lines + dots per subject, store hit targets
   canvas._pmHits = [];
-
+ 
   activeSubjects.forEach(key => {
     const sub = SUBJECTS[key];
     const entries = bySubject[key].slice().sort((a,b) => a.date.localeCompare(b.date));
@@ -2695,7 +3049,7 @@ function renderPaperMarksChart() {
       y: PAD_T + CHART_H - (m.score / m.max) * CHART_H,
       m
     }));
-
+ 
     // Line
     if (pts.length > 1) {
       ctx.save();
@@ -2706,7 +3060,7 @@ function renderPaperMarksChart() {
       ctx.beginPath();
       pts.forEach((p, i) => i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y));
       ctx.stroke();
-
+ 
       // Area fill under line
       ctx.globalAlpha = 0.07;
       ctx.fillStyle = sub.color;
@@ -2718,7 +3072,7 @@ function renderPaperMarksChart() {
       ctx.fill();
       ctx.restore();
     }
-
+ 
     // Dots
     pts.forEach(p => {
       ctx.save();
@@ -2737,7 +3091,7 @@ function renderPaperMarksChart() {
       canvas._pmHits.push({ x: p.x, y: p.y, r: 10, m: p.m, key, sub });
     });
   });
-
+ 
   // Hover
   canvas.onmousemove = function(e) {
     const rect = canvas.getBoundingClientRect();
@@ -2771,12 +3125,12 @@ function renderPaperMarksChart() {
   };
   canvas.onmouseleave = function() { tooltip.style.opacity = '0'; canvas.style.cursor = 'default'; };
 }
-
+ 
 // ════════════════════════════════════
 //  DAILY STUDY TIME CHART (Progress page)
 // ════════════════════════════════════
 var _dtRange = 7;
-
+ 
 function setDtRange(n) {
   _dtRange = n;
   [7,14,30].forEach(v => {
@@ -2785,18 +3139,18 @@ function setDtRange(n) {
   });
   renderDailyTimeChart();
 }
-
+ 
 function renderDailyTimeChart() {
   const canvas = document.getElementById('dtCanvas');
   const emptyEl = document.getElementById('dtEmptyState');
   const legendEl = document.getElementById('dtLegend');
   const tooltip = document.getElementById('dtTooltip');
   if (!canvas) return;
-
+ 
   const today = todayStr();
   const days = [];
   for (let i = _dtRange - 1; i >= 0; i--) days.push(addDays(today, -i));
-
+ 
   // Build data
   const dayData = days.map(date => {
     const obj = { date, total: 0 };
@@ -2808,16 +3162,16 @@ function renderDailyTimeChart() {
     });
     return obj;
   });
-
+ 
   const hasData = dayData.some(d => d.total > 0);
   canvas.style.display = hasData ? 'block' : 'none';
   emptyEl.style.display = hasData ? 'none' : 'block';
-
+ 
   if (!hasData) {
     legendEl.innerHTML = '';
     return;
   }
-
+ 
   // Legend
   const subjectKeys = Object.keys(SUBJECTS);
   legendEl.innerHTML = subjectKeys.map(key => {
@@ -2831,7 +3185,7 @@ function renderDailyTimeChart() {
       <span style="font-size:0.78rem;color:var(--text-muted)">${hrs}h total</span>
     </div>`;
   }).join('');
-
+ 
   // Canvas sizing
   const wrap = document.getElementById('dtChartWrap');
   const W = wrap.clientWidth || 700;
@@ -2839,21 +3193,21 @@ function renderDailyTimeChart() {
   const CHART_W = W - PAD_L - PAD_R;
   const CHART_H = 200;
   const H = CHART_H + PAD_T + PAD_B;
-
+ 
   const dpr = window.devicePixelRatio || 1;
   canvas.width = W * dpr;
   canvas.height = H * dpr;
   canvas.style.height = H + 'px';
-
+ 
   const ctx = canvas.getContext('2d');
   ctx.scale(dpr, dpr);
   ctx.clearRect(0, 0, W, H);
-
+ 
   // Max value (in hours, rounded up)
   const maxSecs = Math.max(...dayData.map(d => d.total), 1);
   const maxHrs = Math.ceil(maxSecs / 3600 * 10) / 10; // round to 0.1
   const niceMax = Math.ceil(maxHrs);
-
+ 
   // Grid lines
   const gridSteps = Math.min(niceMax, 5);
   ctx.font = `11px var(--font, 'Outfit', sans-serif)`;
@@ -2870,21 +3224,21 @@ function renderDailyTimeChart() {
     ctx.fillStyle = 'rgba(148,163,184,0.7)';
     ctx.fillText(val.toFixed(val < 1 ? 1 : 0) + 'h', PAD_L - 6, y + 4);
   }
-
+ 
   // Bars
   const n = dayData.length;
   const barW = Math.max(8, Math.min(40, (CHART_W / n) * 0.72));
   const gap = CHART_W / n;
   const dayLabels = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-
+ 
   // Store bar rects for hover
   canvas._barRects = [];
-
+ 
   dayData.forEach((d, i) => {
     const cx = PAD_L + gap * i + gap / 2;
     const x = cx - barW / 2;
     const isToday = d.date === today;
-
+ 
     // Today highlight
     if (isToday) {
       ctx.fillStyle = 'rgba(99,102,241,0.07)';
@@ -2892,17 +3246,17 @@ function renderDailyTimeChart() {
       ctx.roundRect ? ctx.roundRect(x - 4, PAD_T, barW + 8, CHART_H, 4) : ctx.rect(x - 4, PAD_T, barW + 8, CHART_H);
       ctx.fill();
     }
-
+ 
     let stackY = PAD_T + CHART_H; // start from bottom
     const barInfo = { x, y: PAD_T, w: barW, h: 0, date: d.date, data: d, segments: [] };
-
+ 
     if (d.total > 0) {
       subjectKeys.forEach(key => {
         if (d[key] <= 0) return;
         const sub = SUBJECTS[key];
         const segH = Math.max(2, Math.round((d[key] / (niceMax * 3600)) * CHART_H));
         stackY -= segH;
-
+ 
         ctx.fillStyle = sub.color;
         // Rounded top only on last segment
         const isTop = key === subjectKeys.filter(k => d[k] > 0).at(-1);
@@ -2919,7 +3273,7 @@ function renderDailyTimeChart() {
       barInfo.h = PAD_T + CHART_H - stackY;
     }
     canvas._barRects.push(barInfo);
-
+ 
     // X-axis label
     const dateObj = new Date(d.date + 'T12:00:00');
     let label;
@@ -2937,7 +3291,7 @@ function renderDailyTimeChart() {
     ctx.fillStyle = isToday ? '#6366F1' : 'rgba(100,116,139,0.85)';
     ctx.fillText(label, cx, PAD_T + CHART_H + 18);
   });
-
+ 
   // Hover logic
   canvas.onmousemove = function(e) {
     const rect = canvas.getBoundingClientRect();
@@ -2978,7 +3332,7 @@ function renderDailyTimeChart() {
   };
   canvas.onmouseleave = function() { tooltip.style.opacity = '0'; };
 }
-
+ 
 </script>
 </body>
 </html>
