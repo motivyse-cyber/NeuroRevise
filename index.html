@@ -1087,7 +1087,10 @@ body.light{
  
     <!-- ─── GROUPS ─── -->
     <div id="pg-groups" style="display:none">
-      <div class="groups-header">
+     <div class="groups-header">
+  <h1>Groups</h1>
+  <button class="btn-sm" onclick="createGroupPrompt()">+ Create Group</button>
+</div>
         <div>
           <h1 style="font-size:2rem;font-weight:800;margin-bottom:4px">Study Groups</h1>
           <p style="color:var(--text-muted);font-size:0.88rem">Collaborate, stay accountable, and track each other's progress.</p>
@@ -3356,6 +3359,32 @@ function renderDailyTimeChart() {
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
+</script>
+  <script type="module">
+
+import { db, auth } from "./firebase.js";
+import { collection, addDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+window.createGroupPrompt = async function () {
+  const name = prompt("Enter group name:");
+  if (!name) return;
+
+  await createGroup(name);
+};
+
+async function createGroup(name) {
+  const inviteCode = Math.random().toString(36).substring(2, 8).toUpperCase();
+
+  await addDoc(collection(db, "groups"), {
+    name,
+    adminId: auth.currentUser.uid,
+    inviteCode,
+    createdAt: new Date()
+  });
+
+  alert("Group created! Code: " + inviteCode);
+}
+
 </script>
 </body>
 </html>
