@@ -119,7 +119,7 @@ input,textarea{font-family:var(--font);outline:none}
 .sidebar-logo-text{font-size:1rem;font-weight:700}
 .nav-item{
   display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:10px;
-  cursor:pointer;transition:var(--tr);color:var(--text-muted);font-size:0.9rem;font-weight:500;
+  cursor:pointer;transition:background 0.1s,color 0.1s;color:var(--text-muted);font-size:0.9rem;font-weight:500;
   margin-bottom:4px;
 }
 .nav-item:hover{background:var(--surface2);color:var(--text)}
@@ -566,8 +566,90 @@ body.light{
 
 /* ─── ANIMATIONS ─── */
 @keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
-.animate-in{animation:fadeIn 0.35s ease forwards}
+
 @keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+
+/* ════ AUTH ENTRANCE ════ */
+@keyframes authLogoIn{0%{opacity:0;transform:translateY(40px) rotateX(50deg) scale(0.7)}100%{opacity:1;transform:translateY(0) rotateX(0) scale(1)}}
+@keyframes authSlideUp{from{opacity:0;transform:translateY(32px)}to{opacity:1;transform:translateY(0)}}
+@keyframes authFeatIn{from{opacity:0;transform:translateY(24px) scale(0.92)}to{opacity:1;transform:translateY(0) scale(1)}}
+.auth-logo-wrap{animation:authLogoIn 0.9s cubic-bezier(0.34,1.56,0.64,1) both}
+.auth-title{animation:authSlideUp 0.7s cubic-bezier(0.34,1.26,0.64,1) 0.18s both!important}
+.auth-sub{animation:authSlideUp 0.6s ease 0.3s both}
+.auth-features .auth-feat:nth-child(1){animation:authFeatIn 0.55s cubic-bezier(0.22,1,0.36,1) 0.4s both}
+.auth-features .auth-feat:nth-child(2){animation:authFeatIn 0.55s cubic-bezier(0.22,1,0.36,1) 0.5s both}
+.auth-features .auth-feat:nth-child(3){animation:authFeatIn 0.55s cubic-bezier(0.22,1,0.36,1) 0.6s both}
+.auth-features .auth-feat:nth-child(4){animation:authFeatIn 0.55s cubic-bezier(0.22,1,0.36,1) 0.7s both}
+.auth-buttons{animation:authSlideUp 0.6s ease 0.78s both}
+
+/* ════ 3D LOGO BOB ════ */
+@keyframes logoBob{0%,100%{transform:translateY(0) rotateY(0deg) rotateX(0deg);box-shadow:0 0 40px var(--accent-glow)}30%{transform:translateY(-8px) rotateY(12deg) rotateX(5deg);box-shadow:0 18px 60px var(--accent-glow)}70%{transform:translateY(-4px) rotateY(-8deg) rotateX(-3deg);box-shadow:0 10px 50px var(--accent-glow)}}
+.auth-logo{animation:logoBob 5s ease-in-out infinite;transform-style:preserve-3d;perspective:400px}
+
+/* ════ GLITCH TITLE ════ */
+@keyframes glitch{0%,85%,100%{text-shadow:none;clip-path:none}86%{text-shadow:3px 0 #ff2d78,-3px 0 #00d4ff;transform:skewX(-3deg)}88%{text-shadow:-3px 0 #ff2d78,3px 0 #00d4ff;transform:skewX(2deg)}90%{text-shadow:2px 0 #ff2d78,-2px 0 #00d4ff;transform:none}92%{text-shadow:none}}
+.auth-title{animation:glitch 7s ease infinite,authSlideUp 0.7s cubic-bezier(0.34,1.26,0.64,1) 0.18s both!important}
+
+/* ════ PARTICLE CANVAS ════ */
+#authCanvas{position:absolute;inset:0;pointer-events:none;z-index:0}
+#authPage>*:not(#authCanvas){position:relative;z-index:1}
+
+/* ════ FLOATING BG ORBS ════ */
+@keyframes floatOrb{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(40px,-30px) scale(1.07)}66%{transform:translate(-25px,40px) scale(0.93)}}
+.bg-orb{position:fixed;border-radius:50%;filter:blur(90px);pointer-events:none;z-index:-1}
+.bg-orb-1{width:500px;height:500px;background:radial-gradient(circle,rgba(99,102,241,0.13),transparent);top:-150px;left:-100px;animation:floatOrb 14s ease-in-out infinite}
+.bg-orb-2{width:400px;height:400px;background:radial-gradient(circle,rgba(139,92,246,0.1),transparent);bottom:-100px;right:-80px;animation:floatOrb 18s ease-in-out infinite reverse}
+.bg-orb-3{width:300px;height:300px;background:radial-gradient(circle,rgba(236,72,153,0.07),transparent);top:45%;left:55%;animation:floatOrb 11s ease-in-out infinite 4s}
+
+/* buttons */
+
+/* ════ NAV GLOW INDICATOR ════ */
+.nav-item.active::before{content:'';position:absolute;left:0;top:50%;transform:translateY(-50%);width:3px;height:55%;background:linear-gradient(180deg,var(--accent),var(--accent2));border-radius:0 3px 3px 0;box-shadow:0 0 10px var(--accent)}
+.nav-item{position:relative}
+
+/* ════ SIDEBAR LOGO PULSE ════ */
+@keyframes logoPulse{0%,100%{box-shadow:0 0 0 0 rgba(99,102,241,0.5)}60%{box-shadow:0 0 0 8px rgba(99,102,241,0)}}
+.sidebar-logo-icon{animation:logoPulse 3.5s ease infinite}
+
+/* ════ 3D CARD SHIMMER ════ */
+.card-hover{transform-style:preserve-3d;will-change:transform}
+.card-hover::after{content:'';position:absolute;inset:0;border-radius:inherit;background:linear-gradient(115deg,transparent 25%,rgba(255,255,255,0.04) 50%,transparent 75%);background-size:200% 100%;opacity:0;transition:opacity 0.3s;pointer-events:none;z-index:1}
+.card-hover:hover::after{opacity:1;animation:shimmer 1.8s linear infinite}
+@keyframes shimmer{0%{background-position:-200% center}100%{background-position:200% center}}
+
+/* ════ CARD STAGGER ════ */
+@keyframes cardFadeUp{from{opacity:0;transform:translateY(28px) scale(0.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+
+/* ════ TIMER GLOW ════ */
+@keyframes timerPulse{0%,100%{box-shadow:0 0 20px var(--accent-glow),inset 0 0 20px rgba(99,102,241,0.04)}50%{box-shadow:0 0 50px rgba(99,102,241,0.55),inset 0 0 35px rgba(99,102,241,0.09)}}
+.timer-card.running{animation:timerPulse 2.2s ease-in-out infinite!important;border-color:var(--accent)}
+
+/* ════ COUNTDOWN FLIP ════ */
+@keyframes digitFlip{0%{transform:rotateX(0)}40%{transform:rotateX(-90deg);opacity:0.4}70%{transform:rotateX(-90deg);opacity:0.4}100%{transform:rotateX(0)}}
+.hms-num{display:inline-block;transform-origin:center}
+.digit-flip{animation:digitFlip 0.38s cubic-bezier(0.4,0,0.2,1)}
+
+/* ════ STAT 3D ENTRANCE ════ */
+@keyframes statsIn{from{opacity:0;transform:perspective(500px) rotateX(22deg) translateY(30px)}to{opacity:1;transform:perspective(500px) rotateX(0) translateY(0)}}
+
+/* ════ PROGRESS BAR ANIMATE ════ */
+@keyframes progressGrow{from{width:0!important;opacity:0.6}to{opacity:1}}
+
+/* ════ MODAL ENTRANCE ════ */
+@keyframes modalBounceIn{from{transform:translateY(30px) scale(0.92);opacity:0}to{transform:translateY(0) scale(1);opacity:1}}
+.modal-overlay.open .modal{animation:modalBounceIn 0.4s cubic-bezier(0.34,1.56,0.64,1) both}
+
+/* ════ TOAST BOUNCE ════ */
+@keyframes toastBounce{from{opacity:0;transform:translateY(20px) scale(0.88)}to{opacity:1;transform:translateY(0) scale(1)}}
+.toast.show{animation:toastBounce 0.35s cubic-bezier(0.34,1.56,0.64,1) forwards}
+
+/* ════ ACTIVITY BAR GROW ════ */
+@keyframes barGrow{from{height:4px!important;opacity:0}to{opacity:1}}
+.activity-bar{animation:barGrow 0.7s cubic-bezier(0.22,1,0.36,1) both}
+
+/* ════ AUTH FEAT 3D HOVER ════ */
+.auth-feat{transform-style:preserve-3d;will-change:transform;transition:transform 0.22s ease,box-shadow 0.22s ease,border-color 0.22s ease}
+.auth-feat:hover{box-shadow:0 24px 60px rgba(0,0,0,0.5),0 0 24px var(--accent-glow);border-color:var(--accent)}
 
 /* ─── RESPONSIVE ─── */
 @media(max-width:900px){
@@ -590,7 +672,10 @@ body.light{
 
 <!-- ════════ AUTH PAGE ════════ -->
 <div id="authPage" class="page active" style="flex-direction:column;align-items:center;justify-content:center;min-height:100vh;padding:20px;background:radial-gradient(ellipse at 30% 20%,rgba(99,102,241,0.12) 0%,transparent 60%),radial-gradient(ellipse at 70% 80%,rgba(139,92,246,0.08) 0%,transparent 60%),var(--bg)">
-  <div class="auth-logo">NR</div>
+  <canvas id="authCanvas"></canvas>
+  <div class="auth-logo-wrap" style="perspective:400px">
+    <div class="auth-logo">NR</div>
+  </div>
   <h1 class="auth-title">NeuroRevise</h1>
   <p class="auth-sub">Your Personal Study Operating System</p>
   <div class="auth-features">
@@ -753,6 +838,20 @@ body.light{
           </div>
         </div>
       </div>
+
+      <!-- Study Time Chart -->
+      <div class="card" style="margin-top:24px">
+        <div class="section-title" style="justify-content:space-between">
+          <div style="display:flex;align-items:center;gap:8px">
+            <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M3 20l4-8 4 4 4-6 4 6"/><circle cx="12" cy="12" r="9" style="display:none"/></svg>
+            Study Time by Subject
+          </div>
+          <span style="font-size:0.78rem;font-weight:400;color:var(--text-muted)">Last 7 days</span>
+        </div>
+        <div style="display:flex;gap:24px;align-items:flex-start;flex-wrap:wrap" id="studyTimeChartInner">
+          <div style="color:var(--text-muted);font-size:0.85rem;padding:20px 0">Start a timer session to see your study data here.</div>
+        </div>
+      </div>
     </div>
 
     <!-- ─── PLANNER ─── -->
@@ -856,6 +955,50 @@ body.light{
         <p style="color:var(--text-muted);font-size:0.88rem">Your complete study performance at a glance.</p>
       </div>
       <div class="stats-row" id="statsRow"></div>
+      <!-- Paper Marks Chart -->
+      <div class="card" style="margin-bottom:24px">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;flex-wrap:wrap;gap:10px">
+          <div>
+            <div class="section-title" style="margin-bottom:2px">Paper Marks by Subject</div>
+            <p style="font-size:0.8rem;color:var(--text-muted)">Score % for each paper attempt, tracked over time</p>
+          </div>
+          <button class="btn-sm" onclick="openModal('addMarkModal')" style="padding:8px 18px;white-space:nowrap">+ Log Mark</button>
+        </div>
+        <div id="pmChartWrap" style="position:relative;width:100%">
+          <canvas id="pmCanvas" style="width:100%;display:block"></canvas>
+          <div id="pmEmptyState" style="text-align:center;padding:48px 0;color:var(--text-muted);font-size:0.9rem">
+            No paper marks logged yet.<br><small>Click <strong style="color:var(--accent)">+ Log Mark</strong> to record your first attempt.</small>
+          </div>
+          <div id="pmTooltip" style="position:absolute;pointer-events:none;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:10px 14px;font-size:0.8rem;opacity:0;transition:opacity 0.15s;z-index:10;white-space:nowrap;box-shadow:0 8px 24px rgba(0,0,0,0.4)"></div>
+        </div>
+        <div id="pmLegend" style="display:flex;flex-wrap:wrap;gap:14px;margin-top:14px;padding-top:14px;border-top:1px solid var(--border)"></div>
+        <!-- Recent entries log -->
+        <div id="pmLog" style="margin-top:16px"></div>
+      </div>
+
+      <!-- Daily Study Time Chart -->
+      <div class="card" style="margin-bottom:24px">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;flex-wrap:wrap;gap:10px">
+          <div>
+            <div class="section-title" style="margin-bottom:2px">Daily Study Time by Subject</div>
+            <p style="font-size:0.8rem;color:var(--text-muted)">Hours studied per day, broken down by subject</p>
+          </div>
+          <div style="display:flex;gap:6px">
+            <button id="dtRange7"  class="date-btn active" onclick="setDtRange(7)"  style="padding:6px 14px;font-size:0.8rem">7 days</button>
+            <button id="dtRange14" class="date-btn"        onclick="setDtRange(14)" style="padding:6px 14px;font-size:0.8rem">14 days</button>
+            <button id="dtRange30" class="date-btn"        onclick="setDtRange(30)" style="padding:6px 14px;font-size:0.8rem">30 days</button>
+          </div>
+        </div>
+        <div id="dtChartWrap" style="position:relative;width:100%">
+          <canvas id="dtCanvas" style="width:100%;display:block"></canvas>
+          <div id="dtEmptyState" style="display:none;text-align:center;padding:48px 0;color:var(--text-muted);font-size:0.9rem">
+            No study sessions recorded yet.<br><small>Start a timer on the Study Timer page to track your time.</small>
+          </div>
+          <div id="dtTooltip" style="position:absolute;pointer-events:none;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:10px 14px;font-size:0.8rem;opacity:0;transition:opacity 0.15s;z-index:10;white-space:nowrap;box-shadow:0 8px 24px rgba(0,0,0,0.4)"></div>
+        </div>
+        <div id="dtLegend" style="display:flex;flex-wrap:wrap;gap:14px;margin-top:18px;padding-top:14px;border-top:1px solid var(--border)"></div>
+      </div>
+
       <div class="progress-grid">
         <div class="card">
           <div class="section-title">Subject Mastery</div>
@@ -955,6 +1098,55 @@ body.light{
   </div>
 </div>
 
+<!-- Add Paper Mark Modal -->
+<div class="modal-overlay" id="addMarkModal">
+  <div class="modal">
+    <h2>Log Paper Mark</h2>
+    <p>Record your score for a past paper attempt</p>
+    <div class="form-group">
+      <label>Subject *</label>
+      <select id="markSubject" class="input-styled" style="background:var(--surface2)">
+        <option value="">Select subject…</option>
+        <option value="biology">Biology</option>
+        <option value="chemistry">Chemistry</option>
+        <option value="physics">Physics</option>
+        <option value="pureMaths">Pure Maths</option>
+        <option value="appliedMaths">Applied Maths</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Year *</label>
+      <select id="markYear" class="input-styled" style="background:var(--surface2)">
+        <option value="">Select year…</option>
+        <option>2025</option><option>2024</option><option>2023</option><option>2022</option>
+        <option>2021</option><option>2020</option><option>2019</option><option>2018</option>
+        <option>2017</option><option>2016</option><option>2015</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Paper / Attempt Label (optional)</label>
+      <input type="text" id="markLabel" placeholder="e.g. Paper 1, Mock, Trial…">
+    </div>
+    <div style="display:flex;gap:12px">
+      <div class="form-group" style="flex:1">
+        <label>Score *</label>
+        <input type="number" id="markScore" placeholder="e.g. 72" min="0" step="0.5">
+      </div>
+      <div class="form-group" style="flex:1">
+        <label>Out of *</label>
+        <input type="number" id="markMax" placeholder="e.g. 100" min="1" step="0.5">
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Date</label>
+      <input type="date" id="markDate">
+    </div>
+    <div class="error-msg" id="markError"></div>
+    <button class="btn-primary btn-full" style="margin-top:8px" onclick="saveMarkEntry()">Save Mark</button>
+    <button onclick="closeModal('addMarkModal')" style="position:absolute;top:16px;right:16px;background:none;color:var(--text-muted);font-size:20px">×</button>
+  </div>
+</div>
+
 <!-- Toast -->
 <div class="toast" id="toast"></div>
 
@@ -1019,6 +1211,7 @@ function defaultUserData() {
     topics: {},
     revisions: {},
     pastPapers: {},
+    paperMarks: [],
     tasks: {},
     timeTracking: {},
     streak: { count: 0, lastDate: null },
@@ -1051,26 +1244,44 @@ function login() {
   const email = document.getElementById('loginEmail').value.trim().toLowerCase();
   const pass = document.getElementById('loginPass').value;
   const err = document.getElementById('loginError');
-  const { users, allData } = loadStorage();
+  const { users } = loadStorage();
   if (!users[email] || users[email].pass !== pass) { showErr(err, 'Invalid email or password'); return; }
   const d = JSON.parse(localStorage.getItem('nr_data') || '{}');
-  if (!d[email]) d[email] = defaultUserData();
+  if (!d[email]) {
+    d[email] = defaultUserData();
+    localStorage.setItem('nr_data', JSON.stringify(d));
+  }
   localStorage.setItem('nr_session', email);
   closeModal('loginModal');
   initApp(email, users[email], d[email]);
 }
 function logout() {
-  // Stop all timers
+  // Stop all running timers and save their data first
   Object.keys(timers).forEach(s => { if(timers[s].running) stopTimer(s); });
+  // Explicitly save all user data before clearing state
+  if (currentUser) saveUserData();
+  const loggedOutEmail = currentUser;
   clearInterval(clockInterval);
   clearInterval(countdownInterval);
-  currentUser = null; userData = {};
+  // Reset timer state so re-login starts fresh
+  timers = {};
+  currentUser = null;
+  userData = {};
   localStorage.removeItem('nr_session');
   showPage('authPage');
+  // Auto-open login modal so the user can sign back in easily
+  setTimeout(() => {
+    openModal('loginModal');
+    // Pre-fill their email so they just need to enter the password
+    const emailInput = document.getElementById('loginEmail');
+    if (emailInput && loggedOutEmail) emailInput.value = loggedOutEmail;
+  }, 150);
 }
 function initApp(email, user, data) {
   currentUser = email;
   userData = data;
+  // Always start with clean timer state for this session
+  if (!Object.keys(timers).length) timers = {};
   document.getElementById('userEmail').textContent = email;
   document.getElementById('userAvatar').textContent = (user.name || email)[0].toUpperCase();
   showPage('appPage');
@@ -1113,7 +1324,7 @@ function navigate(page) {
   const navEl = document.getElementById('nav-'+page); if (navEl) navEl.classList.add('active');
   document.querySelectorAll('[id^="pg-"]').forEach(p => p.style.display='none');
   const el = document.getElementById('pg-'+page);
-  if (el) { el.style.display='block'; el.classList.add('animate-in'); }
+  if (el) { el.style.display='block'; }
   // Render
   const renders = {dashboard:renderDashboard,planner:renderPlanner,papers:renderPapers,
     timer:renderTimer,progress:renderProgress,groups:renderGroups};
@@ -1163,6 +1374,7 @@ function updateCountdown() {
   document.getElementById('cdHours').textContent = String(hours).padStart(2,'0');
   document.getElementById('cdMins').textContent = String(mins).padStart(2,'0');
   document.getElementById('cdSecs').textContent = String(secs).padStart(2,'0');
+  triggerFlipIfChanged(secs);
   // Progress bar
   const yearStart = new Date(now.getFullYear(), 0, 1);
   const total = EXAM_DATE - yearStart;
@@ -1299,7 +1511,86 @@ function renderDashboard() {
         <span class="topic-chip-remove" onclick="removeTopic('${id}')">×</span>
       </div>`).join('');
   } else { tList.style.display = 'none'; }
+  renderStudyTimeChart();
 }
+function renderStudyTimeChart() {
+  const container = document.getElementById('studyTimeChartInner');
+  if (!container) return;
+  const today = todayStr();
+  const days = [];
+  for (let i = 6; i >= 0; i--) days.push(addDays(today, -i));
+
+  const dayData = days.map(date => {
+    const result = { date, total: 0 };
+    Object.entries(SUBJECTS).forEach(([key]) => {
+      const sessions = (userData.timeTracking && userData.timeTracking[key] && userData.timeTracking[key].sessions) || [];
+      const secs = sessions.filter(s => s.date === date).reduce((a, s) => a + s.duration, 0);
+      result[key] = secs;
+      result.total += secs;
+    });
+    return result;
+  });
+
+  const hasAnyData = dayData.some(d => d.total > 0);
+  if (!hasAnyData) {
+    container.innerHTML = `<div style="color:var(--text-muted);font-size:0.85rem;padding:20px 0">Start a timer session to see your study data here.</div>`;
+    return;
+  }
+
+  const maxTotal = Math.max(...dayData.map(d => d.total), 1);
+  const BAR_H = 100;
+  const dayLabels = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+
+  let barsHtml = `<div style="flex:1;min-width:200px">
+    <div style="display:flex;gap:6px;align-items:flex-end;height:${BAR_H}px">`;
+
+  dayData.forEach(d => {
+    const dateObj = new Date(d.date + 'T12:00:00');
+    const label = dayLabels[dateObj.getDay()];
+    const isToday = d.date === today;
+    const tipParts = Object.entries(SUBJECTS).map(([k, s]) => d[k] > 0 ? s.name + ': ' + fmtTime(d[k]) : '').filter(Boolean);
+    const tooltip = tipParts.length ? tipParts.join(' | ') : 'No study';
+    barsHtml += `<div style="flex:1;display:flex;flex-direction:column;align-items:center">
+      <div style="width:100%;height:${BAR_H}px;display:flex;flex-direction:column;justify-content:flex-end;cursor:default" title="${tooltip}">`;
+    if (d.total === 0) {
+      barsHtml += `<div style="height:4px;background:var(--surface2);border-radius:4px;opacity:0.5"></div>`;
+    } else {
+      const totalH = Math.max(6, Math.round(d.total / maxTotal * BAR_H));
+      const subEntries = Object.entries(SUBJECTS).filter(([k]) => d[k] > 0);
+      let stackParts = subEntries.map(([key, sub], idx) => {
+        const segH = idx === subEntries.length - 1
+          ? Math.max(2, totalH - subEntries.slice(0, idx).reduce((a, [k]) => a + Math.max(2, Math.round(d[k] / d.total * totalH)), 0))
+          : Math.max(2, Math.round(d[key] / d.total * totalH));
+        return `<div style="height:${segH}px;background:${sub.color}"></div>`;
+      });
+      barsHtml += `<div style="width:100%;border-radius:4px 4px 0 0;overflow:hidden;display:flex;flex-direction:column">${stackParts.join('')}</div>`;
+    }
+    barsHtml += `</div>
+      <div style="font-size:0.65rem;color:${isToday ? 'var(--accent)' : 'var(--text-muted)'};margin-top:4px;font-weight:${isToday ? '700' : '400'}">${label}</div>
+    </div>`;
+  });
+  barsHtml += `</div></div>`;
+
+  let legendHtml = `<div style="min-width:160px;display:flex;flex-direction:column;gap:10px;padding-top:4px;border-left:1px solid var(--border);padding-left:20px">
+    <div style="font-size:0.72rem;font-weight:700;letter-spacing:0.08em;color:var(--text-muted);text-transform:uppercase;margin-bottom:2px">All-Time Hours</div>`;
+  Object.entries(SUBJECTS).forEach(([key, sub]) => {
+    const total = getAllTime(key);
+    const hrs = (total / 3600).toFixed(1);
+    const todaySecs = ((userData.timeTracking && userData.timeTracking[key] && userData.timeTracking[key].sessions) || [])
+      .filter(s => s.date === today).reduce((a, s) => a + s.duration, 0);
+    legendHtml += `<div style="display:flex;align-items:center;gap:8px">
+      <div style="width:10px;height:10px;border-radius:3px;background:${sub.color};flex-shrink:0"></div>
+      <div style="flex:1;min-width:0">
+        <div style="font-size:0.82rem;font-weight:600">${sub.name}</div>
+        <div style="font-size:0.72rem;color:var(--text-muted)">${hrs}h total${todaySecs > 0 ? ' · ' + fmtTime(todaySecs) + ' today' : ''}</div>
+      </div>
+    </div>`;
+  });
+  legendHtml += `</div>`;
+
+  container.innerHTML = barsHtml + legendHtml;
+}
+
 function removeTopic(id) {
   delete userData.topics[id];
   Object.keys(userData.revisions || {}).forEach(date => {
@@ -1758,6 +2049,9 @@ function stopTimer(key) {
   userData.timeTracking[key].sessions.push({ date: todayStr(), duration: secs });
   saveUserData();
   showToast(`${SUBJECTS[key].name} session saved: ${fmtTime(secs)}`, 'success');
+  if (document.getElementById('pg-dashboard') && document.getElementById('pg-dashboard').style.display !== 'none') {
+    renderStudyTimeChart();
+  }
 }
 function getTodayTime(key) {
   const sessions = (userData.timeTracking && userData.timeTracking[key] && userData.timeTracking[key].sessions) || [];
@@ -1835,6 +2129,9 @@ function renderProgress() {
     <div class="revisions-today-icon"><svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#fff" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="m9 12 2 2 4-4"/></svg></div>
     <div class="revisions-today-text"><h4>${todayCount} revisions completed today</h4><p>Keep going — consistency compounds.</p></div>
   </div>`;
+  // Render the charts
+  setTimeout(renderDailyTimeChart, 60);
+  setTimeout(renderPaperMarksChart, 60);
 }
 
 // ════════════════════════════════════
@@ -1957,12 +2254,706 @@ function toggleTheme() {
   const btn = document.querySelector('.theme-toggle span');
   if (btn) btn.textContent = document.body.classList.contains('light') ? 'Dark Mode' : 'Light Mode';
 }
-// Initial planner date setup
+// ════════════════════════════════════
+//  ANIMATION ENGINE
+// ════════════════════════════════════
+
+// ─── AUTH CANVAS PARTICLES ───
+function initAuthCanvas() {
+  const canvas = document.getElementById('authCanvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let W, H, animRunning = true;
+  const mouse = { x: -9999, y: -9999 };
+  const COLORS = ['#6366F1','#8B5CF6','#EC4899','#3B82F6','#10B981','#F59E0B'];
+
+  function resize() {
+    W = canvas.width = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  class Particle {
+    constructor() { this.init(); }
+    init() {
+      this.x = Math.random() * W;
+      this.y = Math.random() * H;
+      this.vx = (Math.random() - 0.5) * 0.5;
+      this.vy = (Math.random() - 0.5) * 0.5;
+      this.radius = Math.random() * 2.2 + 0.6;
+      this.color = COLORS[Math.floor(Math.random() * COLORS.length)];
+      this.alpha = Math.random() * 0.55 + 0.15;
+      this.phase = Math.random() * Math.PI * 2;
+      this.phaseSpeed = Math.random() * 0.025 + 0.008;
+      this.z = Math.random() * 3 + 0.5; // depth layer
+    }
+    update() {
+      this.phase += this.phaseSpeed;
+      this.x += this.vx * this.z;
+      this.y += this.vy * this.z;
+      // Repel from mouse
+      const dx = this.x - mouse.x, dy = this.y - mouse.y;
+      const dist = Math.hypot(dx, dy);
+      if (dist < 100) {
+        const force = (100 - dist) / 100;
+        this.x += (dx / dist) * force * 2.5;
+        this.y += (dy / dist) * force * 2.5;
+      }
+      if (this.x < -10) this.x = W + 10;
+      else if (this.x > W + 10) this.x = -10;
+      if (this.y < -10) this.y = H + 10;
+      else if (this.y > H + 10) this.y = -10;
+    }
+    draw() {
+      const a = this.alpha * (0.65 + 0.35 * Math.sin(this.phase));
+      ctx.save();
+      ctx.globalAlpha = a;
+      ctx.shadowBlur = 10 * this.z;
+      ctx.shadowColor = this.color;
+      ctx.fillStyle = this.color;
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.radius * this.z, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
+    }
+  }
+
+  const particles = Array.from({ length: 90 }, () => new Particle());
+
+  function drawConnections() {
+    const maxDist = 110;
+    for (let i = 0; i < particles.length; i++) {
+      for (let j = i + 1; j < particles.length; j++) {
+        const d = Math.hypot(particles[i].x - particles[j].x, particles[i].y - particles[j].y);
+        if (d < maxDist) {
+          ctx.save();
+          ctx.globalAlpha = (1 - d / maxDist) * 0.13;
+          ctx.strokeStyle = particles[i].color;
+          ctx.lineWidth = 0.6;
+          ctx.beginPath();
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.stroke();
+          ctx.restore();
+        }
+      }
+    }
+  }
+
+  function loop() {
+    const auth = document.getElementById('authPage');
+    if (!auth || auth.style.display === 'none') { animRunning = false; return; }
+    animRunning = true;
+    requestAnimationFrame(loop);
+    ctx.clearRect(0, 0, W, H);
+    particles.forEach(p => { p.update(); p.draw(); });
+    drawConnections();
+  }
+
+  document.addEventListener('mousemove', e => { mouse.x = e.clientX; mouse.y = e.clientY; });
+  loop();
+
+  // Restart canvas when returning to auth
+  window._restartAuthCanvas = () => { if (!animRunning) loop(); };
+}
+
+
+
+// ─── 3D TILT ON HOVER ───
+function applyTilt(selector) {
+  document.querySelectorAll(selector).forEach(el => {
+    if (el._hasTilt) return;
+    el._hasTilt = true;
+    let frame;
+    el.addEventListener('mousemove', e => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => {
+        const r = el.getBoundingClientRect();
+        const cx = r.left + r.width / 2, cy = r.top + r.height / 2;
+        const dx = (e.clientX - cx) / (r.width / 2);
+        const dy = (e.clientY - cy) / (r.height / 2);
+        el.style.transform = `perspective(900px) rotateX(${-dy * 7}deg) rotateY(${dx * 7}deg) translateY(-4px) scale(1.015)`;
+        el.style.transition = 'transform 0.1s ease';
+      });
+    });
+    el.addEventListener('mouseleave', () => {
+      cancelAnimationFrame(frame);
+      el.style.transition = 'transform 0.45s cubic-bezier(0.22,1,0.36,1)';
+      el.style.transform = '';
+    });
+  });
+}
+
+// ─── COUNTER ANIMATION ───
+function animateCount(el, target, suffix='', decimals=0, duration=1100) {
+  if (!el) return;
+  const start = performance.now();
+  function step(now) {
+    const p = Math.min((now - start) / duration, 1);
+    const ease = 1 - Math.pow(1 - p, 4);
+    const val = (target * ease).toFixed(decimals);
+    el.textContent = val + suffix;
+    if (p < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
+// ─── STAGGER CARDS ───
+function staggerCards(containerId, baseDelay=60) {
+  const parent = typeof containerId === 'string' ? document.getElementById(containerId) : containerId;
+  if (!parent) return;
+  const els = parent.querySelectorAll('.card,.timer-card,.stat-card,.group-card');
+  els.forEach((el, i) => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(28px) scale(0.97)';
+    el.style.transition = 'none';
+    setTimeout(() => {
+      el.style.transition = `opacity 0.48s cubic-bezier(0.22,1,0.36,1) ${i*baseDelay}ms, transform 0.48s cubic-bezier(0.22,1,0.36,1) ${i*baseDelay}ms`;
+      el.style.opacity = '1';
+      el.style.transform = '';
+    }, 30);
+  });
+}
+
+// ─── PROGRESS BAR ANIMATE ───
+function animateBars(container) {
+  const bars = (container || document).querySelectorAll('.progress-fill');
+  bars.forEach(bar => {
+    const target = bar.style.width;
+    if (!target || target === '0%') return;
+    bar.style.width = '0';
+    bar.style.transition = 'none';
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        bar.style.transition = 'width 1s cubic-bezier(0.22,1,0.36,1)';
+        bar.style.width = target;
+      });
+    });
+  });
+}
+
+// ─── DIGIT FLIP ON CHANGE ───
+var _lastSecs = -1;
+const _origUpdateCountdown = typeof updateCountdown === 'function' ? updateCountdown : null;
+function triggerFlipIfChanged(newSecs) {
+  if (newSecs !== _lastSecs) {
+    const el = document.getElementById('cdSecs');
+    if (el) {
+      el.classList.remove('digit-flip');
+      void el.offsetWidth;
+      el.classList.add('digit-flip');
+      el.addEventListener('animationend', () => el.classList.remove('digit-flip'), { once: true });
+    }
+    _lastSecs = newSecs;
+  }
+}
+
+// ─── HOOK INTO NAVIGATE ───
+const _origNavigate = navigate;
+const _navigateEnhanced = function(page) {
+  _origNavigate(page);
+  if (page === 'progress') {
+    setTimeout(() => {
+      animateBars(document.getElementById('pg-progress'));
+      renderDailyTimeChart && renderDailyTimeChart();
+      renderPaperMarksChart && renderPaperMarksChart();
+      document.querySelectorAll('#statsRow .stat-num').forEach(el => {
+        const raw = parseFloat(el.textContent);
+        if (!isNaN(raw)) {
+          const suffix = el.textContent.replace(/[\d.]/g, '');
+          animateCount(el, raw, suffix, raw % 1 !== 0 ? 1 : 0);
+        }
+      });
+    }, 30);
+  }
+};
+// Replace global navigate with enhanced version
+window.navigate = _navigateEnhanced;
+
+// ─── FLOATING ORBS ───
+function createBgOrbs() {
+  ['bg-orb-1','bg-orb-2','bg-orb-3'].forEach(cls => {
+    if (!document.querySelector('.'+cls)) {
+      const d = document.createElement('div');
+      d.className = 'bg-orb ' + cls;
+      document.body.appendChild(d);
+    }
+  });
+}
+
+// ─── AUTH CANVAS RESTART ON LOGOUT ───
+const _origShowPage = showPage;
+const _showPageEnhanced = function(id) {
+  _origShowPage(id);
+  if (id === 'authPage' && window._restartAuthCanvas) {
+    setTimeout(window._restartAuthCanvas, 100);
+  }
+};
+// Replace global showPage with enhanced version
+window.showPage = _showPageEnhanced;
+
+// ─── INIT ───
 document.addEventListener('DOMContentLoaded', () => {
+  initAuthCanvas();
+  createBgOrbs();
+  applyTilt('.auth-feat,.card-hover');
   const di = document.getElementById('plannerDateInput');
   if (di) di.value = todayStr();
+  const md = document.getElementById('markDate');
+  if (md) md.value = todayStr();
   renderWeeklyChart && renderWeeklyChart();
 });
+
+
+
+// ════════════════════════════════════
+//  PAPER MARKS
+// ════════════════════════════════════
+function saveMarkEntry() {
+  const subKey = document.getElementById('markSubject').value;
+  const year   = document.getElementById('markYear').value;
+  const label  = document.getElementById('markLabel').value.trim();
+  const score  = parseFloat(document.getElementById('markScore').value);
+  const max    = parseFloat(document.getElementById('markMax').value);
+  const date   = document.getElementById('markDate').value || todayStr();
+  const err    = document.getElementById('markError');
+
+  err.style.display = 'none';
+  if (!subKey) { err.textContent = 'Please select a subject.'; err.style.display = 'block'; return; }
+  if (!year)   { err.textContent = 'Please select a year.';    err.style.display = 'block'; return; }
+  if (isNaN(score) || score < 0) { err.textContent = 'Please enter a valid score.'; err.style.display = 'block'; return; }
+  if (isNaN(max) || max <= 0)    { err.textContent = 'Please enter a valid maximum.'; err.style.display = 'block'; return; }
+  if (score > max) { err.textContent = 'Score cannot exceed the maximum.'; err.style.display = 'block'; return; }
+
+  if (!userData.paperMarks) userData.paperMarks = [];
+  userData.paperMarks.push({ id: Date.now().toString(), subKey, year, label, score, max, date });
+  userData.paperMarks.sort((a, b) => a.date.localeCompare(b.date));
+  saveUserData();
+  closeModal('addMarkModal');
+
+  // Reset form
+  ['markSubject','markYear','markLabel','markScore','markMax'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.value = '';
+  });
+  document.getElementById('markDate').value = todayStr();
+
+  renderPaperMarksChart();
+  showToast('Mark saved ✓', 'success');
+}
+
+function deleteMarkEntry(id) {
+  if (!userData.paperMarks) return;
+  userData.paperMarks = userData.paperMarks.filter(m => m.id !== id);
+  saveUserData();
+  renderPaperMarksChart();
+}
+
+function renderPaperMarksChart() {
+  const canvas   = document.getElementById('pmCanvas');
+  const emptyEl  = document.getElementById('pmEmptyState');
+  const legendEl = document.getElementById('pmLegend');
+  const logEl    = document.getElementById('pmLog');
+  const tooltip  = document.getElementById('pmTooltip');
+  if (!canvas) return;
+
+  const marks = (userData.paperMarks || []).slice().sort((a,b) => a.date.localeCompare(b.date));
+  const hasData = marks.length > 0;
+
+  canvas.style.display = hasData ? 'block' : 'none';
+  emptyEl.style.display = hasData ? 'none' : 'block';
+
+  // Render recent log entries (always)
+  const recent = marks.slice().reverse().slice(0, 8);
+  logEl.innerHTML = marks.length === 0 ? '' : `
+    <div style="font-size:0.78rem;font-weight:700;letter-spacing:0.08em;color:var(--text-muted);text-transform:uppercase;margin-bottom:10px">Recent Entries</div>
+    <div style="display:flex;flex-direction:column;gap:6px">
+      ${recent.map(m => {
+        const sub = SUBJECTS[m.subKey];
+        const pct = Math.round(m.score / m.max * 100);
+        const pctColor = pct >= 75 ? 'var(--success)' : pct >= 50 ? 'var(--warning)' : 'var(--danger)';
+        const dateDisp = new Date(m.date + 'T12:00:00').toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
+        return `<div style="display:flex;align-items:center;gap:10px;padding:8px 12px;background:var(--surface2);border-radius:8px;font-size:0.83rem">
+          <div style="width:10px;height:10px;border-radius:3px;background:${sub ? sub.color : '#888'};flex-shrink:0"></div>
+          <span style="font-weight:600;flex:1">${sub ? sub.name : m.subKey}</span>
+          <span style="color:var(--text-muted)">${m.year}${m.label ? ' · ' + m.label : ''}</span>
+          <span style="color:var(--text-muted)">${dateDisp}</span>
+          <span style="font-weight:700;color:${pctColor};min-width:52px;text-align:right">${m.score}/${m.max} <span style="font-size:0.75rem">(${pct}%)</span></span>
+          <button onclick="deleteMarkEntry('${m.id}')" style="background:none;color:var(--text-muted);font-size:16px;padding:0 4px;border-radius:4px;transition:var(--tr)" onmouseover="this.style.color='var(--danger)'" onmouseout="this.style.color='var(--text-muted)'">×</button>
+        </div>`;
+      }).join('')}
+    </div>`;
+
+  if (!hasData) { legendEl.innerHTML = ''; return; }
+
+  // Group by subject
+  const bySubject = {};
+  Object.keys(SUBJECTS).forEach(k => { bySubject[k] = []; });
+  marks.forEach(m => { if (bySubject[m.subKey]) bySubject[m.subKey].push(m); });
+
+  const activeSubjects = Object.keys(SUBJECTS).filter(k => bySubject[k].length > 0);
+
+  // Legend
+  legendEl.innerHTML = activeSubjects.map(key => {
+    const sub = SUBJECTS[key];
+    const entries = bySubject[key];
+    const avg = Math.round(entries.reduce((a,m) => a + m.score/m.max*100, 0) / entries.length);
+    return `<div style="display:flex;align-items:center;gap:7px">
+      <div style="width:28px;height:3px;border-radius:2px;background:${sub.color};flex-shrink:0"></div>
+      <span style="font-size:0.82rem;color:var(--text-dim);font-weight:500">${sub.name}</span>
+      <span style="font-size:0.78rem;color:var(--text-muted)">${entries.length} attempt${entries.length>1?'s':''} · avg ${avg}%</span>
+    </div>`;
+  }).join('');
+
+  // Canvas draw
+  const wrap = document.getElementById('pmChartWrap');
+  const W = wrap.clientWidth || 700;
+  const PAD_L = 48, PAD_R = 20, PAD_T = 20, PAD_B = 36;
+  const CHART_W = W - PAD_L - PAD_R;
+  const CHART_H = 220;
+  const H = CHART_H + PAD_T + PAD_B;
+
+  const dpr = window.devicePixelRatio || 1;
+  canvas.width  = W * dpr;
+  canvas.height = H * dpr;
+  canvas.style.height = H + 'px';
+
+  const ctx = canvas.getContext('2d');
+  ctx.scale(dpr, dpr);
+  ctx.clearRect(0, 0, W, H);
+
+  // Grid lines + Y labels (0,25,50,75,100)
+  ctx.font = '11px sans-serif';
+  ctx.textAlign = 'right';
+  [0,25,50,75,100].forEach(pct => {
+    const y = PAD_T + CHART_H - (pct / 100) * CHART_H;
+    ctx.strokeStyle = pct === 50 ? 'rgba(255,255,255,0.08)' : 'rgba(255,255,255,0.04)';
+    ctx.lineWidth = pct === 50 ? 1.5 : 1;
+    ctx.setLineDash(pct === 50 ? [4,4] : []);
+    ctx.beginPath(); ctx.moveTo(PAD_L, y); ctx.lineTo(PAD_L + CHART_W, y); ctx.stroke();
+    ctx.setLineDash([]);
+    ctx.fillStyle = 'rgba(148,163,184,0.7)';
+    ctx.fillText(pct + '%', PAD_L - 6, y + 4);
+  });
+
+  // Collect all unique dates for X-axis
+  const allDates = [...new Set(marks.map(m => m.date))].sort();
+  const n = allDates.length;
+  const xPos = date => {
+    const i = allDates.indexOf(date);
+    if (n === 1) return PAD_L + CHART_W / 2;
+    return PAD_L + (i / (n - 1)) * CHART_W;
+  };
+
+  // X-axis labels — show a reasonable number
+  ctx.textAlign = 'center';
+  const step = Math.max(1, Math.ceil(n / 8));
+  allDates.forEach((d, i) => {
+    if (i % step !== 0 && i !== n-1) return;
+    const x = xPos(d);
+    const dateObj = new Date(d + 'T12:00:00');
+    const lbl = dateObj.toLocaleDateString('en-US',{month:'short',day:'numeric'});
+    ctx.fillStyle = 'rgba(100,116,139,0.85)';
+    ctx.font = '10px sans-serif';
+    ctx.fillText(lbl, x, PAD_T + CHART_H + 18);
+  });
+
+  // Draw lines + dots per subject, store hit targets
+  canvas._pmHits = [];
+
+  activeSubjects.forEach(key => {
+    const sub = SUBJECTS[key];
+    const entries = bySubject[key].slice().sort((a,b) => a.date.localeCompare(b.date));
+    const pts = entries.map(m => ({
+      x: xPos(m.date),
+      y: PAD_T + CHART_H - (m.score / m.max) * CHART_H,
+      m
+    }));
+
+    // Line
+    if (pts.length > 1) {
+      ctx.save();
+      ctx.strokeStyle = sub.color;
+      ctx.lineWidth = 2.5;
+      ctx.lineJoin = 'round';
+      ctx.globalAlpha = 0.85;
+      ctx.beginPath();
+      pts.forEach((p, i) => i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y));
+      ctx.stroke();
+
+      // Area fill under line
+      ctx.globalAlpha = 0.07;
+      ctx.fillStyle = sub.color;
+      ctx.beginPath();
+      ctx.moveTo(pts[0].x, PAD_T + CHART_H);
+      pts.forEach(p => ctx.lineTo(p.x, p.y));
+      ctx.lineTo(pts[pts.length-1].x, PAD_T + CHART_H);
+      ctx.closePath();
+      ctx.fill();
+      ctx.restore();
+    }
+
+    // Dots
+    pts.forEach(p => {
+      ctx.save();
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, 5, 0, Math.PI * 2);
+      ctx.fillStyle = sub.color;
+      ctx.shadowColor = sub.color;
+      ctx.shadowBlur = 6;
+      ctx.globalAlpha = 0.95;
+      ctx.fill();
+      ctx.strokeStyle = '#0B0F1A';
+      ctx.lineWidth = 2;
+      ctx.shadowBlur = 0;
+      ctx.stroke();
+      ctx.restore();
+      canvas._pmHits.push({ x: p.x, y: p.y, r: 10, m: p.m, key, sub });
+    });
+  });
+
+  // Hover
+  canvas.onmousemove = function(e) {
+    const rect = canvas.getBoundingClientRect();
+    const mx = e.clientX - rect.left;
+    const my = e.clientY - rect.top;
+    let found = null;
+    for (const h of (canvas._pmHits || [])) {
+      if (Math.hypot(mx - h.x, my - h.y) <= h.r) { found = h; break; }
+    }
+    if (found) {
+      const m = found.m;
+      const pct = Math.round(m.score / m.max * 100);
+      const pctColor = pct >= 75 ? '#10B981' : pct >= 50 ? '#F59E0B' : '#EF4444';
+      const dateDisp = new Date(m.date + 'T12:00:00').toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric',year:'numeric'});
+      tooltip.innerHTML = `
+        <div style="font-weight:700;color:${found.sub.color};margin-bottom:5px">${found.sub.name}</div>
+        <div style="color:var(--text-dim);margin-bottom:3px">${m.year}${m.label ? ' · ' + m.label : ''}</div>
+        <div style="font-size:0.75rem;color:var(--text-muted);margin-bottom:6px">${dateDisp}</div>
+        <div style="font-size:1.1rem;font-weight:800;color:${pctColor}">${pct}%</div>
+        <div style="font-size:0.75rem;color:var(--text-muted)">${m.score} / ${m.max} marks</div>`;
+      tooltip.style.opacity = '1';
+      const tx = Math.min(found.x + 12, W - 160);
+      const ty = Math.max(found.y - 80, PAD_T);
+      tooltip.style.left = tx + 'px';
+      tooltip.style.top  = ty + 'px';
+      canvas.style.cursor = 'pointer';
+    } else {
+      tooltip.style.opacity = '0';
+      canvas.style.cursor = 'default';
+    }
+  };
+  canvas.onmouseleave = function() { tooltip.style.opacity = '0'; canvas.style.cursor = 'default'; };
+}
+
+// ════════════════════════════════════
+//  DAILY STUDY TIME CHART (Progress page)
+// ════════════════════════════════════
+var _dtRange = 7;
+
+function setDtRange(n) {
+  _dtRange = n;
+  [7,14,30].forEach(v => {
+    const btn = document.getElementById('dtRange'+v);
+    if (btn) btn.classList.toggle('active', v===n);
+  });
+  renderDailyTimeChart();
+}
+
+function renderDailyTimeChart() {
+  const canvas = document.getElementById('dtCanvas');
+  const emptyEl = document.getElementById('dtEmptyState');
+  const legendEl = document.getElementById('dtLegend');
+  const tooltip = document.getElementById('dtTooltip');
+  if (!canvas) return;
+
+  const today = todayStr();
+  const days = [];
+  for (let i = _dtRange - 1; i >= 0; i--) days.push(addDays(today, -i));
+
+  // Build data
+  const dayData = days.map(date => {
+    const obj = { date, total: 0 };
+    Object.entries(SUBJECTS).forEach(([key]) => {
+      const sessions = (userData.timeTracking && userData.timeTracking[key] && userData.timeTracking[key].sessions) || [];
+      const secs = sessions.filter(s => s.date === date).reduce((a, s) => a + s.duration, 0);
+      obj[key] = secs;
+      obj.total += secs;
+    });
+    return obj;
+  });
+
+  const hasData = dayData.some(d => d.total > 0);
+  canvas.style.display = hasData ? 'block' : 'none';
+  emptyEl.style.display = hasData ? 'none' : 'block';
+
+  if (!hasData) {
+    legendEl.innerHTML = '';
+    return;
+  }
+
+  // Legend
+  const subjectKeys = Object.keys(SUBJECTS);
+  legendEl.innerHTML = subjectKeys.map(key => {
+    const sub = SUBJECTS[key];
+    const totalSecs = ((userData.timeTracking && userData.timeTracking[key] && userData.timeTracking[key].sessions) || [])
+      .reduce((a, s) => a + s.duration, 0);
+    const hrs = (totalSecs / 3600).toFixed(1);
+    return `<div style="display:flex;align-items:center;gap:7px">
+      <div style="width:12px;height:12px;border-radius:3px;background:${sub.color};flex-shrink:0"></div>
+      <span style="font-size:0.82rem;color:var(--text-dim);font-weight:500">${sub.name}</span>
+      <span style="font-size:0.78rem;color:var(--text-muted)">${hrs}h total</span>
+    </div>`;
+  }).join('');
+
+  // Canvas sizing
+  const wrap = document.getElementById('dtChartWrap');
+  const W = wrap.clientWidth || 700;
+  const PAD_L = 52, PAD_R = 16, PAD_T = 16, PAD_B = 38;
+  const CHART_W = W - PAD_L - PAD_R;
+  const CHART_H = 200;
+  const H = CHART_H + PAD_T + PAD_B;
+
+  const dpr = window.devicePixelRatio || 1;
+  canvas.width = W * dpr;
+  canvas.height = H * dpr;
+  canvas.style.height = H + 'px';
+
+  const ctx = canvas.getContext('2d');
+  ctx.scale(dpr, dpr);
+  ctx.clearRect(0, 0, W, H);
+
+  // Max value (in hours, rounded up)
+  const maxSecs = Math.max(...dayData.map(d => d.total), 1);
+  const maxHrs = Math.ceil(maxSecs / 3600 * 10) / 10; // round to 0.1
+  const niceMax = Math.ceil(maxHrs);
+
+  // Grid lines
+  const gridSteps = Math.min(niceMax, 5);
+  ctx.font = `11px var(--font, 'Outfit', sans-serif)`;
+  ctx.textAlign = 'right';
+  for (let i = 0; i <= gridSteps; i++) {
+    const val = (niceMax / gridSteps * i);
+    const y = PAD_T + CHART_H - (val / niceMax) * CHART_H;
+    ctx.strokeStyle = 'rgba(255,255,255,0.05)';
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(PAD_L, y);
+    ctx.lineTo(PAD_L + CHART_W, y);
+    ctx.stroke();
+    ctx.fillStyle = 'rgba(148,163,184,0.7)';
+    ctx.fillText(val.toFixed(val < 1 ? 1 : 0) + 'h', PAD_L - 6, y + 4);
+  }
+
+  // Bars
+  const n = dayData.length;
+  const barW = Math.max(8, Math.min(40, (CHART_W / n) * 0.72));
+  const gap = CHART_W / n;
+  const dayLabels = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+
+  // Store bar rects for hover
+  canvas._barRects = [];
+
+  dayData.forEach((d, i) => {
+    const cx = PAD_L + gap * i + gap / 2;
+    const x = cx - barW / 2;
+    const isToday = d.date === today;
+
+    // Today highlight
+    if (isToday) {
+      ctx.fillStyle = 'rgba(99,102,241,0.07)';
+      ctx.beginPath();
+      ctx.roundRect ? ctx.roundRect(x - 4, PAD_T, barW + 8, CHART_H, 4) : ctx.rect(x - 4, PAD_T, barW + 8, CHART_H);
+      ctx.fill();
+    }
+
+    let stackY = PAD_T + CHART_H; // start from bottom
+    const barInfo = { x, y: PAD_T, w: barW, h: 0, date: d.date, data: d, segments: [] };
+
+    if (d.total > 0) {
+      subjectKeys.forEach(key => {
+        if (d[key] <= 0) return;
+        const sub = SUBJECTS[key];
+        const segH = Math.max(2, Math.round((d[key] / (niceMax * 3600)) * CHART_H));
+        stackY -= segH;
+
+        ctx.fillStyle = sub.color;
+        // Rounded top only on last segment
+        const isTop = key === subjectKeys.filter(k => d[k] > 0).at(-1);
+        if (isTop && ctx.roundRect) {
+          ctx.beginPath();
+          ctx.roundRect(x, stackY, barW, segH, [4, 4, 0, 0]);
+          ctx.fill();
+        } else {
+          ctx.fillRect(x, stackY, barW, segH);
+        }
+        barInfo.segments.push({ key, color: sub.color, secs: d[key] });
+      });
+      barInfo.y = stackY;
+      barInfo.h = PAD_T + CHART_H - stackY;
+    }
+    canvas._barRects.push(barInfo);
+
+    // X-axis label
+    const dateObj = new Date(d.date + 'T12:00:00');
+    let label;
+    if (_dtRange <= 7) {
+      label = dayLabels[dateObj.getDay()];
+    } else if (_dtRange <= 14) {
+      label = dayLabels[dateObj.getDay()].slice(0,1) + ' ' + dateObj.getDate();
+    } else {
+      label = dateObj.getDate() === 1
+        ? dateObj.toLocaleString('en',{month:'short'})
+        : (i % 5 === 0 ? String(dateObj.getDate()) : '');
+    }
+    ctx.textAlign = 'center';
+    ctx.font = isToday ? `bold 11px var(--font,'Outfit',sans-serif)` : `11px var(--font,'Outfit',sans-serif)`;
+    ctx.fillStyle = isToday ? '#6366F1' : 'rgba(100,116,139,0.85)';
+    ctx.fillText(label, cx, PAD_T + CHART_H + 18);
+  });
+
+  // Hover logic
+  canvas.onmousemove = function(e) {
+    const rect = canvas.getBoundingClientRect();
+    const mx = (e.clientX - rect.left);
+    const my = (e.clientY - rect.top);
+    let found = null;
+    for (const b of canvas._barRects) {
+      if (mx >= b.x - 6 && mx <= b.x + b.w + 6 && my >= PAD_T && my <= PAD_T + CHART_H) {
+        found = b; break;
+      }
+    }
+    if (found && found.data.total > 0) {
+      const dateDisp = new Date(found.date + 'T12:00:00').toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'});
+      let html = `<div style="font-weight:700;margin-bottom:6px;color:var(--text)">${dateDisp}</div>`;
+      found.segments.forEach(seg => {
+        const sub = SUBJECTS[seg.key];
+        const h = Math.floor(seg.secs/3600);
+        const m = Math.floor((seg.secs%3600)/60);
+        const timeStr = h > 0 ? `${h}h ${m}m` : `${m}m`;
+        html += `<div style="display:flex;align-items:center;gap:7px;margin-bottom:3px">
+          <div style="width:9px;height:9px;border-radius:2px;background:${seg.color};flex-shrink:0"></div>
+          <span style="color:var(--text-dim)">${sub.name}:</span>
+          <span style="font-weight:600;color:var(--text)">${timeStr}</span>
+        </div>`;
+      });
+      const totalH = Math.floor(found.data.total/3600);
+      const totalM = Math.floor((found.data.total%3600)/60);
+      html += `<div style="margin-top:6px;padding-top:6px;border-top:1px solid var(--border);font-size:0.75rem;color:var(--text-muted)">Total: ${totalH > 0 ? totalH+'h ' : ''}${totalM}m</div>`;
+      tooltip.innerHTML = html;
+      tooltip.style.opacity = '1';
+      // Position tooltip
+      const tx = Math.min(found.x, W - 200);
+      tooltip.style.left = tx + 'px';
+      tooltip.style.top = (found.y - 10) + 'px';
+    } else {
+      tooltip.style.opacity = '0';
+    }
+  };
+  canvas.onmouseleave = function() { tooltip.style.opacity = '0'; };
+}
+
 </script>
 </body>
 </html>
