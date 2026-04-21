@@ -3337,15 +3337,14 @@ function renderDailyTimeChart() {
 }
  
 </script>
-  <script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.12.0/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.12.0/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
+ <!-- 🔥 FIREBASE SETUP - Place this just before the closing </body> tag -->
+<script type="module">
+  // Import Firebase (use the latest stable version)
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
+  import { getFirestore } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
+  // import { getAuth } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";  // uncomment if you need Auth later
 
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  // Your Firebase config (from the console)
   const firebaseConfig = {
     apiKey: "AIzaSyCPoDscRawhdQKQYyv_x78c79-eygtgr2k",
     authDomain: "neurorevise-23193.firebaseapp.com",
@@ -3358,7 +3357,14 @@ function renderDailyTimeChart() {
 
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
+  const db = getFirestore(app);
+  // const auth = getAuth(app);   // uncomment when you implement real login
+
+  // Make db available globally so your other functions can use it
+  window.db = db;
+  // window.auth = auth;
+
+  console.log("✅ Firebase initialized successfully!");
 </script>
   <script type="module">
 
