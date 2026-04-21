@@ -2501,123 +2501,153 @@ function addMembersToGroup() {
   showToast(`Added ${picked.size} member${picked.size > 1 ? 's' : ''} ✓`, 'success');
 }
  
-// ── createGroup ──
-function createGroup() {
+// ==================== FIREBASE GROUPS FUNCTIONS ====================
+
+// ── Create Group (from modal) ──
+async function createGroup() {
   const name = document.getElementById('groupName').value.trim();
-  if (!name) { showToast('Please enter a group name', 'error'); return; }
-  const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
-  const code = Array.from({length:6}, () => chars[Math.floor(Math.random()*chars.length)]).join('');
-  if (!userData.groups) userData.groups = [];
-  const { users } = loadStorage();
-  const myName = (users[currentUser] && users[currentUser].name) || currentUser;
-  const pickedEmails = Array.from(window._pickedMembers || []);
-  const memberNames = [myName];
-  const memberEmails = [currentUser];
-  pickedEmails.forEach(email => {
-    const n = (users[email] && users[email].name) || email;
-    memberNames.push(n);
-    memberEmails.push(email);
-  });
-  const newGroup = {
-    name, code,
-    description: document.getElementById('groupDesc').value.trim(),
-    createdAt: new Date().toLocaleDateString(),
-    members: memberNames,
-    memberEmails,
-    isAdmin: true,
-    tasks: []
-  };
-  userData.groups.push(newGroup);
-  // Immediately write group to each picked member's data
-  const freshAll = JSON.parse(localStorage.getItem('nr_data') || '{}');
-  freshAll[currentUser] = userData;
-  pickedEmails.forEach(email => {
-    if (freshAll[email]) {
-      freshAll[email].groups = freshAll[email].groups || [];
-      if (!freshAll[email].groups.find(g => g.code === code)) {
-        freshAll[email].groups.push({ ...newGroup, isAdmin: false });
-      }
-    }
-  });
-  localStorage.setItem('nr_data', JSON.stringify(freshAll));
-  document.getElementById('groupName').value = '';
-  document.getElementById('groupDesc').value = '';
-  window._pickedMembers = new Set();
-  closeModal('createGroupModal');
-  renderGroups();
-  const invitedCount = pickedEmails.length;
-  showToast(`Group "${name}" created${invitedCount > 0 ? ` · ${invitedCount} member${invitedCount>1?'s':''} added` : ''}! Code: ${code}`, 'success');
-}
- 
-// ── joinGroup (by code) ──
-function joinGroupByCode(code) {
-  const allData = JSON.parse(localStorage.getItem('nr_data') || '{}');
-  let found = null, ownerEmail = null;
-  Object.entries(allData).forEach(([email, data]) => {
-    (data.groups || []).forEach(g => {
-      if (g.code === code) { found = g; ownerEmail = email; }
-    });
-  });
-  if (!found) { showToast('Group not found', 'error'); return; }
-  if ((userData.groups || []).find(g => g.code === code)) { showToast('Already in this group', 'error'); return; }
-  const { users } = loadStorage();
-  const myName = (users[currentUser] && users[currentUser].name) || currentUser;
-  if (!userData.groups) userData.groups = [];
-  userData.groups.push({ ...found, isAdmin: false });
-  // Add this user to owner's group members
-  const freshAll = JSON.parse(localStorage.getItem('nr_data') || '{}');
-  if (ownerEmail && freshAll[ownerEmail]) {
-    freshAll[ownerEmail].groups = (freshAll[ownerEmail].groups || []).map(g => {
-      if (g.code === code) {
-        const members = g.members || [];
-        if (!members.includes(myName)) members.push(myName);
-        const memberEmails = g.memberEmails || [ownerEmail];
-        if (!memberEmails.includes(currentUser)) memberEmails.push(currentUser);
-        return { ...g, members, memberEmails };
-      }
-      return g;
-    });
+  if (!name) {
+    showToast('Please enter a group name', 'error');
+    return;
   }
-  freshAll[currentUser] = userData;
-  localStorage.setItem('nr_data', JSON.stringify(freshAll));
-  closeModal('joinGroupModal');
-  renderGroups();
-  showToast(`Joined "${found.name}" ✓`, 'success');
+
+  if (!window.db) {
+    showToast('Firebase not ready. Refresh the page.', 'error');
+    return;
+  }
+
+  try {
+    const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+    const code = Array.from({length:6}, () => chars[Math.floor(Math.random()*chars.length)]).join('');
+
+    const { users } = loadStorage();
+    const myName = (users[currentUser] && users[currentUser].name) || currentUser;
+    const pickedEmails = Array.from(window._pickedMembers || []);
+    
+    const memberNames = [myName];
+    const memberEmails = [currentUser];
+
+    pickedEmails.forEach(email => {
+      const n = (users[email] && users[email].name) || email;
+      memberNames.push(n);
+      memberEmails.push(email);
+    });
+
+    // 1. Save to Firestore
+    await addDoc(collection(window.db, "groups"), {
+      name: name,
+      code: code,
+      description: document.getElementById('groupDesc').value.trim(),
+      createdAt: new Date().toISOString(),
+      adminId: currentUser,
+      members: memberNames,
+      memberEmails: memberEmails,
+      isAdmin: true,
+      tasks: []
+    });
+
+    // 2. Also keep local copy for instant UI
+    if (!userData.groups) userData.groups = [];
+    const newGroup = {
+      name, code,
+      description: document.getElementById('groupDesc').value.trim(),
+      createdAt: new Date().toLocaleDateString(),
+      members: memberNames,
+      memberEmails,
+      isAdmin: true,
+      tasks: []
+    };
+    userData.groups.push(newGroup);
+
+    // Save to localStorage too
+    const freshAll = JSON.parse(localStorage.getItem('nr_data') || '{}');
+    freshAll[currentUser] = userData;
+    localStorage.setItem('nr_data', JSON.stringify(freshAll));
+
+    // Clear modal
+    document.getElementById('groupName').value = '';
+    document.getElementById('groupDesc').value = '';
+    window._pickedMembers = new Set();
+    closeModal('createGroupModal');
+
+    renderGroups();
+    showToast(`✅ Group "${name}" created! Code: ${code}`, 'success');
+
+  } catch (error) {
+    console.error("Error creating group:", error);
+    showToast('Failed to create group. Check console.', 'error');
+  }
 }
- 
+
+// ── Join Group by Code ──
+async function joinGroupByCode(code) {
+  if (!window.db) return showToast('Firebase not ready', 'error');
+
+  try {
+    const q = query(collection(window.db, "groups"), where("code", "==", code));
+    const snapshot = await getDocs(q);
+
+    if (snapshot.empty) {
+      showToast('Group not found', 'error');
+      return;
+    }
+
+    const groupDoc = snapshot.docs[0];
+    const found = groupDoc.data();
+
+    if ((userData.groups || []).find(g => g.code === code)) {
+      showToast('You are already in this group', 'error');
+      return;
+    }
+
+    // Add to local user data
+    if (!userData.groups) userData.groups = [];
+    userData.groups.push({ ...found, isAdmin: false });
+
+    // Update localStorage
+    const freshAll = JSON.parse(localStorage.getItem('nr_data') || '{}');
+    freshAll[currentUser] = userData;
+    localStorage.setItem('nr_data', JSON.stringify(freshAll));
+
+    closeModal('joinGroupModal');
+    renderGroups();
+    showToast(`✅ Joined "${found.name}" successfully!`, 'success');
+
+  } catch (error) {
+    console.error(error);
+    showToast('Failed to join group', 'error');
+  }
+}
+
+// ── Join from modal ──
 function joinGroup() {
   const code = document.getElementById('inviteCode').value.trim().toUpperCase();
   if (!code) return;
-  saveUserData();
   joinGroupByCode(code);
   document.getElementById('inviteCode').value = '';
 }
- 
+
+// ── Leave / Delete Group ──
 function leaveGroup(i) {
   const g = userData.groups[i];
-  if (g && g.isAdmin) {
+  if (!g) return;
+
+  if (g.isAdmin) {
     if (!confirm(`Delete group "${g.name}"? All members will lose access.`)) return;
-    // Remove from all member data
-    const freshAll = JSON.parse(localStorage.getItem('nr_data') || '{}');
-    (g.memberEmails || []).forEach(email => {
-      if (freshAll[email]) {
-        freshAll[email].groups = (freshAll[email].groups || []).filter(x => x.code !== g.code);
-      }
-    });
-    userData.groups.splice(i, 1);
-    freshAll[currentUser] = userData;
-    localStorage.setItem('nr_data', JSON.stringify(freshAll));
-    showToast('Group deleted', 'success');
-  } else {
-    userData.groups.splice(i, 1);
-    saveUserData();
-    showToast('Left group', 'success');
   }
+
+  // Remove locally
+  userData.groups.splice(i, 1);
+  saveUserData();
   renderGroups();
+
+  showToast(g.isAdmin ? 'Group deleted' : 'Left group', 'success');
 }
- 
+
 function copyInviteCode(code) {
-  if (navigator.clipboard) navigator.clipboard.writeText(code).catch(function(){});
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(code);
+  }
   showToast(`Invite code copied: ${code}`, 'success');
 }
  
