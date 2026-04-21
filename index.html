@@ -3338,13 +3338,11 @@ function renderDailyTimeChart() {
  
 </script>
  <!-- 🔥 FIREBASE SETUP - Place this just before the closing </body> tag -->
+<!-- ==================== FIREBASE SETUP ==================== -->
 <script type="module">
-  // Import Firebase (use the latest stable version)
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
   import { getFirestore } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
-  // import { getAuth } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";  // uncomment if you need Auth later
 
-  // Your Firebase config (from the console)
   const firebaseConfig = {
     apiKey: "AIzaSyCPoDscRawhdQKQYyv_x78c79-eygtgr2k",
     authDomain: "neurorevise-23193.firebaseapp.com",
@@ -3355,42 +3353,13 @@ function renderDailyTimeChart() {
     measurementId: "G-4GF7CP9J47"
   };
 
-  // Initialize Firebase
   const app = initializeApp(firebaseConfig);
   const db = getFirestore(app);
-  // const auth = getAuth(app);   // uncomment when you implement real login
 
-  // Make db available globally so your other functions can use it
+  // Make db available to the rest of your code
   window.db = db;
-  // window.auth = auth;
 
-  console.log("✅ Firebase initialized successfully!");
-</script>
-  <script type="module">
-
-import { db, auth } from "./firebase.js";
-import { collection, addDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-
-window.createGroupPrompt = async function () {
-  const name = prompt("Enter group name:");
-  if (!name) return;
-
-  await createGroup(name);
-};
-
-async function createGroup(name) {
-  const inviteCode = Math.random().toString(36).substring(2, 8).toUpperCase();
-
-  await addDoc(collection(db, "groups"), {
-    name,
-    adminId: auth.currentUser.uid,
-    inviteCode,
-    createdAt: new Date()
-  });
-
-  alert("Group created! Code: " + inviteCode);
-}
-
+  console.log("✅ Firebase initialized successfully with Firestore!");
 </script>
 </body>
 </html>
