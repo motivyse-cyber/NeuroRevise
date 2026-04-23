@@ -366,28 +366,31 @@ input,textarea{font-family:var(--font);outline:none}
   padding:6px;
 }
 .papers-tab{
-  padding:8px 18px;border-radius:8px;font-size:0.85rem;font-weight:600;
+  padding:8px 20px;border-radius:10px;font-size:0.82rem;font-weight:700;
   background:transparent;border:none;color:var(--text-muted);
   transition:background 0.18s ease,color 0.18s ease;cursor:pointer;white-space:nowrap;
+  letter-spacing:0.06em;text-transform:uppercase;
 }
 .papers-tab:hover{color:var(--text);background:var(--surface2)}
-.papers-tab.active{background:var(--accent-dim);color:var(--accent)}
+.papers-tab.active{background:var(--accent);color:#fff;box-shadow:0 4px 16px var(--accent-glow)}
 .papers-years-sidebar{
   background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);
-  padding:16px 12px;display:flex;flex-direction:column;gap:8px;
+  padding:16px 12px;display:flex;flex-direction:column;gap:6px;
   max-height:calc(100vh - 220px);overflow-y:auto;
   scrollbar-width:thin;
 }
 .papers-year-btn{
-  padding:12px 16px;border-radius:10px;font-size:1rem;font-weight:700;
+  padding:14px 16px;border-radius:12px;font-size:1.05rem;font-weight:800;
   background:var(--surface2);border:1px solid transparent;color:var(--text-muted);
   transition:background 0.18s ease,border-color 0.18s ease,color 0.18s ease,transform 0.15s ease;
-  cursor:pointer;text-align:left;display:flex;
-  align-items:center;justify-content:space-between;
+  cursor:pointer;text-align:left;display:flex;font-style:italic;
+  align-items:center;justify-content:space-between;letter-spacing:0.01em;
 }
 .papers-year-btn:hover{border-color:var(--accent);color:var(--text);transform:translateX(3px)}
 .papers-year-btn.active{
-  background:var(--accent-dim);border-color:var(--accent);color:var(--accent);transform:translateX(4px);
+  background:linear-gradient(135deg,rgba(99,102,241,0.18),rgba(139,92,246,0.12));
+  border-color:var(--accent);color:#fff;transform:translateX(4px);
+  font-style:normal;
 }
 .papers-year-btn.active svg{opacity:1}
 .papers-year-btn svg{opacity:0;transition:opacity 0.18s}
@@ -396,36 +399,45 @@ input,textarea{font-family:var(--font);outline:none}
 .papers-content-area.fading{animation:papersFadeIn 0.22s cubic-bezier(0.22,1,0.36,1) both}
 @keyframes papersFadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 .paper-header-card{
-  background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);
+  background:linear-gradient(135deg,var(--surface) 0%,rgba(99,102,241,0.06) 100%);
+  border:1px solid var(--border);border-radius:var(--radius-lg);
   padding:20px 24px;display:flex;align-items:center;justify-content:space-between;
   transition:border-color 0.2s;
 }
 .paper-header-left{display:flex;align-items:center;gap:14px}
 .paper-header-icon{
-  width:44px;height:44px;border-radius:12px;background:var(--accent-dim);
-  display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;
-  transition:background 0.2s;
+  width:52px;height:52px;border-radius:14px;background:var(--accent-dim);
+  display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;
+  transition:background 0.2s;border:1px solid rgba(99,102,241,0.25);
 }
-.paper-header-title{font-size:1.2rem;font-weight:700}
-.paper-header-sub{font-size:0.82rem;color:var(--text-muted);margin-top:2px}
+.paper-header-title{font-size:1.3rem;font-weight:800;margin-bottom:4px}
+.paper-header-status{
+  display:flex;align-items:center;gap:6px;font-size:0.7rem;font-weight:700;
+  letter-spacing:0.1em;color:var(--success);text-transform:uppercase;margin-bottom:2px;
+}
+.status-dot{
+  width:7px;height:7px;border-radius:50%;background:var(--success);
+  box-shadow:0 0 6px var(--success);flex-shrink:0;
+}
+.paper-header-sub{font-size:0.8rem;color:var(--text-muted);margin-top:2px}
 .paper-header-actions{display:flex;align-items:center;gap:10px}
 .btn-correction{
-  padding:8px 16px;border-radius:8px;font-size:0.78rem;font-weight:700;
-  letter-spacing:0.05em;text-transform:uppercase;
+  padding:9px 18px;border-radius:9px;font-size:0.78rem;font-weight:700;
+  letter-spacing:0.07em;text-transform:uppercase;
   background:transparent;border:1px solid var(--border);color:var(--text-muted);
   transition:background 0.18s,border-color 0.18s,color 0.18s;cursor:pointer;
 }
 .btn-correction:hover{border-color:var(--accent);color:var(--accent)}
 .btn-correction.active{background:var(--accent-dim);border-color:var(--accent);color:var(--accent)}
 .btn-reset{
-  padding:8px 16px;border-radius:8px;font-size:0.85rem;font-weight:600;
+  width:38px;height:38px;border-radius:9px;font-size:0.85rem;font-weight:600;
   background:transparent;border:1px solid var(--border);color:var(--text-dim);
-  transition:border-color 0.18s,color 0.18s;cursor:pointer;display:flex;align-items:center;gap:6px;
+  transition:border-color 0.18s,color 0.18s;cursor:pointer;display:flex;align-items:center;justify-content:center;
 }
 .btn-reset:hover{border-color:var(--danger);color:var(--danger)}
 .paper-body-card{
   background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);
-  padding:24px;
+  padding:28px;
 }
 .paper-section-label{
   display:flex;align-items:center;gap:8px;
@@ -433,27 +445,38 @@ input,textarea{font-family:var(--font);outline:none}
   color:var(--text-muted);margin-bottom:16px;margin-top:8px;
 }
 .paper-section-label:not(:first-child){margin-top:28px}
-.paper-section-label svg{opacity:0.5}
-.q-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:8px;margin-bottom:8px}
+.section-dot{
+  width:8px;height:8px;border-radius:50%;background:var(--accent);
+  box-shadow:0 0 6px var(--accent-glow);flex-shrink:0;
+}
+.q-grid{display:grid;grid-template-columns:repeat(10,1fr);gap:8px;margin-bottom:8px}
 .q-grid.essays{grid-template-columns:repeat(8,1fr)}
 .q-card{
-  aspect-ratio:1;background:var(--surface2);border-radius:10px;display:flex;
+  aspect-ratio:1;border-radius:12px;display:flex;
   flex-direction:column;align-items:center;justify-content:center;cursor:pointer;
-  transition:transform 0.15s cubic-bezier(0.22,1,0.36,1),
-             border-color 0.15s ease,
-             background 0.2s ease,
-             box-shadow 0.15s ease;
-  border:2px solid transparent;user-select:none;
-  position:relative;overflow:hidden;
+  border:1.5px solid rgba(255,255,255,0.04);user-select:none;
+  position:relative;overflow:hidden;gap:2px;
+  background:linear-gradient(145deg,#161e30,#111827);
+  transition:border-color 0.15s ease,background 0.2s ease,box-shadow 0.15s ease;
+  transform-style:preserve-3d;perspective:400px;
 }
-.q-card:hover{border-color:var(--accent);transform:scale(1.08);box-shadow:0 4px 16px rgba(99,102,241,0.25)}
+.q-card:hover{border-color:var(--accent);box-shadow:0 4px 16px rgba(99,102,241,0.25)}
+@keyframes cardFlip{
+  0%  {transform:rotateY(0deg)  scale(1)}
+  30% {transform:rotateY(90deg) scale(0.92)}
+  50% {transform:rotateY(90deg) scale(0.92)}
+  70% {transform:rotateY(0deg)  scale(1.05)}
+  100%{transform:rotateY(0deg)  scale(1)}
+}
+.q-card.flipping{animation:cardFlip 0.36s cubic-bezier(0.4,0,0.2,1) both}
 .q-card:active{transform:scale(0.96);transition-duration:0.08s}
-.q-card.att1,.q-card.att2{background:rgba(245,158,11,0.15);border-color:rgba(245,158,11,0.3)}
-.q-card.att3{background:rgba(16,185,129,0.15);border-color:rgba(16,185,129,0.5);box-shadow:0 0 10px rgba(16,185,129,0.15)}
+.q-card.att1,.q-card.att2{background:linear-gradient(145deg,rgba(245,158,11,0.12),rgba(245,158,11,0.06));border-color:rgba(245,158,11,0.3)}
+.q-card.att3{background:linear-gradient(145deg,rgba(16,185,129,0.15),rgba(16,185,129,0.07));border-color:rgba(16,185,129,0.5);box-shadow:0 0 10px rgba(16,185,129,0.15)}
 .q-card.att3:hover{border-color:var(--success);box-shadow:0 4px 16px rgba(16,185,129,0.3)}
-.q-num{font-size:0.82rem;font-weight:600;margin-bottom:3px}
-.q-dots{display:flex;gap:2px}
-.q-dot{width:5px;height:5px;border-radius:50%;background:var(--border);transition:background 0.2s ease,transform 0.2s ease}
+.q-prefix{font-size:0.52rem;font-weight:700;letter-spacing:0.08em;color:var(--text-muted);text-transform:uppercase;line-height:1}
+.q-num{font-size:0.9rem;font-weight:700;line-height:1}
+.q-dots{display:flex;gap:3px;margin-top:2px}
+.q-dot{width:4px;height:4px;border-radius:50%;background:var(--border);transition:background 0.2s ease,transform 0.2s ease}
 .q-dot.filled{background:var(--text-muted);transform:scale(1.2)}
 .q-card.att1 .q-dot:nth-child(1){background:var(--warning)}
 .q-card.att2 .q-dot:nth-child(-n+2){background:var(--warning)}
@@ -928,8 +951,8 @@ body.light{
     <!-- ─── PAPERS ─── -->
     <div id="pg-papers" style="display:none">
       <div class="page-header">
-        <h1>Paper Mastery</h1>
-        <p style="color:var(--text-muted);font-size:0.88rem">Track your past paper attempts. 3+ ticks = Green (Mastered).</p>
+        <h1>Neural Paper Bank</h1>
+        <p style="color:var(--text-muted);font-size:0.88rem">Verify mastery through iterative execution. <span style="color:var(--accent);font-style:italic;font-weight:600">3+ completions = Synchronized.</span></p>
       </div>
       <!-- Subject tabs -->
       <div class="papers-subject-tabs" id="papersSubjectTabs"></div>
@@ -939,7 +962,7 @@ body.light{
         <div class="papers-years-sidebar" id="papersYearsSidebar">
           <div style="font-size:0.68rem;font-weight:700;letter-spacing:0.1em;color:var(--text-muted);margin-bottom:4px;display:flex;align-items:center;gap:6px">
             <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
-            EXAM YEARS
+            TEMPORAL NODES
           </div>
         </div>
         <!-- Paper content -->
@@ -1164,9 +1187,9 @@ body.light{
 // ════════════════════════════════════
 const EXAM_DATE = new Date(new Date().getFullYear(), 7, 10); // Aug 10 current year
 const SUBJECTS = {
-  biology:      { name:'Biology',       color:'#10B981', mcq:50, structured:['SEQ1','SEQ2','SEQ3','SEQ4'], essays:['Q5','Q6','Q7','Q8','Q9','Q10'] },
-  chemistry:    { name:'Chemistry',     color:'#F59E0B', mcq:50, structured:['SEQ1','SEQ2','SEQ3','SEQ4'], essays:['Q5','Q6','Q7','Q8','Q9','Q10'] },
-  physics:      { name:'Physics',       color:'#3B82F6', mcq:50, structured:['SEQ1','SEQ2','SEQ3','SEQ4'], essays:['Q5','Q6','Q7','Q8','Q9a','Q9b','Q10a','Q10b'] },
+  biology:      { name:'Biology',       color:'#10B981', mcq:50, structured:['S1','S2','S3','S4'], essays:['E5','E6','E7','E8','E9','E10'] },
+  chemistry:    { name:'Chemistry',     color:'#F59E0B', mcq:50, structured:['S1','S2','S3','S4'], essays:['E5','E6','E7','E8','E9','E10'] },
+  physics:      { name:'Physics',       color:'#3B82F6', mcq:50, structured:['S1','S2','S3','S4'], essays:['E5','E6','E7','E8','E9a','E9b','E10a','E10b'] },
   pureMaths:    { name:'Pure Maths',    color:'#8B5CF6', mcq:0,  shortEssays:['Q1','Q2','Q3','Q4','Q5','Q6','Q7','Q8','Q9','Q10'], essays:['Q11','Q12','Q13','Q14','Q15','Q16','Q17'] },
   appliedMaths: { name:'Applied Maths', color:'#EC4899', mcq:0,  shortEssays:['Q1','Q2','Q3','Q4','Q5','Q6','Q7','Q8','Q9','Q10'], essays:['Q11','Q12','Q13','Q14','Q15','Q16','Q17'] }
 };
@@ -1724,7 +1747,7 @@ function renderPapers() {
   const sidebar = document.getElementById('papersYearsSidebar');
   sidebar.innerHTML = `<div style="font-size:0.68rem;font-weight:700;letter-spacing:0.1em;color:var(--text-muted);margin-bottom:4px;display:flex;align-items:center;gap:6px">
     <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
-    EXAM YEARS
+    TEMPORAL NODES
   </div>` + [...YEARS].reverse().map(y =>
     `<button class="papers-year-btn ${y===activeYear?'active':''}" onclick="setActiveYear('${y}')">
       ${y}
@@ -1760,7 +1783,7 @@ function _triggerPapersFade() {
 function toggleCorrectionMode() {
   correctionMode = !correctionMode;
   document.getElementById('correctionBtn').classList.toggle('active', correctionMode);
-  document.getElementById('correctionBtn').textContent = correctionMode ? 'EXIT CORRECTION MODE' : 'ENTER CORRECTION MODE';
+  document.getElementById('correctionBtn').textContent = correctionMode ? 'EXIT CORRECTION MODE' : 'CORRECTION MODE';
 }
 
 function resetCurrentPaper() {
@@ -1783,15 +1806,15 @@ function renderPaperContent() {
       <div class="paper-header-left">
         <div class="paper-header-icon">${subjectIcons[activeSubjectKey]}</div>
         <div>
-          <div class="paper-header-title">${sub.name} ${activeYear}</div>
-          <div class="paper-header-sub">Click to track attempts, Right-click to decrease. &nbsp;·&nbsp; ${mastered}/${total} mastered (${pct}%)</div>
+          <div class="paper-header-title">${sub.name} — ${activeYear}</div>
+          <div class="paper-header-status"><span class="status-dot"></span>SUBJECT LOGIC VERIFIED</div>
+          <div class="paper-header-sub">${mastered}/${total} mastered (${pct}%)</div>
         </div>
       </div>
       <div class="paper-header-actions">
-        <button class="btn-correction ${correctionMode?'active':''}" id="correctionBtn" onclick="toggleCorrectionMode()">${correctionMode?'EXIT CORRECTION MODE':'ENTER CORRECTION MODE'}</button>
+        <button class="btn-correction ${correctionMode?'active':''}" id="correctionBtn" onclick="toggleCorrectionMode()">${correctionMode?'EXIT CORRECTION MODE':'CORRECTION MODE'}</button>
         <button class="btn-reset" onclick="resetCurrentPaper()">
           <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
-          Reset
         </button>
       </div>
     </div>
@@ -1800,39 +1823,35 @@ function renderPaperContent() {
   if (sub.mcq > 0) {
     // ── MCQ Part 1 ──
     html += `<div class="paper-section-label">
-      <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+      <span class="section-dot"></span>
       MCQ PART 1
     </div>`;
     html += `<div class="q-grid">`;
     for (let i = 1; i <= sub.mcq; i++) {
-      // MCQ IDs are stored as "mcq_1", "mcq_2", etc. to avoid collision
       html += renderQCard(activeSubjectKey, activeYear, 'mcq_' + i, i);
     }
     html += `</div>`;
 
     // ── Structured Part 2 ──
+    const hasPairs = sub.essays.some(q => q.includes('a') || q.includes('b'));
+    const essayCols = hasPairs ? 8 : 6;
     html += `<div class="paper-section-label" style="margin-top:24px">
-      <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+      <span class="section-dot"></span>
       STRUCTURED PART 2
     </div>`;
-    html += `<div class="q-grid essays" style="grid-template-columns:repeat(4,1fr)">`;
+    html += `<div class="q-grid essays" style="grid-template-columns:repeat(${essayCols},1fr)">`;
     sub.structured.forEach(q => {
-      // Structured IDs are stored as "str_1", "str_2", etc.
       html += renderQCard(activeSubjectKey, activeYear, 'str_' + q, q);
     });
     html += `</div>`;
 
     // ── Essays Part 2 ──
     html += `<div class="paper-section-label" style="margin-top:24px">
-      <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-      ESSAYS PART 2
+      <span class="section-dot"></span>
+      ESSAY PART 2
     </div>`;
-    const hasPairs = sub.essays.some(q => q.includes('a') || q.includes('b'));
-    html += hasPairs
-      ? `<div class="q-grid essays" style="grid-template-columns:repeat(8,1fr)">`
-      : `<div class="q-grid essays" style="grid-template-columns:repeat(6,1fr)">`;
+    html += `<div class="q-grid essays" style="grid-template-columns:repeat(${essayCols},1fr)">`;
     sub.essays.forEach(q => {
-      // Essay IDs stored as "ess_Q5", "ess_5", etc.
       html += renderQCard(activeSubjectKey, activeYear, 'ess_' + q, q);
     });
     html += `</div>`;
@@ -1841,7 +1860,7 @@ function renderPaperContent() {
     // ── Short Essays (Pure/Applied Maths) ──
     if (sub.shortEssays) {
       html += `<div class="paper-section-label">
-        <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        <span class="section-dot"></span>
         SHORT ESSAYS
       </div>`;
       html += `<div class="q-grid essays" style="grid-template-columns:repeat(10,1fr)">`;
@@ -1852,7 +1871,7 @@ function renderPaperContent() {
     }
     if (sub.essays) {
       html += `<div class="paper-section-label" style="margin-top:24px">
-        <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        <span class="section-dot"></span>
         ESSAYS
       </div>`;
       html += `<div class="q-grid essays" style="grid-template-columns:repeat(7,1fr)">`;
@@ -1878,35 +1897,35 @@ function setQAttempts(subKey, year, qId, val) {
   saveUserData();
 }
 function clickQuestion(subKey, year, qId, el) {
+  // Prevent double-click spam during flip
+  if (el.classList.contains('flipping')) return;
+
   const cur = getQAttempts(subKey, year, qId);
   if (correctionMode) {
     if (cur > 0) setQAttempts(subKey, year, qId, cur - 1);
   } else {
-    // Cap at 3 (mastered). If already at 3, cycle back to 0 so user can reset easily.
     setQAttempts(subKey, year, qId, cur >= 3 ? 0 : cur + 1);
   }
   const newAtt = getQAttempts(subKey, year, qId);
 
-  // Update card class in-place
-  const cls = newAtt >= 3 ? 'att3' : newAtt === 2 ? 'att2' : newAtt === 1 ? 'att1' : '';
-  el.className = 'q-card' + (cls ? ' ' + cls : '');
-
-  // Rebuild dots innerHTML so CSS nth-child rules apply fresh
-  el.querySelector('.q-dots').innerHTML =
-    [0,1,2].map(i => `<div class="q-dot ${newAtt > i ? 'filled' : ''}"></div>`).join('');
-
-  // Bounce animation
-  el.animate(
-    [{transform:'scale(0.88)'},{transform:'scale(1.1)'},{transform:'scale(1)'}],
-    {duration:220, easing:'cubic-bezier(0.22,1,0.36,1)'}
-  );
+  // Trigger flip — update visual state at the midpoint (card is edge-on at ~50%)
+  el.classList.add('flipping');
+  setTimeout(() => {
+    const cls = newAtt >= 3 ? 'att3' : newAtt === 2 ? 'att2' : newAtt === 1 ? 'att1' : '';
+    el.className = 'q-card flipping' + (cls ? ' ' + cls : '');
+    el.querySelector('.q-dots').innerHTML =
+      [0,1,2].map(i => `<div class="q-dot ${newAtt > i ? 'filled' : ''}"></div>`).join('');
+  }, 160); // ~halfway through 360ms animation
+  setTimeout(() => {
+    el.classList.remove('flipping');
+  }, 380);
 
   // Update header mastery % without full re-render
   const sub = SUBJECTS[subKey];
   const { total, mastered } = subjectTotals(subKey, sub, [year]);
   const pct = total ? Math.round(mastered/total*100) : 0;
   const subEl = document.querySelector('.paper-header-sub');
-  if (subEl) subEl.textContent = `Click to track attempts, Right-click to decrease. · ${mastered}/${total} mastered (${pct}%)`;
+  if (subEl) subEl.textContent = `${mastered}/${total} mastered (${pct}%)`;
 }
 
 function rightClickQuestion(e, subKey, year, qId) {
@@ -1921,8 +1940,14 @@ function renderQCard(subKey, year, qId, label) {
   const att = getQAttempts(subKey, year, qId);
   const cls = att >= 3 ? 'att3' : att === 2 ? 'att2' : att === 1 ? 'att1' : '';
   const dots = [0,1,2].map(i => `<div class="q-dot ${att > i ? 'filled' : ''}"></div>`).join('');
-  // Use single quotes so they don't conflict with the double-quoted HTML attribute
+  // Derive prefix from qId
+  let prefix = '';
+  if (qId.startsWith('mcq_')) prefix = 'MCQ';
+  else if (qId.startsWith('str_')) prefix = 'STR';
+  else if (qId.startsWith('ess_')) prefix = 'ESS';
+  else if (qId.startsWith('se_')) prefix = 'SE';
   return `<div class="q-card ${cls}" onclick="clickQuestion('${subKey}','${year}','${qId}',this)" oncontextmenu="rightClickQuestion(event,'${subKey}','${year}','${qId}')">
+    ${prefix ? `<div class="q-prefix">${prefix}</div>` : ''}
     <div class="q-num">${label}</div>
     <div class="q-dots">${dots}</div>
   </div>`;
