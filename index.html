@@ -19,16 +19,16 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
 a{color:inherit;text-decoration:none}
 button{font-family:var(--font);cursor:pointer;border:none;outline:none}
 input,textarea{font-family:var(--font);outline:none}
-
+ 
 /* ─── SCROLLBAR ─── */
 ::-webkit-scrollbar{width:5px;height:5px}
 ::-webkit-scrollbar-track{background:var(--bg)}
 ::-webkit-scrollbar-thumb{background:var(--border);border-radius:10px}
-
+ 
 /* ─── PAGE SYSTEM ─── */
 .page{display:none}
 .page.active{display:flex}
-
+ 
 /* ════════════════════════════════════════
    AUTH PAGE
 ════════════════════════════════════════ */
@@ -69,7 +69,7 @@ input,textarea{font-family:var(--font);outline:none}
   font-size:1rem;font-weight:600;border:1px solid var(--border);transition:var(--tr);
 }
 .btn-ghost:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-dim)}
-
+ 
 /* Auth Modal */
 .modal-overlay{
   position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);
@@ -98,12 +98,12 @@ input,textarea{font-family:var(--font);outline:none}
 .modal-switch span{color:var(--accent);cursor:pointer;font-weight:600}
 .modal-switch span:hover{text-decoration:underline}
 .error-msg{color:var(--danger);font-size:0.82rem;margin-top:8px;display:none}
-
+ 
 /* ════════════════════════════════════════
    APP LAYOUT
 ════════════════════════════════════════ */
 #appPage{flex-direction:row;min-height:100vh}
-
+ 
 /* Sidebar */
 .sidebar{
   width:var(--sidebar-w);background:var(--surface3);border-right:1px solid var(--border);
@@ -149,16 +149,16 @@ input,textarea{font-family:var(--font);outline:none}
   transition:var(--tr);
 }
 .theme-toggle:hover{background:var(--surface2);color:var(--text)}
-
+ 
 /* Main Content */
 .main{margin-left:var(--sidebar-w);flex:1;padding:32px;min-height:100vh;overflow-y:auto}
-
+ 
 /* Page Header */
 .page-header{margin-bottom:28px}
 .page-header h1{font-size:2rem;font-weight:800;margin-bottom:4px}
 .page-meta{display:flex;align-items:center;gap:8px;color:var(--text-muted);font-size:0.88rem}
 .dot{width:4px;height:4px;background:var(--text-muted);border-radius:50%}
-
+ 
 /* ─── CARDS ─── */
 .card{
   background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);
@@ -167,12 +167,12 @@ input,textarea{font-family:var(--font);outline:none}
 .card-sm{padding:16px 20px}
 .card-hover{transition:var(--tr)}
 .card-hover:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,0.3)}
-
+ 
 /* ─── GRID ─── */
 .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
 .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-
+ 
 /* ─── BADGE ─── */
 .badge{
   display:inline-flex;align-items:center;padding:3px 10px;border-radius:20px;
@@ -182,12 +182,12 @@ input,textarea{font-family:var(--font);outline:none}
 .badge-success{background:rgba(16,185,129,0.15);color:var(--success)}
 .badge-warn{background:rgba(245,158,11,0.15);color:var(--warning)}
 .badge-danger{background:rgba(239,68,68,0.15);color:var(--danger)}
-
+ 
 /* ─── PROGRESS BAR ─── */
 .progress-bar{height:6px;background:var(--surface2);border-radius:10px;overflow:hidden}
 .progress-fill{height:100%;border-radius:10px;transition:width 0.6s ease;
   background:linear-gradient(90deg,var(--accent),var(--accent2))}
-
+ 
 /* ─── CHECKBOX ─── */
 .checkbox-wrap{display:flex;align-items:center;gap:10px;cursor:pointer}
 .checkbox{
@@ -196,7 +196,7 @@ input,textarea{font-family:var(--font);outline:none}
 }
 .checkbox.checked{background:var(--accent);border-color:var(--accent)}
 .checkbox.checked::after{content:'✓';color:#fff;font-size:12px;font-weight:700}
-
+ 
 /* ─── STAT CARD ─── */
 .stat-card{display:flex;justify-content:space-between;align-items:center;position:relative;overflow:hidden}
 .stat-card::before{
@@ -209,7 +209,7 @@ input,textarea{font-family:var(--font);outline:none}
   width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;
   font-size:20px;flex-shrink:0;
 }
-
+ 
 /* ════════════════════════════════════════
    DASHBOARD
 ════════════════════════════════════════ */
@@ -238,7 +238,7 @@ input,textarea{font-family:var(--font);outline:none}
 .progress-fill.urgent{background:linear-gradient(90deg,var(--warning),#f97316)}
 .progress-fill.critical{background:linear-gradient(90deg,var(--danger),#f97316);animation:pulse-red 2s infinite}
 @keyframes pulse-red{0%,100%{opacity:1}50%{opacity:0.7}}
-
+ 
 .dashboard-grid{display:grid;grid-template-columns:1fr 360px;gap:24px}
 .section-title{font-size:1.1rem;font-weight:700;margin-bottom:16px;display:flex;align-items:center;gap:8px}
 .count-badge{
@@ -254,14 +254,13 @@ input,textarea{font-family:var(--font);outline:none}
   font-size:0.72rem;color:var(--accent);background:var(--accent-dim);
   padding:2px 8px;border-radius:20px;font-weight:600;white-space:nowrap;flex-shrink:0;
 }
-.review-name{flex:1;font-size:0.9rem;font-weight:500}
 .empty-state{
   text-align:center;padding:48px 20px;color:var(--text-muted);
 }
 .empty-state svg{margin-bottom:12px;opacity:0.3}
 .empty-state p{font-size:0.95rem;margin-bottom:4px;color:var(--text-dim)}
 .empty-state small{font-size:0.82rem}
-
+ 
 /* Log Study Input */
 .log-study-card{}
 .input-styled{
@@ -278,7 +277,7 @@ input,textarea{font-family:var(--font);outline:none}
 .btn-accent:hover{transform:translateY(-1px);box-shadow:0 6px 25px var(--accent-glow)}
 .btn-accent:active{transform:translateY(0)}
 .hint{font-size:0.78rem;color:var(--text-muted);margin-top:8px;text-align:center}
-
+ 
 /* Topics list */
 .topics-grid{display:flex;flex-direction:column;gap:6px;margin-top:16px;max-height:200px;overflow-y:auto}
 .topic-chip{
@@ -289,12 +288,12 @@ input,textarea{font-family:var(--font);outline:none}
   width:20px;height:20px;display:flex;align-items:center;justify-content:center;
   border-radius:4px;transition:var(--tr)}
 .topic-chip-remove:hover{background:var(--danger);color:#fff}
-
+ 
 /* Upcoming/Missed */
 .sub-section{margin-top:24px}
 .review-missed{border-left:3px solid var(--danger)!important}
 .review-upcoming{border-left:3px solid var(--accent)!important}
-
+ 
 /* ════════════════════════════════════════
    PLANNER
 ════════════════════════════════════════ */
@@ -353,10 +352,10 @@ input,textarea{font-family:var(--font);outline:none}
 .wc-bar{width:100%;background:var(--accent-dim);border-radius:4px 4px 0 0;min-height:2px;transition:height 0.5s ease}
 .wc-bar.active{background:linear-gradient(0deg,var(--accent),var(--accent2))}
 .wc-label{font-size:0.68rem;color:var(--text-muted);text-align:center}
-
+ 
 /* Add Task Modal content */
 .modal-body{display:flex;flex-direction:column;gap:12px}
-
+ 
 /* ════════════════════════════════════════
    PAST PAPERS — NEW LAYOUT
 ════════════════════════════════════════ */
@@ -369,7 +368,7 @@ input,textarea{font-family:var(--font);outline:none}
 .papers-tab{
   padding:8px 18px;border-radius:8px;font-size:0.85rem;font-weight:600;
   background:transparent;border:none;color:var(--text-muted);
-  transition:var(--tr);cursor:pointer;white-space:nowrap;
+  transition:background 0.18s ease,color 0.18s ease;cursor:pointer;white-space:nowrap;
 }
 .papers-tab:hover{color:var(--text);background:var(--surface2)}
 .papers-tab.active{background:var(--accent-dim);color:var(--accent)}
@@ -377,28 +376,35 @@ input,textarea{font-family:var(--font);outline:none}
   background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);
   padding:16px 12px;display:flex;flex-direction:column;gap:8px;
   max-height:calc(100vh - 220px);overflow-y:auto;
+  scrollbar-width:thin;
 }
 .papers-year-btn{
   padding:12px 16px;border-radius:10px;font-size:1rem;font-weight:700;
   background:var(--surface2);border:1px solid transparent;color:var(--text-muted);
-  transition:var(--tr);cursor:pointer;text-align:left;display:flex;
+  transition:background 0.18s ease,border-color 0.18s ease,color 0.18s ease,transform 0.15s ease;
+  cursor:pointer;text-align:left;display:flex;
   align-items:center;justify-content:space-between;
 }
-.papers-year-btn:hover{border-color:var(--accent);color:var(--text)}
+.papers-year-btn:hover{border-color:var(--accent);color:var(--text);transform:translateX(3px)}
 .papers-year-btn.active{
-  background:var(--accent-dim);border-color:var(--accent);color:var(--accent);
+  background:var(--accent-dim);border-color:var(--accent);color:var(--accent);transform:translateX(4px);
 }
 .papers-year-btn.active svg{opacity:1}
-.papers-year-btn svg{opacity:0;transition:var(--tr)}
+.papers-year-btn svg{opacity:0;transition:opacity 0.18s}
+/* Smooth fade for content area swaps */
 .papers-content-area{padding-left:20px;display:flex;flex-direction:column;gap:16px}
+.papers-content-area.fading{animation:papersFadeIn 0.22s cubic-bezier(0.22,1,0.36,1) both}
+@keyframes papersFadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 .paper-header-card{
   background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);
   padding:20px 24px;display:flex;align-items:center;justify-content:space-between;
+  transition:border-color 0.2s;
 }
 .paper-header-left{display:flex;align-items:center;gap:14px}
 .paper-header-icon{
   width:44px;height:44px;border-radius:12px;background:var(--accent-dim);
   display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;
+  transition:background 0.2s;
 }
 .paper-header-title{font-size:1.2rem;font-weight:700}
 .paper-header-sub{font-size:0.82rem;color:var(--text-muted);margin-top:2px}
@@ -407,14 +413,14 @@ input,textarea{font-family:var(--font);outline:none}
   padding:8px 16px;border-radius:8px;font-size:0.78rem;font-weight:700;
   letter-spacing:0.05em;text-transform:uppercase;
   background:transparent;border:1px solid var(--border);color:var(--text-muted);
-  transition:var(--tr);cursor:pointer;
+  transition:background 0.18s,border-color 0.18s,color 0.18s;cursor:pointer;
 }
 .btn-correction:hover{border-color:var(--accent);color:var(--accent)}
 .btn-correction.active{background:var(--accent-dim);border-color:var(--accent);color:var(--accent)}
 .btn-reset{
   padding:8px 16px;border-radius:8px;font-size:0.85rem;font-weight:600;
   background:transparent;border:1px solid var(--border);color:var(--text-dim);
-  transition:var(--tr);cursor:pointer;display:flex;align-items:center;gap:6px;
+  transition:border-color 0.18s,color 0.18s;cursor:pointer;display:flex;align-items:center;gap:6px;
 }
 .btn-reset:hover{border-color:var(--danger);color:var(--danger)}
 .paper-body-card{
@@ -433,17 +439,22 @@ input,textarea{font-family:var(--font);outline:none}
 .q-card{
   aspect-ratio:1;background:var(--surface2);border-radius:10px;display:flex;
   flex-direction:column;align-items:center;justify-content:center;cursor:pointer;
-  transition:var(--tr);border:2px solid transparent;user-select:none;
+  transition:transform 0.15s cubic-bezier(0.22,1,0.36,1),
+             border-color 0.15s ease,
+             background 0.2s ease,
+             box-shadow 0.15s ease;
+  border:2px solid transparent;user-select:none;
   position:relative;overflow:hidden;
 }
-.q-card:hover{border-color:var(--accent);transform:scale(1.05)}
+.q-card:hover{border-color:var(--accent);transform:scale(1.08);box-shadow:0 4px 16px rgba(99,102,241,0.25)}
+.q-card:active{transform:scale(0.96);transition-duration:0.08s}
 .q-card.att1,.q-card.att2{background:rgba(245,158,11,0.15);border-color:rgba(245,158,11,0.3)}
-.q-card.att3{background:rgba(16,185,129,0.15);border-color:rgba(16,185,129,0.5)}
-.q-card.att3:hover{border-color:var(--success)}
+.q-card.att3{background:rgba(16,185,129,0.15);border-color:rgba(16,185,129,0.5);box-shadow:0 0 10px rgba(16,185,129,0.15)}
+.q-card.att3:hover{border-color:var(--success);box-shadow:0 4px 16px rgba(16,185,129,0.3)}
 .q-num{font-size:0.82rem;font-weight:600;margin-bottom:3px}
 .q-dots{display:flex;gap:2px}
-.q-dot{width:5px;height:5px;border-radius:50%;background:var(--border);transition:var(--tr)}
-.q-dot.filled{background:var(--text-muted)}
+.q-dot{width:5px;height:5px;border-radius:50%;background:var(--border);transition:background 0.2s ease,transform 0.2s ease}
+.q-dot.filled{background:var(--text-muted);transform:scale(1.2)}
 .q-card.att1 .q-dot:nth-child(1){background:var(--warning)}
 .q-card.att2 .q-dot:nth-child(-n+2){background:var(--warning)}
 .q-card.att3 .q-dot{background:var(--success)}
@@ -452,7 +463,7 @@ input,textarea{font-family:var(--font);outline:none}
   background:transparent;border:1px solid var(--border);color:var(--text-dim);transition:var(--tr);
 }
 .btn-outline:hover{border-color:var(--accent);color:var(--accent)}
-
+ 
 /* ════════════════════════════════════════
    STUDY TIMER
 ════════════════════════════════════════ */
@@ -481,7 +492,7 @@ input,textarea{font-family:var(--font);outline:none}
 .btn-timer.stop:hover{box-shadow:0 6px 20px rgba(239,68,68,0.4)}
 .timer-meta{display:flex;justify-content:space-between;margin-top:12px;font-size:0.75rem;color:var(--text-muted)}
 .timer-meta-val{font-weight:600;color:var(--text-dim);font-family:var(--mono)}
-
+ 
 /* ════════════════════════════════════════
    PROGRESS
 ════════════════════════════════════════ */
@@ -507,7 +518,7 @@ input,textarea{font-family:var(--font);outline:none}
   display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .revisions-today-text h4{font-size:0.9rem;font-weight:600}
 .revisions-today-text p{font-size:0.8rem;color:var(--text-muted)}
-
+ 
 /* ════════════════════════════════════════
    GROUPS
 ════════════════════════════════════════ */
@@ -546,13 +557,13 @@ input,textarea{font-family:var(--font);outline:none}
   background:transparent;border:1px solid rgba(239,68,68,0.3);color:var(--danger);transition:var(--tr);
 }
 .btn-danger-outline:hover{background:rgba(239,68,68,0.1)}
-
+ 
 /* ─── LIGHT MODE ─── */
 body.light{
   --bg:#f8faff;--surface:#ffffff;--surface2:#f1f5f9;--surface3:#f4f7fe;
   --border:#e2e8f0;--text:#0f172a;--text-muted:#64748b;--text-dim:#475569;
 }
-
+ 
 /* ─── TOAST ─── */
 .toast{
   position:fixed;bottom:24px;right:24px;background:var(--surface);border:1px solid var(--border);
@@ -563,12 +574,11 @@ body.light{
 .toast.show{transform:translateY(0);opacity:1}
 .toast.success{border-color:var(--success);color:var(--success)}
 .toast.error{border-color:var(--danger);color:var(--danger)}
-
+ 
 /* ─── ANIMATIONS ─── */
 @keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
-
 @keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
-
+ 
 /* ════ AUTH ENTRANCE ════ */
 @keyframes authLogoIn{0%{opacity:0;transform:translateY(40px) rotateX(50deg) scale(0.7)}100%{opacity:1;transform:translateY(0) rotateX(0) scale(1)}}
 @keyframes authSlideUp{from{opacity:0;transform:translateY(32px)}to{opacity:1;transform:translateY(0)}}
@@ -581,76 +591,74 @@ body.light{
 .auth-features .auth-feat:nth-child(3){animation:authFeatIn 0.55s cubic-bezier(0.22,1,0.36,1) 0.6s both}
 .auth-features .auth-feat:nth-child(4){animation:authFeatIn 0.55s cubic-bezier(0.22,1,0.36,1) 0.7s both}
 .auth-buttons{animation:authSlideUp 0.6s ease 0.78s both}
-
+ 
 /* ════ 3D LOGO BOB ════ */
 @keyframes logoBob{0%,100%{transform:translateY(0) rotateY(0deg) rotateX(0deg);box-shadow:0 0 40px var(--accent-glow)}30%{transform:translateY(-8px) rotateY(12deg) rotateX(5deg);box-shadow:0 18px 60px var(--accent-glow)}70%{transform:translateY(-4px) rotateY(-8deg) rotateX(-3deg);box-shadow:0 10px 50px var(--accent-glow)}}
 .auth-logo{animation:logoBob 5s ease-in-out infinite;transform-style:preserve-3d;perspective:400px}
-
+ 
 /* ════ GLITCH TITLE ════ */
 @keyframes glitch{0%,85%,100%{text-shadow:none;clip-path:none}86%{text-shadow:3px 0 #ff2d78,-3px 0 #00d4ff;transform:skewX(-3deg)}88%{text-shadow:-3px 0 #ff2d78,3px 0 #00d4ff;transform:skewX(2deg)}90%{text-shadow:2px 0 #ff2d78,-2px 0 #00d4ff;transform:none}92%{text-shadow:none}}
 .auth-title{animation:glitch 7s ease infinite,authSlideUp 0.7s cubic-bezier(0.34,1.26,0.64,1) 0.18s both!important}
-
+ 
 /* ════ PARTICLE CANVAS ════ */
 #authCanvas{position:absolute;inset:0;pointer-events:none;z-index:0}
 #authPage>*:not(#authCanvas){position:relative;z-index:1}
-
+ 
 /* ════ FLOATING BG ORBS ════ */
 @keyframes floatOrb{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(40px,-30px) scale(1.07)}66%{transform:translate(-25px,40px) scale(0.93)}}
 .bg-orb{position:fixed;border-radius:50%;filter:blur(90px);pointer-events:none;z-index:-1}
 .bg-orb-1{width:500px;height:500px;background:radial-gradient(circle,rgba(99,102,241,0.13),transparent);top:-150px;left:-100px;animation:floatOrb 14s ease-in-out infinite}
 .bg-orb-2{width:400px;height:400px;background:radial-gradient(circle,rgba(139,92,246,0.1),transparent);bottom:-100px;right:-80px;animation:floatOrb 18s ease-in-out infinite reverse}
 .bg-orb-3{width:300px;height:300px;background:radial-gradient(circle,rgba(236,72,153,0.07),transparent);top:45%;left:55%;animation:floatOrb 11s ease-in-out infinite 4s}
-
-/* buttons */
-
+ 
 /* ════ NAV GLOW INDICATOR ════ */
 .nav-item.active::before{content:'';position:absolute;left:0;top:50%;transform:translateY(-50%);width:3px;height:55%;background:linear-gradient(180deg,var(--accent),var(--accent2));border-radius:0 3px 3px 0;box-shadow:0 0 10px var(--accent)}
 .nav-item{position:relative}
-
+ 
 /* ════ SIDEBAR LOGO PULSE ════ */
 @keyframes logoPulse{0%,100%{box-shadow:0 0 0 0 rgba(99,102,241,0.5)}60%{box-shadow:0 0 0 8px rgba(99,102,241,0)}}
 .sidebar-logo-icon{animation:logoPulse 3.5s ease infinite}
-
+ 
 /* ════ 3D CARD SHIMMER ════ */
 .card-hover{transform-style:preserve-3d;will-change:transform}
 .card-hover::after{content:'';position:absolute;inset:0;border-radius:inherit;background:linear-gradient(115deg,transparent 25%,rgba(255,255,255,0.04) 50%,transparent 75%);background-size:200% 100%;opacity:0;transition:opacity 0.3s;pointer-events:none;z-index:1}
 .card-hover:hover::after{opacity:1;animation:shimmer 1.8s linear infinite}
 @keyframes shimmer{0%{background-position:-200% center}100%{background-position:200% center}}
-
+ 
 /* ════ CARD STAGGER ════ */
 @keyframes cardFadeUp{from{opacity:0;transform:translateY(28px) scale(0.97)}to{opacity:1;transform:translateY(0) scale(1)}}
-
+ 
 /* ════ TIMER GLOW ════ */
 @keyframes timerPulse{0%,100%{box-shadow:0 0 20px var(--accent-glow),inset 0 0 20px rgba(99,102,241,0.04)}50%{box-shadow:0 0 50px rgba(99,102,241,0.55),inset 0 0 35px rgba(99,102,241,0.09)}}
 .timer-card.running{animation:timerPulse 2.2s ease-in-out infinite!important;border-color:var(--accent)}
-
+ 
 /* ════ COUNTDOWN FLIP ════ */
 @keyframes digitFlip{0%{transform:rotateX(0)}40%{transform:rotateX(-90deg);opacity:0.4}70%{transform:rotateX(-90deg);opacity:0.4}100%{transform:rotateX(0)}}
 .hms-num{display:inline-block;transform-origin:center}
 .digit-flip{animation:digitFlip 0.38s cubic-bezier(0.4,0,0.2,1)}
-
+ 
 /* ════ STAT 3D ENTRANCE ════ */
 @keyframes statsIn{from{opacity:0;transform:perspective(500px) rotateX(22deg) translateY(30px)}to{opacity:1;transform:perspective(500px) rotateX(0) translateY(0)}}
-
+ 
 /* ════ PROGRESS BAR ANIMATE ════ */
 @keyframes progressGrow{from{width:0!important;opacity:0.6}to{opacity:1}}
-
+ 
 /* ════ MODAL ENTRANCE ════ */
 @keyframes modalBounceIn{from{transform:translateY(30px) scale(0.92);opacity:0}to{transform:translateY(0) scale(1);opacity:1}}
 .modal-overlay.open .modal{animation:modalBounceIn 0.4s cubic-bezier(0.34,1.56,0.64,1) both}
-
+ 
 /* ════ TOAST BOUNCE ════ */
 @keyframes toastBounce{from{opacity:0;transform:translateY(20px) scale(0.88)}to{opacity:1;transform:translateY(0) scale(1)}}
 .toast.show{animation:toastBounce 0.35s cubic-bezier(0.34,1.56,0.64,1) forwards}
-
+ 
 /* ════ ACTIVITY BAR GROW ════ */
 @keyframes barGrow{from{height:4px!important;opacity:0}to{opacity:1}}
 .activity-bar{animation:barGrow 0.7s cubic-bezier(0.22,1,0.36,1) both}
-
+ 
 /* ════ AUTH FEAT 3D HOVER ════ */
 .auth-feat{transform-style:preserve-3d;will-change:transform;transition:transform 0.22s ease,box-shadow 0.22s ease,border-color 0.22s ease}
 .auth-feat:hover{box-shadow:0 24px 60px rgba(0,0,0,0.5),0 0 24px var(--accent-glow);border-color:var(--accent)}
-
+ 
 /* ─── RESPONSIVE ─── */
 @media(max-width:900px){
   .sidebar{width:60px;padding:16px 8px}
@@ -669,7 +677,7 @@ body.light{
 </style>
 </head>
 <body>
-
+ 
 <!-- ════════ AUTH PAGE ════════ -->
 <div id="authPage" class="page active" style="flex-direction:column;align-items:center;justify-content:center;min-height:100vh;padding:20px;background:radial-gradient(ellipse at 30% 20%,rgba(99,102,241,0.12) 0%,transparent 60%),radial-gradient(ellipse at 70% 80%,rgba(139,92,246,0.08) 0%,transparent 60%),var(--bg)">
   <canvas id="authCanvas"></canvas>
@@ -705,7 +713,7 @@ body.light{
     <button class="btn-ghost" onclick="openModal('loginModal')">Sign In</button>
   </div>
 </div>
-
+ 
 <!-- ════════ APP PAGE ════════ -->
 <div id="appPage" class="page" style="display:none">
   <!-- Sidebar -->
@@ -751,10 +759,10 @@ body.light{
       </button>
     </div>
   </div>
-
+ 
   <!-- Main -->
   <div class="main">
-
+ 
     <!-- ─── DASHBOARD ─── -->
     <div id="pg-dashboard" style="display:block">
       <div class="page-header">
@@ -767,7 +775,7 @@ body.light{
           <span id="liveClock">00:00:00</span>
         </div>
       </div>
-
+ 
       <!-- Countdown -->
       <div class="countdown-card" id="countdownCard">
         <div class="countdown-label">Exam Countdown</div>
@@ -789,7 +797,7 @@ body.light{
           <div class="progress-bar"><div class="progress-fill" id="cdBar" style="width:0%"></div></div>
         </div>
       </div>
-
+ 
       <!-- Dashboard Grid -->
       <div class="dashboard-grid">
         <div>
@@ -822,7 +830,7 @@ body.light{
             <div id="upcomingList"><p style="font-size:0.85rem;color:var(--text-muted)">No reviews scheduled for the next 7 days.</p></div>
           </div>
         </div>
-
+ 
         <!-- Log Study -->
         <div>
           <div class="card log-study-card">
@@ -838,7 +846,7 @@ body.light{
           </div>
         </div>
       </div>
-
+ 
       <!-- Study Time Chart -->
       <div class="card" style="margin-top:24px">
         <div class="section-title" style="justify-content:space-between">
@@ -853,7 +861,7 @@ body.light{
         </div>
       </div>
     </div>
-
+ 
     <!-- ─── PLANNER ─── -->
     <div id="pg-planner" style="display:none">
       <div class="page-header">
@@ -876,7 +884,7 @@ body.light{
             <button class="btn-sm" onclick="openModal('addTaskModal')">+ Add Task</button>
           </div>
           <div id="taskList"><div class="empty-state">
-            <svg width="40" height="40" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18m0 4H8m4 4H8"/></svg>
+            <svg width="40" height="40" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
             <p>No tasks planned for this day.</p>
             <small>Add your first task to get started.</small>
           </div></div>
@@ -916,7 +924,7 @@ body.light{
         </div>
       </div>
     </div>
-
+ 
     <!-- ─── PAPERS ─── -->
     <div id="pg-papers" style="display:none">
       <div class="page-header">
@@ -938,7 +946,7 @@ body.light{
         <div class="papers-content-area" id="papersContentArea"></div>
       </div>
     </div>
-
+ 
     <!-- ─── TIMER ─── -->
     <div id="pg-timer" style="display:none">
       <div class="page-header">
@@ -947,7 +955,7 @@ body.light{
       </div>
       <div class="timer-grid" id="timerGrid"></div>
     </div>
-
+ 
     <!-- ─── PROGRESS ─── -->
     <div id="pg-progress" style="display:none">
       <div class="page-header">
@@ -975,7 +983,7 @@ body.light{
         <!-- Recent entries log -->
         <div id="pmLog" style="margin-top:16px"></div>
       </div>
-
+ 
       <!-- Daily Study Time Chart -->
       <div class="card" style="margin-bottom:24px">
         <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;flex-wrap:wrap;gap:10px">
@@ -998,7 +1006,7 @@ body.light{
         </div>
         <div id="dtLegend" style="display:flex;flex-wrap:wrap;gap:14px;margin-top:18px;padding-top:14px;border-top:1px solid var(--border)"></div>
       </div>
-
+ 
       <div class="progress-grid">
         <div class="card">
           <div class="section-title">Subject Mastery</div>
@@ -1013,7 +1021,7 @@ body.light{
         </div>
       </div>
     </div>
-
+ 
     <!-- ─── GROUPS ─── -->
     <div id="pg-groups" style="display:none">
       <div class="groups-header">
@@ -1025,10 +1033,10 @@ body.light{
       </div>
       <div id="groupsContent"></div>
     </div>
-
+ 
   </div><!-- /main -->
 </div><!-- /appPage -->
-
+ 
 <!-- ════════ MODALS ════════ -->
 <!-- Signup -->
 <div class="modal-overlay" id="signupModal">
@@ -1097,7 +1105,7 @@ body.light{
     <button onclick="closeModal('joinGroupModal')" style="position:absolute;top:16px;right:16px;background:none;color:var(--text-muted);font-size:20px">×</button>
   </div>
 </div>
-
+ 
 <!-- Add Paper Mark Modal -->
 <div class="modal-overlay" id="addMarkModal">
   <div class="modal">
@@ -1146,10 +1154,10 @@ body.light{
     <button onclick="closeModal('addMarkModal')" style="position:absolute;top:16px;right:16px;background:none;color:var(--text-muted);font-size:20px">×</button>
   </div>
 </div>
-
+ 
 <!-- Toast -->
 <div class="toast" id="toast"></div>
-
+ 
 <script>
 // ════════════════════════════════════
 //  CONFIG
@@ -1165,7 +1173,7 @@ const SUBJECTS = {
 const YEARS = ['2015','2016','2017','2018','2019','2020','2021','2022','2023','2024','2025'];
 const SR_SCHEDULE = [1, 3, 7, 14, 30];
 const SUBJECT_COLORS = {biology:'#10B981',chemistry:'#F59E0B',physics:'#3B82F6',pureMaths:'#8B5CF6',appliedMaths:'#EC4899'};
-
+ 
 // ════════════════════════════════════
 //  STATE
 // ════════════════════════════════════
@@ -1174,7 +1182,7 @@ let userData = {};
 let timers = {};
 let selectedYears = new Set(['2025']);
 let clockInterval, countdownInterval;
-
+ 
 function todayStr() {
   return new Date().toISOString().split('T')[0];
 }
@@ -1186,12 +1194,12 @@ function addDays(dateInput, n) {
   d.setDate(d.getDate() + n);
   return dateStr(d);
 }
-
+ 
 let plannerDate = todayStr();
 function formatDateDisplay(str) {
   return new Date(str + 'T12:00:00').toLocaleDateString('en-US', {weekday:'long', month:'long', day:'numeric'});
 }
-
+ 
 // ════════════════════════════════════
 //  STORAGE
 // ════════════════════════════════════
@@ -1218,7 +1226,7 @@ function defaultUserData() {
     groups: []
   };
 }
-
+ 
 // ════════════════════════════════════
 //  AUTH
 // ════════════════════════════════════
@@ -1256,23 +1264,18 @@ function login() {
   initApp(email, users[email], d[email]);
 }
 function logout() {
-  // Stop all running timers and save their data first
   Object.keys(timers).forEach(s => { if(timers[s].running) stopTimer(s); });
-  // Explicitly save all user data before clearing state
   if (currentUser) saveUserData();
   const loggedOutEmail = currentUser;
   clearInterval(clockInterval);
   clearInterval(countdownInterval);
-  // Reset timer state so re-login starts fresh
   timers = {};
   currentUser = null;
   userData = {};
   localStorage.removeItem('nr_session');
   showPage('authPage');
-  // Auto-open login modal so the user can sign back in easily
   setTimeout(() => {
     openModal('loginModal');
-    // Pre-fill their email so they just need to enter the password
     const emailInput = document.getElementById('loginEmail');
     if (emailInput && loggedOutEmail) emailInput.value = loggedOutEmail;
   }, 150);
@@ -1280,19 +1283,31 @@ function logout() {
 function initApp(email, user, data) {
   currentUser = email;
   userData = data;
-  // Always start with clean timer state for this session
   if (!Object.keys(timers).length) timers = {};
   document.getElementById('userEmail').textContent = email;
   document.getElementById('userAvatar').textContent = (user.name || email)[0].toUpperCase();
   showPage('appPage');
   startClock();
+  // Recover any timers that were persisted before a page refresh
+  _recoverRunningTimers();
+  // Restart tick intervals for any recovered running timers
+  Object.keys(timers).forEach(key => {
+    const t = timers[key];
+    if (t.running && !t.interval) {
+      t.interval = setInterval(() => {
+        t.elapsed = Math.floor((Date.now() - t.startTime) / 1000);
+        const el = document.getElementById('td-'+key);
+        if (el) el.textContent = fmtTime(t.elapsed);
+      }, 500);
+    }
+  });
   navigate('dashboard');
 }
 function showErr(el, msg) {
   el.textContent = msg; el.style.display = 'block';
   setTimeout(() => el.style.display = 'none', 3000);
 }
-
+ 
 // Check existing session
 (function() {
   const session = localStorage.getItem('nr_session');
@@ -1305,7 +1320,7 @@ function showErr(el, msg) {
     }
   }
 })();
-
+ 
 // ════════════════════════════════════
 //  MODAL SYSTEM
 // ════════════════════════════════════
@@ -1315,7 +1330,7 @@ function switchModal(from, to) { closeModal(from); openModal(to); }
 document.addEventListener('click', e => {
   if (e.target.classList.contains('modal-overlay')) closeModal(e.target.id);
 });
-
+ 
 // ════════════════════════════════════
 //  NAVIGATION
 // ════════════════════════════════════
@@ -1325,7 +1340,6 @@ function navigate(page) {
   document.querySelectorAll('[id^="pg-"]').forEach(p => p.style.display='none');
   const el = document.getElementById('pg-'+page);
   if (el) { el.style.display='block'; }
-  // Render
   const renders = {dashboard:renderDashboard,planner:renderPlanner,papers:renderPapers,
     timer:renderTimer,progress:renderProgress,groups:renderGroups};
   if (renders[page]) renders[page]();
@@ -1341,7 +1355,7 @@ function showPage(id) {
     target.style.display = (id === 'appPage') ? 'flex' : 'flex';
   }
 }
-
+ 
 // ════════════════════════════════════
 //  CLOCK & COUNTDOWN
 // ════════════════════════════════════
@@ -1375,7 +1389,6 @@ function updateCountdown() {
   document.getElementById('cdMins').textContent = String(mins).padStart(2,'0');
   document.getElementById('cdSecs').textContent = String(secs).padStart(2,'0');
   triggerFlipIfChanged(secs);
-  // Progress bar
   const yearStart = new Date(now.getFullYear(), 0, 1);
   const total = EXAM_DATE - yearStart;
   const elapsed = now - yearStart;
@@ -1387,7 +1400,7 @@ function updateCountdown() {
   else if (days < 30) bar.className = 'progress-fill urgent';
   else bar.className = 'progress-fill';
 }
-
+ 
 // ════════════════════════════════════
 //  SPACED REPETITION
 // ════════════════════════════════════
@@ -1400,13 +1413,11 @@ function addTopic() {
   if (!userData.topics) userData.topics = {};
   if (!userData.revisions) userData.revisions = {};
   userData.topics[id] = { name, addedDate: today, scheduleStages: [...SR_SCHEDULE] };
-  // Schedule revisions
   SR_SCHEDULE.forEach((days, idx) => {
     const revDate = addDays(today, days);
     if (!userData.revisions[revDate]) userData.revisions[revDate] = [];
     userData.revisions[revDate].push({ topicId: id, stage: days, completed: false });
   });
-  // Day 0 (today) - immediate
   if (!userData.revisions[today]) userData.revisions[today] = [];
   userData.revisions[today].unshift({ topicId: id, stage: 0, completed: false });
   saveUserData();
@@ -1439,7 +1450,7 @@ function stageLabel(days) {
   if (days === 0) return 'Day 0';
   return 'Day ' + days;
 }
-
+ 
 // ════════════════════════════════════
 //  DASHBOARD RENDER
 // ════════════════════════════════════
@@ -1448,7 +1459,6 @@ function renderDashboard() {
   const topics = userData.topics || {};
   const revisions = userData.revisions || {};
   const todayRevs = revisions[today] || [];
-  // Due today
   const dueList = document.getElementById('dueList');
   const doneCount = todayRevs.filter(r=>r.completed).length;
   document.getElementById('dueCount').textContent = `${doneCount} / ${todayRevs.length} completed`;
@@ -1465,7 +1475,6 @@ function renderDashboard() {
       </div>`;
     }).join('');
   }
-  // Missed
   const missedList = document.getElementById('missedList');
   const missedItems = [];
   Object.entries(revisions).forEach(([date, revs]) => {
@@ -1481,7 +1490,6 @@ function renderDashboard() {
         <span style="font-size:0.75rem;color:var(--text-muted);margin-left:4px">${date}</span>
       </div>`).join('');
   }
-  // Upcoming
   const upcomingList = document.getElementById('upcomingList');
   const upcomingItems = [];
   for (let d = 1; d <= 7; d++) {
@@ -1499,7 +1507,6 @@ function renderDashboard() {
         <span style="font-size:0.75rem;color:var(--text-muted);margin-left:4px">${date}</span>
       </div>`).join('');
   }
-  // Topics list
   const topicKeys = Object.keys(topics);
   const tGrid = document.getElementById('topicsGrid');
   const tList = document.getElementById('topicsList');
@@ -1519,7 +1526,7 @@ function renderStudyTimeChart() {
   const today = todayStr();
   const days = [];
   for (let i = 6; i >= 0; i--) days.push(addDays(today, -i));
-
+ 
   const dayData = days.map(date => {
     const result = { date, total: 0 };
     Object.entries(SUBJECTS).forEach(([key]) => {
@@ -1530,20 +1537,20 @@ function renderStudyTimeChart() {
     });
     return result;
   });
-
+ 
   const hasAnyData = dayData.some(d => d.total > 0);
   if (!hasAnyData) {
     container.innerHTML = `<div style="color:var(--text-muted);font-size:0.85rem;padding:20px 0">Start a timer session to see your study data here.</div>`;
     return;
   }
-
+ 
   const maxTotal = Math.max(...dayData.map(d => d.total), 1);
   const BAR_H = 100;
   const dayLabels = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-
+ 
   let barsHtml = `<div style="flex:1;min-width:200px">
     <div style="display:flex;gap:6px;align-items:flex-end;height:${BAR_H}px">`;
-
+ 
   dayData.forEach(d => {
     const dateObj = new Date(d.date + 'T12:00:00');
     const label = dayLabels[dateObj.getDay()];
@@ -1570,7 +1577,7 @@ function renderStudyTimeChart() {
     </div>`;
   });
   barsHtml += `</div></div>`;
-
+ 
   let legendHtml = `<div style="min-width:160px;display:flex;flex-direction:column;gap:10px;padding-top:4px;border-left:1px solid var(--border);padding-left:20px">
     <div style="font-size:0.72rem;font-weight:700;letter-spacing:0.08em;color:var(--text-muted);text-transform:uppercase;margin-bottom:2px">All-Time Hours</div>`;
   Object.entries(SUBJECTS).forEach(([key, sub]) => {
@@ -1587,10 +1594,10 @@ function renderStudyTimeChart() {
     </div>`;
   });
   legendHtml += `</div>`;
-
+ 
   container.innerHTML = barsHtml + legendHtml;
 }
-
+ 
 function removeTopic(id) {
   delete userData.topics[id];
   Object.keys(userData.revisions || {}).forEach(date => {
@@ -1599,7 +1606,7 @@ function removeTopic(id) {
   saveUserData();
   renderDashboard();
 }
-
+ 
 // ════════════════════════════════════
 //  PLANNER
 // ════════════════════════════════════
@@ -1634,7 +1641,6 @@ function renderPlanner() {
         <span class="task-del" onclick="deleteTask(${i})">×</span>
       </div>`).join('');
   }
-  // Stats
   const total = tasks.length;
   const done = tasks.filter(t=>t.completed).length;
   const pct = total ? Math.round(done/total*100) : 0;
@@ -1700,23 +1706,21 @@ function deleteTask(i) {
   userData.tasks[plannerDate].splice(i, 1);
   saveUserData(); renderPlanner();
 }
-
+ 
 // ════════════════════════════════════
 //  PAST PAPERS
 // ════════════════════════════════════
 let activeSubjectKey = 'physics';
 let activeYear = '2025';
 let correctionMode = false;
-
+ 
 function renderPapers() {
-  // Subject tabs
   const tabs = document.getElementById('papersSubjectTabs');
   const subjectLabels = {physics:'PHYSICS',chemistry:'CHEMISTRY',biology:'BIOLOGY',pureMaths:'PURE',appliedMaths:'APPLIED'};
   tabs.innerHTML = Object.entries(SUBJECTS).map(([key]) =>
     `<button class="papers-tab ${key===activeSubjectKey?'active':''}" onclick="setActiveSubject('${key}')">${subjectLabels[key]}</button>`
   ).join('');
-
-  // Years sidebar
+ 
   const sidebar = document.getElementById('papersYearsSidebar');
   sidebar.innerHTML = `<div style="font-size:0.68rem;font-weight:700;letter-spacing:0.1em;color:var(--text-muted);margin-bottom:4px;display:flex;align-items:center;gap:6px">
     <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
@@ -1727,29 +1731,38 @@ function renderPapers() {
       <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
     </button>`
   ).join('');
-
-  // Content area
+ 
   renderPaperContent();
 }
-
+ 
 function setActiveSubject(key) {
   activeSubjectKey = key;
   correctionMode = false;
   renderPapers();
+  _triggerPapersFade();
 }
-
+ 
 function setActiveYear(y) {
   activeYear = y;
   correctionMode = false;
   renderPapers();
+  _triggerPapersFade();
 }
-
+ 
+function _triggerPapersFade() {
+  const area = document.getElementById('papersContentArea');
+  if (!area) return;
+  area.classList.remove('fading');
+  void area.offsetWidth; // force reflow
+  area.classList.add('fading');
+}
+ 
 function toggleCorrectionMode() {
   correctionMode = !correctionMode;
   document.getElementById('correctionBtn').classList.toggle('active', correctionMode);
   document.getElementById('correctionBtn').textContent = correctionMode ? 'EXIT CORRECTION MODE' : 'ENTER CORRECTION MODE';
 }
-
+ 
 function resetCurrentPaper() {
   const sub = SUBJECTS[activeSubjectKey];
   const qs = getSubjectQuestions(sub);
@@ -1757,14 +1770,14 @@ function resetCurrentPaper() {
   renderPaperContent();
   showToast('Paper reset ✓', 'success');
 }
-
+ 
 function renderPaperContent() {
   const sub = SUBJECTS[activeSubjectKey];
   const area = document.getElementById('papersContentArea');
   const subjectIcons = {physics:'⚛️',chemistry:'🧪',biology:'🧬',pureMaths:'📐',appliedMaths:'📊'};
   const { total, mastered } = subjectTotals(activeSubjectKey, sub, [activeYear]);
   const pct = total ? Math.round(mastered/total*100) : 0;
-
+ 
   let html = `
     <div class="paper-header-card">
       <div class="paper-header-left">
@@ -1783,44 +1796,58 @@ function renderPaperContent() {
       </div>
     </div>
     <div class="paper-body-card">`;
-
+ 
   if (sub.mcq > 0) {
+    // ── MCQ Part 1 ──
     html += `<div class="paper-section-label">
       <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
       MCQ PART 1
     </div>`;
     html += `<div class="q-grid">`;
-    for (let i = 1; i <= sub.mcq; i++) html += renderQCard(activeSubjectKey, activeYear, String(i), i);
+    for (let i = 1; i <= sub.mcq; i++) {
+      // MCQ IDs are stored as "mcq_1", "mcq_2", etc. to avoid collision
+      html += renderQCard(activeSubjectKey, activeYear, 'mcq_' + i, i);
+    }
     html += `</div>`;
-
+ 
+    // ── Structured Part 2 ──
     html += `<div class="paper-section-label" style="margin-top:24px">
       <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
       STRUCTURED PART 2
     </div>`;
     html += `<div class="q-grid essays" style="grid-template-columns:repeat(4,1fr)">`;
-    sub.structured.forEach(q => { html += renderQCard(activeSubjectKey, activeYear, q, q); });
+    sub.structured.forEach(q => {
+      // Structured IDs are stored as "str_1", "str_2", etc.
+      html += renderQCard(activeSubjectKey, activeYear, 'str_' + q, q);
+    });
     html += `</div>`;
-
+ 
+    // ── Essays Part 2 ──
     html += `<div class="paper-section-label" style="margin-top:24px">
       <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
       ESSAYS PART 2
     </div>`;
     const hasPairs = sub.essays.some(q => q.includes('a') || q.includes('b'));
-    if (hasPairs) {
-      html += `<div class="q-grid essays" style="grid-template-columns:repeat(8,1fr)">`;
-    } else {
-      html += `<div class="q-grid essays" style="grid-template-columns:repeat(6,1fr)">`;
-    }
-    sub.essays.forEach(q => { html += renderQCard(activeSubjectKey, activeYear, q, q); });
+    html += hasPairs
+      ? `<div class="q-grid essays" style="grid-template-columns:repeat(8,1fr)">`
+      : `<div class="q-grid essays" style="grid-template-columns:repeat(6,1fr)">`;
+    sub.essays.forEach(q => {
+      // Essay IDs stored as "ess_Q5", "ess_5", etc.
+      html += renderQCard(activeSubjectKey, activeYear, 'ess_' + q, q);
+    });
     html += `</div>`;
+ 
   } else {
+    // ── Short Essays (Pure/Applied Maths) ──
     if (sub.shortEssays) {
       html += `<div class="paper-section-label">
         <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
         SHORT ESSAYS
       </div>`;
       html += `<div class="q-grid essays" style="grid-template-columns:repeat(10,1fr)">`;
-      sub.shortEssays.forEach(q => { html += renderQCard(activeSubjectKey, activeYear, q, q); });
+      sub.shortEssays.forEach(q => {
+        html += renderQCard(activeSubjectKey, activeYear, 'se_' + q, q);
+      });
       html += `</div>`;
     }
     if (sub.essays) {
@@ -1829,14 +1856,17 @@ function renderPaperContent() {
         ESSAYS
       </div>`;
       html += `<div class="q-grid essays" style="grid-template-columns:repeat(7,1fr)">`;
-      sub.essays.forEach(q => { html += renderQCard(activeSubjectKey, activeYear, q, q); });
+      sub.essays.forEach(q => {
+        html += renderQCard(activeSubjectKey, activeYear, 'ess_' + q, q);
+      });
       html += `</div>`;
     }
   }
-
+ 
   html += `</div>`; // close paper-body-card
   area.innerHTML = html;
 }
+ 
 function getQAttempts(subKey, year, qId) {
   return (userData.pastPapers && userData.pastPapers[subKey] && userData.pastPapers[subKey][year] && userData.pastPapers[subKey][year][qId]) || 0;
 }
@@ -1852,24 +1882,62 @@ function clickQuestion(subKey, year, qId, el) {
   if (correctionMode) {
     if (cur > 0) setQAttempts(subKey, year, qId, cur - 1);
   } else {
-    setQAttempts(subKey, year, qId, cur + 1);
+    // Cap at 3 (mastered). If already at 3, cycle back to 0 so user can reset easily.
+    setQAttempts(subKey, year, qId, cur >= 3 ? 0 : cur + 1);
   }
-  renderPaperContent();
+  const newAtt = getQAttempts(subKey, year, qId);
+ 
+  // Update card class in-place
+  const cls = newAtt >= 3 ? 'att3' : newAtt === 2 ? 'att2' : newAtt === 1 ? 'att1' : '';
+  el.className = 'q-card' + (cls ? ' ' + cls : '');
+ 
+  // Rebuild dots innerHTML so CSS nth-child rules apply fresh
+  el.querySelector('.q-dots').innerHTML =
+    [0,1,2].map(i => `<div class="q-dot ${newAtt > i ? 'filled' : ''}"></div>`).join('');
+ 
+  // Bounce animation
+  el.animate(
+    [{transform:'scale(0.88)'},{transform:'scale(1.1)'},{transform:'scale(1)'}],
+    {duration:220, easing:'cubic-bezier(0.22,1,0.36,1)'}
+  );
+ 
+  // Update header mastery % without full re-render
+  const sub = SUBJECTS[subKey];
+  const { total, mastered } = subjectTotals(subKey, sub, [year]);
+  const pct = total ? Math.round(mastered/total*100) : 0;
+  const subEl = document.querySelector('.paper-header-sub');
+  if (subEl) subEl.textContent = `Click to track attempts, Right-click to decrease. · ${mastered}/${total} mastered (${pct}%)`;
 }
+ 
 function rightClickQuestion(e, subKey, year, qId) {
   e.preventDefault();
   const cur = getQAttempts(subKey, year, qId);
-  if (cur > 0) { setQAttempts(subKey, year, qId, cur - 1); renderPaperContent(); }
+  if (cur > 0) {
+    setQAttempts(subKey, year, qId, cur - 1);
+    renderPaperContent();
+  }
 }
 function renderQCard(subKey, year, qId, label) {
   const att = getQAttempts(subKey, year, qId);
   const cls = att >= 3 ? 'att3' : att === 2 ? 'att2' : att === 1 ? 'att1' : '';
   const dots = [0,1,2].map(i => `<div class="q-dot ${att > i ? 'filled' : ''}"></div>`).join('');
+  // Use single quotes so they don't conflict with the double-quoted HTML attribute
   return `<div class="q-card ${cls}" onclick="clickQuestion('${subKey}','${year}','${qId}',this)" oncontextmenu="rightClickQuestion(event,'${subKey}','${year}','${qId}')">
     <div class="q-num">${label}</div>
     <div class="q-dots">${dots}</div>
   </div>`;
 }
+ 
+// Returns all storage keys used for this subject's questions
+function getSubjectQuestions(sub) {
+  const qs = [];
+  if (sub.mcq > 0) for(let i=1;i<=sub.mcq;i++) qs.push('mcq_' + i);
+  if (sub.structured) sub.structured.forEach(q => qs.push('str_' + q));
+  if (sub.shortEssays) sub.shortEssays.forEach(q => qs.push('se_' + q));
+  if (sub.essays) sub.essays.forEach(q => qs.push('ess_' + q));
+  return qs;
+}
+ 
 function subjectTotals(subKey, sub, years) {
   let total = 0, mastered = 0, attempted = 0;
   const questions = getSubjectQuestions(sub);
@@ -1883,113 +1951,7 @@ function subjectTotals(subKey, sub, years) {
   });
   return { total, mastered, attempted };
 }
-function getSubjectQuestions(sub) {
-  const qs = [];
-  if (sub.mcq > 0) for(let i=1;i<=sub.mcq;i++) qs.push(String(i));
-  if (sub.structured) sub.structured.forEach(q => qs.push(q));
-  if (sub.shortEssays) sub.shortEssays.forEach(q => qs.push(q));
-  if (sub.essays) sub.essays.forEach(q => qs.push(q));
-  return qs;
-}
-function renderSubjectBlock(subKey, sub) {
-  const years = [...selectedYears].sort();
-  const { total, mastered, attempted } = subjectTotals(subKey, sub, years);
-  const pct = total ? Math.round(mastered/total*100) : 0;
-  const yearStr = years.length === 1 ? years[0] : years.join(', ');
-  return `
-  <div class="subject-block">
-    <div class="subject-header" onclick="toggleSubject('${subKey}')">
-      <div class="subject-title-wrap">
-        <div class="subject-title">${sub.name}</div>
-        <div class="subject-subtitle">${yearStr} · ${mastered}/${total} mastered (${pct}%)</div>
-      </div>
-      <div class="subject-progress">
-        <span style="font-size:0.82rem;color:var(--text-muted)">${mastered}/mastered · ${attempted} attempted</span>
-        <div style="width:120px"><div class="progress-bar"><div class="progress-fill" style="width:${pct}%;background:linear-gradient(90deg,${sub.color},${sub.color}aa)"></div></div></div>
-        <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" id="chevron-${subKey}"><polyline points="6 9 12 15 18 9"/></svg>
-      </div>
-    </div>
-    <div class="subject-progress-bar"><div class="progress-fill" style="width:${pct}%;background:${sub.color}"></div></div>
-    <div class="subject-body" id="body-${subKey}">
-      <div class="subject-actions" style="margin-bottom:16px">
-        <button class="btn-outline" onclick="markAllDone('${subKey}')">✓ Mark All Done</button>
-        <button class="btn-outline" onclick="resetSubject('${subKey}')">↺ Reset Year</button>
-        ${sub.mcq > 0 ? `<button class="btn-outline" onclick="completeMCQ('${subKey}')">+ Complete All MCQs</button>` : ''}
-      </div>
-      ${years.map(y => renderYearPaper(subKey, sub, y)).join('<div style="height:16px"></div>')}
-    </div>
-  </div>`;
-}
-function renderYearPaper(subKey, sub, year) {
-  let html = '';
-  if (sub.mcq > 0) {
-    html += `<div class="paper-section-title">PART 1 — MCQ <button class="btn-outline" style="font-size:0.7rem;padding:3px 10px" onclick="completeMCQYear('${subKey}','${year}')">Complete All MCQs</button></div>`;
-    html += `<div class="q-grid">`;
-    for (let i = 1; i <= sub.mcq; i++) html += renderQCard(subKey, year, String(i), i);
-    html += `</div>`;
-    html += `<div class="paper-section-title">PART 2 — STRUCTURED</div>`;
-    html += `<div class="q-grid essays" style="grid-template-columns:repeat(4,1fr)">`;
-    sub.structured.forEach(q => { html += renderQCard(subKey, year, q, q); });
-    html += `</div>`;
-    html += `<div class="paper-section-title">PART 2 — ESSAYS</div>`;
-    const hasPairs = sub.essays.some(q => q.includes('a') || q.includes('b'));
-    if (hasPairs) {
-      html += `<div class="q-grid essays" style="grid-template-columns:repeat(8,1fr)">`;
-      sub.essays.forEach(q => { html += renderQCard(subKey, year, q, q); });
-      html += `</div>`;
-    } else {
-      html += `<div class="q-grid essays" style="grid-template-columns:repeat(7,1fr)">`;
-      sub.essays.forEach(q => { html += renderQCard(subKey, year, q, q); });
-      html += `</div>`;
-    }
-  } else {
-    if (sub.shortEssays) {
-      html += `<div class="paper-section-title">SHORT ESSAYS</div>`;
-      html += `<div class="q-grid essays">`;
-      sub.shortEssays.forEach(q => { html += renderQCard(subKey, year, q, q); });
-      html += `</div>`;
-    }
-    if (sub.essays) {
-      html += `<div class="paper-section-title">ESSAYS</div>`;
-      html += `<div class="q-grid essays">`;
-      sub.essays.forEach(q => { html += renderQCard(subKey, year, q, q); });
-      html += `</div>`;
-    }
-  }
-  return html;
-}
-function toggleSubject(key) {
-  const body = document.getElementById('body-'+key);
-  const ch = document.getElementById('chevron-'+key);
-  body.classList.toggle('open');
-  ch.style.transform = body.classList.contains('open') ? 'rotate(180deg)' : '';
-}
-function markAllDone(subKey) {
-  const sub = SUBJECTS[subKey];
-  const years = [...selectedYears];
-  const qs = getSubjectQuestions(sub);
-  years.forEach(y => qs.forEach(q => setQAttempts(subKey, y, q, 3)));
-  renderPapers(); showToast('All questions marked as mastered ✓', 'success');
-}
-function resetSubject(subKey) {
-  const sub = SUBJECTS[subKey];
-  const years = [...selectedYears];
-  const qs = getSubjectQuestions(sub);
-  years.forEach(y => qs.forEach(q => setQAttempts(subKey, y, q, 0)));
-  renderPapers(); showToast('Subject reset', 'success');
-}
-function completeMCQ(subKey) {
-  const sub = SUBJECTS[subKey];
-  const years = [...selectedYears];
-  years.forEach(y => { for(let i=1;i<=sub.mcq;i++) setQAttempts(subKey,y,String(i),3); });
-  renderPapers(); showToast('All MCQs completed ✓', 'success');
-}
-function completeMCQYear(subKey, year) {
-  const sub = SUBJECTS[subKey];
-  for(let i=1;i<=sub.mcq;i++) setQAttempts(subKey,year,String(i),3);
-  renderPapers(); showToast(`${year} MCQs completed ✓`, 'success');
-}
-
+ 
 // ════════════════════════════════════
 //  TIMER
 // ════════════════════════════════════
@@ -2026,32 +1988,84 @@ function toggleTimer(key) {
   else startTimer(key);
   renderTimer();
 }
+// ── Wake Lock: keeps screen/tab awake while a timer runs ──
+let _wakeLock = null;
+async function _acquireWakeLock() {
+  if ('wakeLock' in navigator) {
+    try { _wakeLock = await navigator.wakeLock.request('screen'); } catch(e) {}
+  }
+}
+function _releaseWakeLock() {
+  if (_wakeLock) { _wakeLock.release().catch(()=>{}); _wakeLock = null; }
+}
+// Re-acquire wake lock when tab becomes visible again
+document.addEventListener('visibilitychange', () => {
+  if (document.visibilityState === 'visible') {
+    // Recalculate elapsed for all running timers (handles tab sleep drift)
+    Object.keys(timers).forEach(key => {
+      const t = timers[key];
+      if (t.running && t.startTime) {
+        t.elapsed = Math.floor((Date.now() - t.startTime) / 1000);
+        const el = document.getElementById('td-'+key);
+        if (el) el.textContent = fmtTime(t.elapsed);
+      }
+    });
+    // Re-acquire wake lock if any timer is running
+    if (Object.values(timers).some(t => t.running)) _acquireWakeLock();
+  }
+});
+ 
 function startTimer(key) {
   const t = timers[key];
   t.running = true;
+  // startTime anchors the real wall-clock moment the timer began (accounting for prior elapsed)
   t.startTime = Date.now() - t.elapsed * 1000;
+  // Persist startTime so page refreshes can recover it
+  try { localStorage.setItem('nr_timer_' + key, JSON.stringify({ startTime: t.startTime })); } catch(e) {}
   t.interval = setInterval(() => {
+    // Always derive elapsed from wall-clock diff — immune to tab throttling/sleep
     t.elapsed = Math.floor((Date.now() - t.startTime) / 1000);
     const el = document.getElementById('td-'+key);
     if (el) el.textContent = fmtTime(t.elapsed);
-  }, 1000);
+  }, 500); // Poll at 500ms so it catches up quickly after wake
+  _acquireWakeLock();
 }
 function stopTimer(key) {
   const t = timers[key];
   clearInterval(t.interval);
   t.running = false;
+  // Final elapsed from wall-clock to capture any drift
+  if (t.startTime) t.elapsed = Math.floor((Date.now() - t.startTime) / 1000);
   const secs = t.elapsed;
   t.elapsed = 0;
-  // Save
+  t.startTime = null;
+  try { localStorage.removeItem('nr_timer_' + key); } catch(e) {}
   if (!userData.timeTracking) userData.timeTracking = {};
   if (!userData.timeTracking[key]) userData.timeTracking[key] = { total: 0, sessions: [] };
   userData.timeTracking[key].total += secs;
   userData.timeTracking[key].sessions.push({ date: todayStr(), duration: secs });
   saveUserData();
+  // Release wake lock only if no other timers are running
+  if (!Object.values(timers).some(t2 => t2.running)) _releaseWakeLock();
   showToast(`${SUBJECTS[key].name} session saved: ${fmtTime(secs)}`, 'success');
   if (document.getElementById('pg-dashboard') && document.getElementById('pg-dashboard').style.display !== 'none') {
     renderStudyTimeChart();
   }
+}
+// Recover any timers that were running before a page refresh
+function _recoverRunningTimers() {
+  Object.keys(SUBJECTS).forEach(key => {
+    try {
+      const saved = localStorage.getItem('nr_timer_' + key);
+      if (saved) {
+        const { startTime } = JSON.parse(saved);
+        if (!timers[key]) timers[key] = { running: false, elapsed: 0, startTime: null, interval: null };
+        timers[key].startTime = startTime;
+        timers[key].elapsed = Math.floor((Date.now() - startTime) / 1000);
+        timers[key].running = true;
+      }
+    } catch(e) {}
+  });
 }
 function getTodayTime(key) {
   const sessions = (userData.timeTracking && userData.timeTracking[key] && userData.timeTracking[key].sessions) || [];
@@ -2065,7 +2079,7 @@ function fmtTime(secs) {
   const h = Math.floor(secs/3600), m = Math.floor((secs%3600)/60), s = secs%60;
   return `${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
 }
-
+ 
 // ════════════════════════════════════
 //  PROGRESS
 // ════════════════════════════════════
@@ -2073,7 +2087,6 @@ function renderProgress() {
   const topics = Object.keys(userData.topics || {}).length;
   const streak = (userData.streak && userData.streak.count) || 0;
   const totalTime = Object.values(userData.timeTracking || {}).reduce((a,v) => a+(v.total||0), 0);
-  // Paper mastery
   let pTotal = 0, pMastered = 0;
   Object.entries(SUBJECTS).forEach(([key, sub]) => {
     const qs = getSubjectQuestions(sub);
@@ -2089,7 +2102,6 @@ function renderProgress() {
     <div class="card stat-card"><div><div class="stat-label">Total Topics</div><div class="stat-num">${topics}</div><div style="font-size:0.75rem;color:var(--text-muted)">topics logged</div></div><div class="stat-icon" style="background:rgba(139,92,246,0.15);font-size:22px">📚</div></div>
     <div class="card stat-card"><div><div class="stat-label">Paper Mastery</div><div class="stat-num">${masteryPct}%</div><div style="font-size:0.75rem;color:var(--text-muted)">${pMastered} questions mastered</div></div><div class="stat-icon" style="background:rgba(16,185,129,0.15);font-size:22px">🎯</div></div>
     <div class="card stat-card"><div><div class="stat-label">Study Hours</div><div class="stat-num">${(totalTime/3600).toFixed(1)}h</div><div style="font-size:0.75rem;color:var(--text-muted)">total time invested</div></div><div class="stat-icon" style="background:rgba(59,130,246,0.15);font-size:22px">⏱</div></div>`;
-  // Subject mastery
   const sm = document.getElementById('subjectMastery');
   sm.innerHTML = Object.entries(SUBJECTS).map(([key, sub]) => {
     const qs = getSubjectQuestions(sub);
@@ -2102,7 +2114,6 @@ function renderProgress() {
       <span class="subject-bar-pct">${pct}%</span>
     </div>`;
   }).join('');
-  // Activity grid
   const today = todayStr();
   const revisions = userData.revisions || {};
   const ag = document.getElementById('activityGrid');
@@ -2129,11 +2140,10 @@ function renderProgress() {
     <div class="revisions-today-icon"><svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#fff" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="m9 12 2 2 4-4"/></svg></div>
     <div class="revisions-today-text"><h4>${todayCount} revisions completed today</h4><p>Keep going — consistency compounds.</p></div>
   </div>`;
-  // Render the charts
   setTimeout(renderDailyTimeChart, 60);
   setTimeout(renderPaperMarksChart, 60);
 }
-
+ 
 // ════════════════════════════════════
 //  GROUPS
 // ════════════════════════════════════
@@ -2179,7 +2189,6 @@ function renderGroups() {
 function createGroup() {
   const name = document.getElementById('groupName').value.trim();
   if (!name) return;
-  // Generate a readable 6-char alphanumeric code, avoid ambiguous chars
   const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
   const code = Array.from({length:6}, () => chars[Math.floor(Math.random()*chars.length)]).join('');
   if (!userData.groups) userData.groups = [];
@@ -2194,7 +2203,7 @@ function createGroup() {
     isAdmin: true,
     tasks: []
   });
-  saveUserData(); // flush to localStorage immediately so others can find it
+  saveUserData();
   document.getElementById('groupName').value='';
   document.getElementById('groupDesc').value='';
   closeModal('createGroupModal');
@@ -2204,11 +2213,7 @@ function createGroup() {
 function joinGroup() {
   const code = document.getElementById('inviteCode').value.trim().toUpperCase();
   if (!code) return;
-
-  // Flush current session to storage so it's visible in the search below
   saveUserData();
-
-  // Search all users' data for the invite code
   const allData = JSON.parse(localStorage.getItem('nr_data') || '{}');
   let found = null, ownerEmail = null;
   Object.entries(allData).forEach(([email, data]) => {
@@ -2216,16 +2221,12 @@ function joinGroup() {
       if (g.code === code) { found = g; ownerEmail = email; }
     });
   });
-
   if (!found) { showToast('Invalid invite code — check the code and try again', 'error'); return; }
   if (!userData.groups) userData.groups = [];
   if (userData.groups.find(g => g.code === code)) { showToast('You are already in this group', 'error'); return; }
-
   const { users } = loadStorage();
   const user = users[currentUser];
   const memberName = (user && user.name) || currentUser;
-
-  // Add joiner to the owner's copy of the group
   const freshAll = JSON.parse(localStorage.getItem('nr_data') || '{}');
   if (ownerEmail && freshAll[ownerEmail]) {
     freshAll[ownerEmail].groups = (freshAll[ownerEmail].groups || []).map(g => {
@@ -2236,7 +2237,6 @@ function joinGroup() {
       }
       return g;
     });
-    // Also update joiner's own data in the same write
     if (!freshAll[currentUser]) freshAll[currentUser] = userData;
     freshAll[currentUser].groups = freshAll[currentUser].groups || [];
     if (!freshAll[currentUser].groups.find(g => g.code === code)) {
@@ -2244,10 +2244,8 @@ function joinGroup() {
       freshAll[currentUser].groups.push({ ...updatedGroup, isAdmin: false });
     }
     localStorage.setItem('nr_data', JSON.stringify(freshAll));
-    // Sync in-memory userData
     userData.groups = freshAll[currentUser].groups;
   }
-
   document.getElementById('inviteCode').value = '';
   closeModal('joinGroupModal');
   renderGroups();
@@ -2263,7 +2261,7 @@ function copyInviteCode(code) {
   if (navigator.clipboard) navigator.clipboard.writeText(code).catch(function(){});
   showToast(`Invite code copied: ${code}`, 'success');
 }
-
+ 
 // ════════════════════════════════════
 //  UTILS
 // ════════════════════════════════════
@@ -2279,11 +2277,10 @@ function toggleTheme() {
   const btn = document.querySelector('.theme-toggle span');
   if (btn) btn.textContent = document.body.classList.contains('light') ? 'Dark Mode' : 'Light Mode';
 }
+ 
 // ════════════════════════════════════
 //  ANIMATION ENGINE
 // ════════════════════════════════════
-
-// ─── AUTH CANVAS PARTICLES ───
 function initAuthCanvas() {
   const canvas = document.getElementById('authCanvas');
   if (!canvas) return;
@@ -2291,113 +2288,69 @@ function initAuthCanvas() {
   let W, H, animRunning = true;
   const mouse = { x: -9999, y: -9999 };
   const COLORS = ['#6366F1','#8B5CF6','#EC4899','#3B82F6','#10B981','#F59E0B'];
-
-  function resize() {
-    W = canvas.width = window.innerWidth;
-    H = canvas.height = window.innerHeight;
-  }
+  function resize() { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
   resize();
   window.addEventListener('resize', resize);
-
   class Particle {
     constructor() { this.init(); }
     init() {
-      this.x = Math.random() * W;
-      this.y = Math.random() * H;
-      this.vx = (Math.random() - 0.5) * 0.5;
-      this.vy = (Math.random() - 0.5) * 0.5;
+      this.x = Math.random() * W; this.y = Math.random() * H;
+      this.vx = (Math.random() - 0.5) * 0.5; this.vy = (Math.random() - 0.5) * 0.5;
       this.radius = Math.random() * 2.2 + 0.6;
       this.color = COLORS[Math.floor(Math.random() * COLORS.length)];
       this.alpha = Math.random() * 0.55 + 0.15;
       this.phase = Math.random() * Math.PI * 2;
       this.phaseSpeed = Math.random() * 0.025 + 0.008;
-      this.z = Math.random() * 3 + 0.5; // depth layer
+      this.z = Math.random() * 3 + 0.5;
     }
     update() {
       this.phase += this.phaseSpeed;
-      this.x += this.vx * this.z;
-      this.y += this.vy * this.z;
-      // Repel from mouse
+      this.x += this.vx * this.z; this.y += this.vy * this.z;
       const dx = this.x - mouse.x, dy = this.y - mouse.y;
       const dist = Math.hypot(dx, dy);
-      if (dist < 100) {
-        const force = (100 - dist) / 100;
-        this.x += (dx / dist) * force * 2.5;
-        this.y += (dy / dist) * force * 2.5;
-      }
-      if (this.x < -10) this.x = W + 10;
-      else if (this.x > W + 10) this.x = -10;
-      if (this.y < -10) this.y = H + 10;
-      else if (this.y > H + 10) this.y = -10;
+      if (dist < 100) { const force = (100 - dist) / 100; this.x += (dx / dist) * force * 2.5; this.y += (dy / dist) * force * 2.5; }
+      if (this.x < -10) this.x = W + 10; else if (this.x > W + 10) this.x = -10;
+      if (this.y < -10) this.y = H + 10; else if (this.y > H + 10) this.y = -10;
     }
     draw() {
       const a = this.alpha * (0.65 + 0.35 * Math.sin(this.phase));
-      ctx.save();
-      ctx.globalAlpha = a;
-      ctx.shadowBlur = 10 * this.z;
-      ctx.shadowColor = this.color;
-      ctx.fillStyle = this.color;
-      ctx.beginPath();
-      ctx.arc(this.x, this.y, this.radius * this.z, 0, Math.PI * 2);
-      ctx.fill();
-      ctx.restore();
+      ctx.save(); ctx.globalAlpha = a; ctx.shadowBlur = 10 * this.z; ctx.shadowColor = this.color;
+      ctx.fillStyle = this.color; ctx.beginPath(); ctx.arc(this.x, this.y, this.radius * this.z, 0, Math.PI * 2); ctx.fill(); ctx.restore();
     }
   }
-
   const particles = Array.from({ length: 90 }, () => new Particle());
-
   function drawConnections() {
     const maxDist = 110;
     for (let i = 0; i < particles.length; i++) {
       for (let j = i + 1; j < particles.length; j++) {
         const d = Math.hypot(particles[i].x - particles[j].x, particles[i].y - particles[j].y);
         if (d < maxDist) {
-          ctx.save();
-          ctx.globalAlpha = (1 - d / maxDist) * 0.13;
-          ctx.strokeStyle = particles[i].color;
-          ctx.lineWidth = 0.6;
-          ctx.beginPath();
-          ctx.moveTo(particles[i].x, particles[i].y);
-          ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.stroke();
-          ctx.restore();
+          ctx.save(); ctx.globalAlpha = (1 - d / maxDist) * 0.13; ctx.strokeStyle = particles[i].color; ctx.lineWidth = 0.6;
+          ctx.beginPath(); ctx.moveTo(particles[i].x, particles[i].y); ctx.lineTo(particles[j].x, particles[j].y); ctx.stroke(); ctx.restore();
         }
       }
     }
   }
-
   function loop() {
     const auth = document.getElementById('authPage');
     if (!auth || auth.style.display === 'none') { animRunning = false; return; }
-    animRunning = true;
-    requestAnimationFrame(loop);
-    ctx.clearRect(0, 0, W, H);
-    particles.forEach(p => { p.update(); p.draw(); });
-    drawConnections();
+    animRunning = true; requestAnimationFrame(loop); ctx.clearRect(0, 0, W, H);
+    particles.forEach(p => { p.update(); p.draw(); }); drawConnections();
   }
-
   document.addEventListener('mousemove', e => { mouse.x = e.clientX; mouse.y = e.clientY; });
   loop();
-
-  // Restart canvas when returning to auth
   window._restartAuthCanvas = () => { if (!animRunning) loop(); };
 }
-
-
-
-// ─── 3D TILT ON HOVER ───
+ 
 function applyTilt(selector) {
   document.querySelectorAll(selector).forEach(el => {
-    if (el._hasTilt) return;
-    el._hasTilt = true;
-    let frame;
+    if (el._hasTilt) return; el._hasTilt = true; let frame;
     el.addEventListener('mousemove', e => {
       cancelAnimationFrame(frame);
       frame = requestAnimationFrame(() => {
         const r = el.getBoundingClientRect();
         const cx = r.left + r.width / 2, cy = r.top + r.height / 2;
-        const dx = (e.clientX - cx) / (r.width / 2);
-        const dy = (e.clientY - cy) / (r.height / 2);
+        const dx = (e.clientX - cx) / (r.width / 2), dy = (e.clientY - cy) / (r.height / 2);
         el.style.transform = `perspective(900px) rotateX(${-dy * 7}deg) rotateY(${dx * 7}deg) translateY(-4px) scale(1.015)`;
         el.style.transition = 'transform 0.1s ease';
       });
@@ -2409,72 +2362,41 @@ function applyTilt(selector) {
     });
   });
 }
-
-// ─── COUNTER ANIMATION ───
+ 
 function animateCount(el, target, suffix='', decimals=0, duration=1100) {
   if (!el) return;
   const start = performance.now();
   function step(now) {
     const p = Math.min((now - start) / duration, 1);
     const ease = 1 - Math.pow(1 - p, 4);
-    const val = (target * ease).toFixed(decimals);
-    el.textContent = val + suffix;
+    el.textContent = (target * ease).toFixed(decimals) + suffix;
     if (p < 1) requestAnimationFrame(step);
   }
   requestAnimationFrame(step);
 }
-
-// ─── STAGGER CARDS ───
-function staggerCards(containerId, baseDelay=60) {
-  const parent = typeof containerId === 'string' ? document.getElementById(containerId) : containerId;
-  if (!parent) return;
-  const els = parent.querySelectorAll('.card,.timer-card,.stat-card,.group-card');
-  els.forEach((el, i) => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(28px) scale(0.97)';
-    el.style.transition = 'none';
-    setTimeout(() => {
-      el.style.transition = `opacity 0.48s cubic-bezier(0.22,1,0.36,1) ${i*baseDelay}ms, transform 0.48s cubic-bezier(0.22,1,0.36,1) ${i*baseDelay}ms`;
-      el.style.opacity = '1';
-      el.style.transform = '';
-    }, 30);
-  });
-}
-
-// ─── PROGRESS BAR ANIMATE ───
+ 
 function animateBars(container) {
   const bars = (container || document).querySelectorAll('.progress-fill');
   bars.forEach(bar => {
     const target = bar.style.width;
     if (!target || target === '0%') return;
-    bar.style.width = '0';
-    bar.style.transition = 'none';
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        bar.style.transition = 'width 1s cubic-bezier(0.22,1,0.36,1)';
-        bar.style.width = target;
-      });
-    });
+    bar.style.width = '0'; bar.style.transition = 'none';
+    requestAnimationFrame(() => { requestAnimationFrame(() => { bar.style.transition = 'width 1s cubic-bezier(0.22,1,0.36,1)'; bar.style.width = target; }); });
   });
 }
-
-// ─── DIGIT FLIP ON CHANGE ───
+ 
 var _lastSecs = -1;
-const _origUpdateCountdown = typeof updateCountdown === 'function' ? updateCountdown : null;
 function triggerFlipIfChanged(newSecs) {
   if (newSecs !== _lastSecs) {
     const el = document.getElementById('cdSecs');
     if (el) {
-      el.classList.remove('digit-flip');
-      void el.offsetWidth;
-      el.classList.add('digit-flip');
+      el.classList.remove('digit-flip'); void el.offsetWidth; el.classList.add('digit-flip');
       el.addEventListener('animationend', () => el.classList.remove('digit-flip'), { once: true });
     }
     _lastSecs = newSecs;
   }
 }
-
-// ─── HOOK INTO NAVIGATE ───
+ 
 const _origNavigate = navigate;
 const _navigateEnhanced = function(page) {
   _origNavigate(page);
@@ -2485,53 +2407,33 @@ const _navigateEnhanced = function(page) {
       renderPaperMarksChart && renderPaperMarksChart();
       document.querySelectorAll('#statsRow .stat-num').forEach(el => {
         const raw = parseFloat(el.textContent);
-        if (!isNaN(raw)) {
-          const suffix = el.textContent.replace(/[\d.]/g, '');
-          animateCount(el, raw, suffix, raw % 1 !== 0 ? 1 : 0);
-        }
+        if (!isNaN(raw)) { const suffix = el.textContent.replace(/[\d.]/g, ''); animateCount(el, raw, suffix, raw % 1 !== 0 ? 1 : 0); }
       });
     }, 30);
   }
 };
-// Replace global navigate with enhanced version
 window.navigate = _navigateEnhanced;
-
-// ─── FLOATING ORBS ───
+ 
 function createBgOrbs() {
   ['bg-orb-1','bg-orb-2','bg-orb-3'].forEach(cls => {
-    if (!document.querySelector('.'+cls)) {
-      const d = document.createElement('div');
-      d.className = 'bg-orb ' + cls;
-      document.body.appendChild(d);
-    }
+    if (!document.querySelector('.'+cls)) { const d = document.createElement('div'); d.className = 'bg-orb ' + cls; document.body.appendChild(d); }
   });
 }
-
-// ─── AUTH CANVAS RESTART ON LOGOUT ───
+ 
 const _origShowPage = showPage;
 const _showPageEnhanced = function(id) {
   _origShowPage(id);
-  if (id === 'authPage' && window._restartAuthCanvas) {
-    setTimeout(window._restartAuthCanvas, 100);
-  }
+  if (id === 'authPage' && window._restartAuthCanvas) { setTimeout(window._restartAuthCanvas, 100); }
 };
-// Replace global showPage with enhanced version
 window.showPage = _showPageEnhanced;
-
-// ─── INIT ───
+ 
 document.addEventListener('DOMContentLoaded', () => {
-  initAuthCanvas();
-  createBgOrbs();
-  applyTilt('.auth-feat,.card-hover');
-  const di = document.getElementById('plannerDateInput');
-  if (di) di.value = todayStr();
-  const md = document.getElementById('markDate');
-  if (md) md.value = todayStr();
+  initAuthCanvas(); createBgOrbs(); applyTilt('.auth-feat,.card-hover');
+  const di = document.getElementById('plannerDateInput'); if (di) di.value = todayStr();
+  const md = document.getElementById('markDate'); if (md) md.value = todayStr();
   renderWeeklyChart && renderWeeklyChart();
 });
-
-
-
+ 
 // ════════════════════════════════════
 //  PAPER MARKS
 // ════════════════════════════════════
@@ -2543,38 +2445,29 @@ function saveMarkEntry() {
   const max    = parseFloat(document.getElementById('markMax').value);
   const date   = document.getElementById('markDate').value || todayStr();
   const err    = document.getElementById('markError');
-
   err.style.display = 'none';
   if (!subKey) { err.textContent = 'Please select a subject.'; err.style.display = 'block'; return; }
   if (!year)   { err.textContent = 'Please select a year.';    err.style.display = 'block'; return; }
   if (isNaN(score) || score < 0) { err.textContent = 'Please enter a valid score.'; err.style.display = 'block'; return; }
   if (isNaN(max) || max <= 0)    { err.textContent = 'Please enter a valid maximum.'; err.style.display = 'block'; return; }
   if (score > max) { err.textContent = 'Score cannot exceed the maximum.'; err.style.display = 'block'; return; }
-
   if (!userData.paperMarks) userData.paperMarks = [];
   userData.paperMarks.push({ id: Date.now().toString(), subKey, year, label, score, max, date });
   userData.paperMarks.sort((a, b) => a.date.localeCompare(b.date));
   saveUserData();
   closeModal('addMarkModal');
-
-  // Reset form
-  ['markSubject','markYear','markLabel','markScore','markMax'].forEach(id => {
-    const el = document.getElementById(id);
-    if (el) el.value = '';
-  });
+  ['markSubject','markYear','markLabel','markScore','markMax'].forEach(id => { const el = document.getElementById(id); if (el) el.value = ''; });
   document.getElementById('markDate').value = todayStr();
-
   renderPaperMarksChart();
   showToast('Mark saved ✓', 'success');
 }
-
+ 
 function deleteMarkEntry(id) {
   if (!userData.paperMarks) return;
   userData.paperMarks = userData.paperMarks.filter(m => m.id !== id);
-  saveUserData();
-  renderPaperMarksChart();
+  saveUserData(); renderPaperMarksChart();
 }
-
+ 
 function renderPaperMarksChart() {
   const canvas   = document.getElementById('pmCanvas');
   const emptyEl  = document.getElementById('pmEmptyState');
@@ -2582,14 +2475,10 @@ function renderPaperMarksChart() {
   const logEl    = document.getElementById('pmLog');
   const tooltip  = document.getElementById('pmTooltip');
   if (!canvas) return;
-
   const marks = (userData.paperMarks || []).slice().sort((a,b) => a.date.localeCompare(b.date));
   const hasData = marks.length > 0;
-
   canvas.style.display = hasData ? 'block' : 'none';
   emptyEl.style.display = hasData ? 'none' : 'block';
-
-  // Render recent log entries (always)
   const recent = marks.slice().reverse().slice(0, 8);
   logEl.innerHTML = marks.length === 0 ? '' : `
     <div style="font-size:0.78rem;font-weight:700;letter-spacing:0.08em;color:var(--text-muted);text-transform:uppercase;margin-bottom:10px">Recent Entries</div>
@@ -2609,17 +2498,11 @@ function renderPaperMarksChart() {
         </div>`;
       }).join('')}
     </div>`;
-
   if (!hasData) { legendEl.innerHTML = ''; return; }
-
-  // Group by subject
   const bySubject = {};
   Object.keys(SUBJECTS).forEach(k => { bySubject[k] = []; });
   marks.forEach(m => { if (bySubject[m.subKey]) bySubject[m.subKey].push(m); });
-
   const activeSubjects = Object.keys(SUBJECTS).filter(k => bySubject[k].length > 0);
-
-  // Legend
   legendEl.innerHTML = activeSubjects.map(key => {
     const sub = SUBJECTS[key];
     const entries = bySubject[key];
@@ -2630,355 +2513,203 @@ function renderPaperMarksChart() {
       <span style="font-size:0.78rem;color:var(--text-muted)">${entries.length} attempt${entries.length>1?'s':''} · avg ${avg}%</span>
     </div>`;
   }).join('');
-
-  // Canvas draw
   const wrap = document.getElementById('pmChartWrap');
   const W = wrap.clientWidth || 700;
   const PAD_L = 48, PAD_R = 20, PAD_T = 20, PAD_B = 36;
   const CHART_W = W - PAD_L - PAD_R;
   const CHART_H = 220;
   const H = CHART_H + PAD_T + PAD_B;
-
   const dpr = window.devicePixelRatio || 1;
-  canvas.width  = W * dpr;
-  canvas.height = H * dpr;
-  canvas.style.height = H + 'px';
-
+  canvas.width = W * dpr; canvas.height = H * dpr; canvas.style.height = H + 'px';
   const ctx = canvas.getContext('2d');
-  ctx.scale(dpr, dpr);
-  ctx.clearRect(0, 0, W, H);
-
-  // Grid lines + Y labels (0,25,50,75,100)
-  ctx.font = '11px sans-serif';
-  ctx.textAlign = 'right';
+  ctx.scale(dpr, dpr); ctx.clearRect(0, 0, W, H);
+  ctx.font = '11px sans-serif'; ctx.textAlign = 'right';
   [0,25,50,75,100].forEach(pct => {
     const y = PAD_T + CHART_H - (pct / 100) * CHART_H;
     ctx.strokeStyle = pct === 50 ? 'rgba(255,255,255,0.08)' : 'rgba(255,255,255,0.04)';
-    ctx.lineWidth = pct === 50 ? 1.5 : 1;
-    ctx.setLineDash(pct === 50 ? [4,4] : []);
-    ctx.beginPath(); ctx.moveTo(PAD_L, y); ctx.lineTo(PAD_L + CHART_W, y); ctx.stroke();
-    ctx.setLineDash([]);
-    ctx.fillStyle = 'rgba(148,163,184,0.7)';
-    ctx.fillText(pct + '%', PAD_L - 6, y + 4);
+    ctx.lineWidth = pct === 50 ? 1.5 : 1; ctx.setLineDash(pct === 50 ? [4,4] : []);
+    ctx.beginPath(); ctx.moveTo(PAD_L, y); ctx.lineTo(PAD_L + CHART_W, y); ctx.stroke(); ctx.setLineDash([]);
+    ctx.fillStyle = 'rgba(148,163,184,0.7)'; ctx.fillText(pct + '%', PAD_L - 6, y + 4);
   });
-
-  // Collect all unique dates for X-axis
   const allDates = [...new Set(marks.map(m => m.date))].sort();
   const n = allDates.length;
-  const xPos = date => {
-    const i = allDates.indexOf(date);
-    if (n === 1) return PAD_L + CHART_W / 2;
-    return PAD_L + (i / (n - 1)) * CHART_W;
-  };
-
-  // X-axis labels — show a reasonable number
+  const xPos = date => { const i = allDates.indexOf(date); if (n === 1) return PAD_L + CHART_W / 2; return PAD_L + (i / (n - 1)) * CHART_W; };
   ctx.textAlign = 'center';
   const step = Math.max(1, Math.ceil(n / 8));
   allDates.forEach((d, i) => {
     if (i % step !== 0 && i !== n-1) return;
     const x = xPos(d);
     const dateObj = new Date(d + 'T12:00:00');
-    const lbl = dateObj.toLocaleDateString('en-US',{month:'short',day:'numeric'});
-    ctx.fillStyle = 'rgba(100,116,139,0.85)';
-    ctx.font = '10px sans-serif';
-    ctx.fillText(lbl, x, PAD_T + CHART_H + 18);
+    ctx.fillStyle = 'rgba(100,116,139,0.85)'; ctx.font = '10px sans-serif';
+    ctx.fillText(dateObj.toLocaleDateString('en-US',{month:'short',day:'numeric'}), x, PAD_T + CHART_H + 18);
   });
-
-  // Draw lines + dots per subject, store hit targets
   canvas._pmHits = [];
-
   activeSubjects.forEach(key => {
     const sub = SUBJECTS[key];
     const entries = bySubject[key].slice().sort((a,b) => a.date.localeCompare(b.date));
-    const pts = entries.map(m => ({
-      x: xPos(m.date),
-      y: PAD_T + CHART_H - (m.score / m.max) * CHART_H,
-      m
-    }));
-
-    // Line
+    const pts = entries.map(m => ({ x: xPos(m.date), y: PAD_T + CHART_H - (m.score / m.max) * CHART_H, m }));
     if (pts.length > 1) {
-      ctx.save();
-      ctx.strokeStyle = sub.color;
-      ctx.lineWidth = 2.5;
-      ctx.lineJoin = 'round';
-      ctx.globalAlpha = 0.85;
-      ctx.beginPath();
-      pts.forEach((p, i) => i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y));
-      ctx.stroke();
-
-      // Area fill under line
-      ctx.globalAlpha = 0.07;
-      ctx.fillStyle = sub.color;
-      ctx.beginPath();
-      ctx.moveTo(pts[0].x, PAD_T + CHART_H);
-      pts.forEach(p => ctx.lineTo(p.x, p.y));
-      ctx.lineTo(pts[pts.length-1].x, PAD_T + CHART_H);
-      ctx.closePath();
-      ctx.fill();
-      ctx.restore();
+      ctx.save(); ctx.strokeStyle = sub.color; ctx.lineWidth = 2.5; ctx.lineJoin = 'round'; ctx.globalAlpha = 0.85;
+      ctx.beginPath(); pts.forEach((p, i) => i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y)); ctx.stroke();
+      ctx.globalAlpha = 0.07; ctx.fillStyle = sub.color; ctx.beginPath(); ctx.moveTo(pts[0].x, PAD_T + CHART_H);
+      pts.forEach(p => ctx.lineTo(p.x, p.y)); ctx.lineTo(pts[pts.length-1].x, PAD_T + CHART_H); ctx.closePath(); ctx.fill(); ctx.restore();
     }
-
-    // Dots
     pts.forEach(p => {
-      ctx.save();
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, 5, 0, Math.PI * 2);
-      ctx.fillStyle = sub.color;
-      ctx.shadowColor = sub.color;
-      ctx.shadowBlur = 6;
-      ctx.globalAlpha = 0.95;
-      ctx.fill();
-      ctx.strokeStyle = '#0B0F1A';
-      ctx.lineWidth = 2;
-      ctx.shadowBlur = 0;
-      ctx.stroke();
-      ctx.restore();
+      ctx.save(); ctx.beginPath(); ctx.arc(p.x, p.y, 5, 0, Math.PI * 2); ctx.fillStyle = sub.color;
+      ctx.shadowColor = sub.color; ctx.shadowBlur = 6; ctx.globalAlpha = 0.95; ctx.fill();
+      ctx.strokeStyle = '#0B0F1A'; ctx.lineWidth = 2; ctx.shadowBlur = 0; ctx.stroke(); ctx.restore();
       canvas._pmHits.push({ x: p.x, y: p.y, r: 10, m: p.m, key, sub });
     });
   });
-
-  // Hover
   canvas.onmousemove = function(e) {
-    const rect = canvas.getBoundingClientRect();
-    const mx = e.clientX - rect.left;
-    const my = e.clientY - rect.top;
+    const rect = canvas.getBoundingClientRect(); const mx = e.clientX - rect.left; const my = e.clientY - rect.top;
     let found = null;
-    for (const h of (canvas._pmHits || [])) {
-      if (Math.hypot(mx - h.x, my - h.y) <= h.r) { found = h; break; }
-    }
+    for (const h of (canvas._pmHits || [])) { if (Math.hypot(mx - h.x, my - h.y) <= h.r) { found = h; break; } }
     if (found) {
-      const m = found.m;
-      const pct = Math.round(m.score / m.max * 100);
+      const m = found.m; const pct = Math.round(m.score / m.max * 100);
       const pctColor = pct >= 75 ? '#10B981' : pct >= 50 ? '#F59E0B' : '#EF4444';
       const dateDisp = new Date(m.date + 'T12:00:00').toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric',year:'numeric'});
-      tooltip.innerHTML = `
-        <div style="font-weight:700;color:${found.sub.color};margin-bottom:5px">${found.sub.name}</div>
+      tooltip.innerHTML = `<div style="font-weight:700;color:${found.sub.color};margin-bottom:5px">${found.sub.name}</div>
         <div style="color:var(--text-dim);margin-bottom:3px">${m.year}${m.label ? ' · ' + m.label : ''}</div>
         <div style="font-size:0.75rem;color:var(--text-muted);margin-bottom:6px">${dateDisp}</div>
         <div style="font-size:1.1rem;font-weight:800;color:${pctColor}">${pct}%</div>
         <div style="font-size:0.75rem;color:var(--text-muted)">${m.score} / ${m.max} marks</div>`;
       tooltip.style.opacity = '1';
-      const tx = Math.min(found.x + 12, W - 160);
-      const ty = Math.max(found.y - 80, PAD_T);
-      tooltip.style.left = tx + 'px';
-      tooltip.style.top  = ty + 'px';
+      tooltip.style.left = Math.min(found.x + 12, W - 160) + 'px';
+      tooltip.style.top  = Math.max(found.y - 80, PAD_T) + 'px';
       canvas.style.cursor = 'pointer';
-    } else {
-      tooltip.style.opacity = '0';
-      canvas.style.cursor = 'default';
-    }
+    } else { tooltip.style.opacity = '0'; canvas.style.cursor = 'default'; }
   };
   canvas.onmouseleave = function() { tooltip.style.opacity = '0'; canvas.style.cursor = 'default'; };
 }
-
+ 
 // ════════════════════════════════════
-//  DAILY STUDY TIME CHART (Progress page)
+//  DAILY STUDY TIME CHART
 // ════════════════════════════════════
 var _dtRange = 7;
-
 function setDtRange(n) {
   _dtRange = n;
-  [7,14,30].forEach(v => {
-    const btn = document.getElementById('dtRange'+v);
-    if (btn) btn.classList.toggle('active', v===n);
-  });
+  [7,14,30].forEach(v => { const btn = document.getElementById('dtRange'+v); if (btn) btn.classList.toggle('active', v===n); });
   renderDailyTimeChart();
 }
-
 function renderDailyTimeChart() {
   const canvas = document.getElementById('dtCanvas');
   const emptyEl = document.getElementById('dtEmptyState');
   const legendEl = document.getElementById('dtLegend');
   const tooltip = document.getElementById('dtTooltip');
   if (!canvas) return;
-
   const today = todayStr();
   const days = [];
   for (let i = _dtRange - 1; i >= 0; i--) days.push(addDays(today, -i));
-
-  // Build data
   const dayData = days.map(date => {
     const obj = { date, total: 0 };
     Object.entries(SUBJECTS).forEach(([key]) => {
       const sessions = (userData.timeTracking && userData.timeTracking[key] && userData.timeTracking[key].sessions) || [];
       const secs = sessions.filter(s => s.date === date).reduce((a, s) => a + s.duration, 0);
-      obj[key] = secs;
-      obj.total += secs;
+      obj[key] = secs; obj.total += secs;
     });
     return obj;
   });
-
   const hasData = dayData.some(d => d.total > 0);
   canvas.style.display = hasData ? 'block' : 'none';
   emptyEl.style.display = hasData ? 'none' : 'block';
-
-  if (!hasData) {
-    legendEl.innerHTML = '';
-    return;
-  }
-
-  // Legend
+  if (!hasData) { legendEl.innerHTML = ''; return; }
   const subjectKeys = Object.keys(SUBJECTS);
   legendEl.innerHTML = subjectKeys.map(key => {
     const sub = SUBJECTS[key];
-    const totalSecs = ((userData.timeTracking && userData.timeTracking[key] && userData.timeTracking[key].sessions) || [])
-      .reduce((a, s) => a + s.duration, 0);
-    const hrs = (totalSecs / 3600).toFixed(1);
+    const totalSecs = ((userData.timeTracking && userData.timeTracking[key] && userData.timeTracking[key].sessions) || []).reduce((a, s) => a + s.duration, 0);
     return `<div style="display:flex;align-items:center;gap:7px">
       <div style="width:12px;height:12px;border-radius:3px;background:${sub.color};flex-shrink:0"></div>
       <span style="font-size:0.82rem;color:var(--text-dim);font-weight:500">${sub.name}</span>
-      <span style="font-size:0.78rem;color:var(--text-muted)">${hrs}h total</span>
+      <span style="font-size:0.78rem;color:var(--text-muted)">${(totalSecs/3600).toFixed(1)}h total</span>
     </div>`;
   }).join('');
-
-  // Canvas sizing
   const wrap = document.getElementById('dtChartWrap');
   const W = wrap.clientWidth || 700;
   const PAD_L = 52, PAD_R = 16, PAD_T = 16, PAD_B = 38;
   const CHART_W = W - PAD_L - PAD_R;
   const CHART_H = 200;
   const H = CHART_H + PAD_T + PAD_B;
-
   const dpr = window.devicePixelRatio || 1;
-  canvas.width = W * dpr;
-  canvas.height = H * dpr;
-  canvas.style.height = H + 'px';
-
+  canvas.width = W * dpr; canvas.height = H * dpr; canvas.style.height = H + 'px';
   const ctx = canvas.getContext('2d');
-  ctx.scale(dpr, dpr);
-  ctx.clearRect(0, 0, W, H);
-
-  // Max value (in hours, rounded up)
+  ctx.scale(dpr, dpr); ctx.clearRect(0, 0, W, H);
   const maxSecs = Math.max(...dayData.map(d => d.total), 1);
-  const maxHrs = Math.ceil(maxSecs / 3600 * 10) / 10; // round to 0.1
+  const maxHrs = Math.ceil(maxSecs / 3600 * 10) / 10;
   const niceMax = Math.ceil(maxHrs);
-
-  // Grid lines
   const gridSteps = Math.min(niceMax, 5);
-  ctx.font = `11px var(--font, 'Outfit', sans-serif)`;
-  ctx.textAlign = 'right';
+  ctx.font = `11px var(--font, 'Outfit', sans-serif)`; ctx.textAlign = 'right';
   for (let i = 0; i <= gridSteps; i++) {
     const val = (niceMax / gridSteps * i);
     const y = PAD_T + CHART_H - (val / niceMax) * CHART_H;
-    ctx.strokeStyle = 'rgba(255,255,255,0.05)';
-    ctx.lineWidth = 1;
-    ctx.beginPath();
-    ctx.moveTo(PAD_L, y);
-    ctx.lineTo(PAD_L + CHART_W, y);
-    ctx.stroke();
-    ctx.fillStyle = 'rgba(148,163,184,0.7)';
-    ctx.fillText(val.toFixed(val < 1 ? 1 : 0) + 'h', PAD_L - 6, y + 4);
+    ctx.strokeStyle = 'rgba(255,255,255,0.05)'; ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(PAD_L, y); ctx.lineTo(PAD_L + CHART_W, y); ctx.stroke();
+    ctx.fillStyle = 'rgba(148,163,184,0.7)'; ctx.fillText(val.toFixed(val < 1 ? 1 : 0) + 'h', PAD_L - 6, y + 4);
   }
-
-  // Bars
   const n = dayData.length;
   const barW = Math.max(8, Math.min(40, (CHART_W / n) * 0.72));
   const gap = CHART_W / n;
   const dayLabels = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-
-  // Store bar rects for hover
   canvas._barRects = [];
-
   dayData.forEach((d, i) => {
     const cx = PAD_L + gap * i + gap / 2;
     const x = cx - barW / 2;
     const isToday = d.date === today;
-
-    // Today highlight
     if (isToday) {
-      ctx.fillStyle = 'rgba(99,102,241,0.07)';
-      ctx.beginPath();
+      ctx.fillStyle = 'rgba(99,102,241,0.07)'; ctx.beginPath();
       ctx.roundRect ? ctx.roundRect(x - 4, PAD_T, barW + 8, CHART_H, 4) : ctx.rect(x - 4, PAD_T, barW + 8, CHART_H);
       ctx.fill();
     }
-
-    let stackY = PAD_T + CHART_H; // start from bottom
+    let stackY = PAD_T + CHART_H;
     const barInfo = { x, y: PAD_T, w: barW, h: 0, date: d.date, data: d, segments: [] };
-
     if (d.total > 0) {
       subjectKeys.forEach(key => {
         if (d[key] <= 0) return;
         const sub = SUBJECTS[key];
         const segH = Math.max(2, Math.round((d[key] / (niceMax * 3600)) * CHART_H));
-        stackY -= segH;
-
-        ctx.fillStyle = sub.color;
-        // Rounded top only on last segment
+        stackY -= segH; ctx.fillStyle = sub.color;
         const isTop = key === subjectKeys.filter(k => d[k] > 0).at(-1);
-        if (isTop && ctx.roundRect) {
-          ctx.beginPath();
-          ctx.roundRect(x, stackY, barW, segH, [4, 4, 0, 0]);
-          ctx.fill();
-        } else {
-          ctx.fillRect(x, stackY, barW, segH);
-        }
+        if (isTop && ctx.roundRect) { ctx.beginPath(); ctx.roundRect(x, stackY, barW, segH, [4, 4, 0, 0]); ctx.fill(); }
+        else { ctx.fillRect(x, stackY, barW, segH); }
         barInfo.segments.push({ key, color: sub.color, secs: d[key] });
       });
-      barInfo.y = stackY;
-      barInfo.h = PAD_T + CHART_H - stackY;
+      barInfo.y = stackY; barInfo.h = PAD_T + CHART_H - stackY;
     }
     canvas._barRects.push(barInfo);
-
-    // X-axis label
     const dateObj = new Date(d.date + 'T12:00:00');
     let label;
-    if (_dtRange <= 7) {
-      label = dayLabels[dateObj.getDay()];
-    } else if (_dtRange <= 14) {
-      label = dayLabels[dateObj.getDay()].slice(0,1) + ' ' + dateObj.getDate();
-    } else {
-      label = dateObj.getDate() === 1
-        ? dateObj.toLocaleString('en',{month:'short'})
-        : (i % 5 === 0 ? String(dateObj.getDate()) : '');
-    }
+    if (_dtRange <= 7) label = dayLabels[dateObj.getDay()];
+    else if (_dtRange <= 14) label = dayLabels[dateObj.getDay()].slice(0,1) + ' ' + dateObj.getDate();
+    else label = dateObj.getDate() === 1 ? dateObj.toLocaleString('en',{month:'short'}) : (i % 5 === 0 ? String(dateObj.getDate()) : '');
     ctx.textAlign = 'center';
     ctx.font = isToday ? `bold 11px var(--font,'Outfit',sans-serif)` : `11px var(--font,'Outfit',sans-serif)`;
     ctx.fillStyle = isToday ? '#6366F1' : 'rgba(100,116,139,0.85)';
     ctx.fillText(label, cx, PAD_T + CHART_H + 18);
   });
-
-  // Hover logic
   canvas.onmousemove = function(e) {
-    const rect = canvas.getBoundingClientRect();
-    const mx = (e.clientX - rect.left);
-    const my = (e.clientY - rect.top);
+    const rect = canvas.getBoundingClientRect(); const mx = (e.clientX - rect.left); const my = (e.clientY - rect.top);
     let found = null;
-    for (const b of canvas._barRects) {
-      if (mx >= b.x - 6 && mx <= b.x + b.w + 6 && my >= PAD_T && my <= PAD_T + CHART_H) {
-        found = b; break;
-      }
-    }
+    for (const b of canvas._barRects) { if (mx >= b.x - 6 && mx <= b.x + b.w + 6 && my >= PAD_T && my <= PAD_T + CHART_H) { found = b; break; } }
     if (found && found.data.total > 0) {
       const dateDisp = new Date(found.date + 'T12:00:00').toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'});
       let html = `<div style="font-weight:700;margin-bottom:6px;color:var(--text)">${dateDisp}</div>`;
       found.segments.forEach(seg => {
         const sub = SUBJECTS[seg.key];
-        const h = Math.floor(seg.secs/3600);
-        const m = Math.floor((seg.secs%3600)/60);
-        const timeStr = h > 0 ? `${h}h ${m}m` : `${m}m`;
+        const h = Math.floor(seg.secs/3600); const m = Math.floor((seg.secs%3600)/60);
         html += `<div style="display:flex;align-items:center;gap:7px;margin-bottom:3px">
           <div style="width:9px;height:9px;border-radius:2px;background:${seg.color};flex-shrink:0"></div>
           <span style="color:var(--text-dim)">${sub.name}:</span>
-          <span style="font-weight:600;color:var(--text)">${timeStr}</span>
+          <span style="font-weight:600;color:var(--text)">${h > 0 ? h+'h ' : ''}${m}m</span>
         </div>`;
       });
-      const totalH = Math.floor(found.data.total/3600);
-      const totalM = Math.floor((found.data.total%3600)/60);
+      const totalH = Math.floor(found.data.total/3600); const totalM = Math.floor((found.data.total%3600)/60);
       html += `<div style="margin-top:6px;padding-top:6px;border-top:1px solid var(--border);font-size:0.75rem;color:var(--text-muted)">Total: ${totalH > 0 ? totalH+'h ' : ''}${totalM}m</div>`;
-      tooltip.innerHTML = html;
-      tooltip.style.opacity = '1';
-      // Position tooltip
-      const tx = Math.min(found.x, W - 200);
-      tooltip.style.left = tx + 'px';
-      tooltip.style.top = (found.y - 10) + 'px';
-    } else {
-      tooltip.style.opacity = '0';
-    }
+      tooltip.innerHTML = html; tooltip.style.opacity = '1';
+      tooltip.style.left = Math.min(found.x, W - 200) + 'px'; tooltip.style.top = (found.y - 10) + 'px';
+    } else { tooltip.style.opacity = '0'; }
   };
   canvas.onmouseleave = function() { tooltip.style.opacity = '0'; };
 }
-
 </script>
 </body>
 </html>
